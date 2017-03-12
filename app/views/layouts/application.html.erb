@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>RealEstateRailsApp</title>
     <%= csrf_meta_tags %>
 
@@ -10,45 +13,7 @@
 
   <body>
     <header id="header">
-      <div class="header-top">
-        <div class="container">
-          <ul class="top-nav">
-            <li>
-              <a href="#">Registrate</a>
-            </li>
-            <li>
-              <a href="#">Inicia Sesión</a>
-            </li>
-            <li class="pull-right top-nav-icon">
-              <a href="#">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-            </li>
-            <li class="pull-right top-nav-icon">
-              <a href="#">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-            </li>
-            <li class="pull-right top-nav-icon">
-              <a href="#">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-            </li>
-            <li class="pull-right hidden-xs">
-              <span>
-                <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                <a href="mailto:info@tucasa.com">info@tucasa.com</a>
-              </span>
-            </li>
-            <li class="pull-right hidden-xs">
-              <span>
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <a href="tel:8099080343">809-908-0343</a>
-              </span>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <%= yield :header_top %>
       <div class="header-main">
         <div class="container">
           <a class="logo" href="index.html">
@@ -135,210 +100,84 @@
           </ul>
         </div>
       </div>
-      <div class="header-search container">
-        <form>
-          <div class="search">
-            <div class="search-type dropdown">
-              <a href="#" data-toggle="dropdown" aria-expanded="false" id="search-link">Renta<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
-              <div class="dropdown-menu">
-                <div>
-                  <input type="radio" name="property-type" value="Renta" class="rent_or_buy">
-                  <span>Renta</span>
-                </div>
-                <div>
-                  <input type="radio" name="property-type" value="Compra" class="rent_or_buy">
-                  <span>Compra</span>
-                </div>
-              </div>
-            </div>
-            <div class="search-body">
-              <input type="text" class="search-input" placeholder="Buscar" data-rmd-action="advanced-search-open">
-              <div class="search-advanced">
-                <div class="col-sm-6">
-                  <div class="form-group form-group-float form-group-active">
-                    <input type="text" class="form-control" placeholder="Naco, Santo Domingo">
-                    <label>Sector o Ciudad</label>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="form-group">
-                    <label>Tipo de Propiedad</label>
-                    <select class="select2 select2-hidden-accessible" name="">
-                      <option value="Apartamento">Apartamento</option>
-                      <option value="Casa">Casa</option>
-                      <option value="Villa">Villa</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="form-group">
-                    <label>Precio</label>
-                    <div class="price-in">
-                      <small>Minimo</small>
-                      <select class="range" name="">
-                        <option value="0">0</option>
-                        <option value="500000">RD$ 500,000</option>
-                        <option value="1000000">RD$ 1,000,000</option>
-                        <option value="1500000">RD$ 1,500,000</option>
-                        <option value="2000000">RD$ 2,000,000</option>
-                      </select>
-                    </div>
-                    <div class="price-in">
-                      <small>Maximo</small>
-                      <select class="range" name="">
-                        <option value="0">0</option>
-                        <option value="500000">RD$ 500,000</option>
-                        <option value="1000000">RD$ 1,000,000</option>
-                        <option value="1500000">RD$ 1,500,000</option>
-                        <option value="2000000">RD$ 2,000,000</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="form-group">
-                    <label>Habitaciones y Baños</label>
-                    <div class="price-in">
-                      <small>Habitaciones</small>
-                      <select class="range" name="">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                      </select>
-                    </div>
-                    <div class="price-in">
-                      <small>Baños</small>
-                      <select class="range" name="">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xs-12 m-t-10">
-                  <a href="pages/search.html">Buscar</a>
-                  <button class="btn prevent cancel">Cancelar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="header-recommended">
-        <div class="my-location">
-          <h2 class="my-location-title">Propiedades serca de usted.</h2>
-        </div>
-        <div class="listings-grid">
-          <div class="listings-grid-item">
-            <a href="pages/show.html">
-              <div class="listings-grid-main">
-                <img src="images/apart.jpg" alt="Apartment">
-                <div class="listings-grid-price">DOP$ 8,500,000</div>
-              </div>
-              <div class="listings-grid-body">
-                <small>C/ Fabio Mota #9</small>
-                <h5>Apartamento en construcción</h5>
-              </div>
-              <ul class="listings-grid-attrs">
-                <li><i class="listings-grid-icon fa fa-bed" aria-hidden="true"> 03</i></li>
-                <li><i class="listings-grid-icon fa fa-bath" aria-hidden="true"> 02</i></li>
-                <li><i class="listings-grid-icon fa fa-car" aria-hidden="true"> 02</i></li>
-              </ul>
-            </a>
-            <div class="listings-grid-favorite">
-              <i class="listings-grid-icon fa fa-heart-o" aria-hidden="true"></i>
-            </div>
-          </div>
-          <!-- <div>your content</div> -->
-          <div class="listings-grid-item">
-            <a href="#">
-              <div class="listings-grid-main">
-                <img src="images/metro.jpg" alt="Apartment">
-                <div class="listings-grid-price">DOP$ 5,200,000</div>
-              </div>
-              <div class="listings-grid-body">
-                <small>C/ Fabio Mota #9</small>
-                <h5>Apartamento en construcción</h5>
-              </div>
-              <ul class="listings-grid-attrs">
-                <li><i class="listings-grid-icon fa fa-bed" aria-hidden="true"> 03</i></li>
-                <li><i class="listings-grid-icon fa fa-bath" aria-hidden="true"> 02</i></li>
-                <li><i class="listings-grid-icon fa fa-car" aria-hidden="true"> 02</i></li>
-              </ul>
-            </a>
-            <div class="listings-grid-favorite">
-              <i class="listings-grid-icon fa fa-heart-o" aria-hidden="true"></i>
-            </div>
-          </div>
-          <!-- <div>your content</div> -->
-          <div class="listings-grid-item">
-            <a href="#">
-              <div class="listings-grid-main">
-                <img src="images/metro.jpg" alt="Apartment">
-                <div class="listings-grid-price">DOP$ 10,150,000</div>
-              </div>
-              <div class="listings-grid-body">
-                <small>C/ Fabio Mota #9</small>
-                <h5>Apartamento en construcción</h5>
-              </div>
-              <ul class="listings-grid-attrs">
-                <li><i class="listings-grid-icon fa fa-bed" aria-hidden="true"> 03</i></li>
-                <li><i class="listings-grid-icon fa fa-bath" aria-hidden="true"> 02</i></li>
-                <li><i class="listings-grid-icon fa fa-car" aria-hidden="true"> 02</i></li>
-              </ul>
-            </a>
-            <div class="listings-grid-favorite">
-              <i class="listings-grid-icon fa fa-heart-o" aria-hidden="true"></i>
-            </div>
-          </div>
-          <!-- <div>your content</div> -->
-          <div class="listings-grid-item">
-            <a href="#">
-              <div class="listings-grid-main">
-                <img src="images/metro.jpg" alt="Apartment">
-                <div class="listings-grid-price">DOP$ 3,600,000</div>
-              </div>
-              <div class="listings-grid-body">
-                <small>C/ Fabio Mota #9</small>
-                <h5>Apartamento en construcción</h5>
-              </div>
-              <ul class="listings-grid-attrs">
-                <li><i class="listings-grid-icon fa fa-bed" aria-hidden="true"> 03</i></li>
-                <li><i class="listings-grid-icon fa fa-bath" aria-hidden="true"> 02</i></li>
-                <li><i class="listings-grid-icon fa fa-car" aria-hidden="true"> 02</i></li>
-              </ul>
-            </a>
-            <div class="listings-grid-favorite">
-              <i class="listings-grid-icon fa fa-heart-o" aria-hidden="true"></i>
-            </div>
-          </div>
-          <!-- <div>your content</div> -->
-          <div class="listings-grid-item">
-            <a href="#">
-              <div class="listings-grid-main">
-                <img src="images/metro.jpg" alt="Apartment">
-                <div class="listings-grid-price">DOP$ 6,250,000</div>
-              </div>
-              <div class="listings-grid-body">
-                <small>C/ Fabio Mota #9</small>
-                <h5>Apartamento en construcción</h5>
-              </div>
-              <ul class="listings-grid-attrs">
-                <li><i class="listings-grid-icon fa fa-bed" aria-hidden="true"> 03</i></li>
-                <li><i class="listings-grid-icon fa fa-bath" aria-hidden="true"> 02</i></li>
-                <li><i class="listings-grid-icon fa fa-car" aria-hidden="true"> 02</i></li>
-              </ul>
-            </a>
-            <div class="listings-grid-favorite">
-              <i class="listings-grid-icon fa fa-heart-o" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-      </div>
+      <%= yield :header_search_recommended %>
     </header>
     <%= yield %>
+    <footer id="footer">
+      <div class="container hidden-xs">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="footer-block">
+              <a class="logo clearfix" href="#">
+                <div class="logo-text">
+                  <span>TuCasa</span>
+                  <span>Tu verdadera casa</span>
+                </div>
+              </a>
+              <address class="m-t-20 m-b-20 f-14">
+                C/ Fabio Mota #9, edif. Calvin Ariel Apt. 8B, Naco.
+              </address>
+              <div class="f-20">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <a href="tel:8099080343">809-908-0343</a>
+              </div>
+              <div class="f-14 m-t-5">
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                <a href="mailto:info@tucasa.com">info@tucasa.com</a>
+              </div>
+              <div class="f-20 m-t-20">
+                <a class="m-r-10" href="#">
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a class="m-r-10" href="#">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a class="m-r-10" href="#">
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="footer-block footer-block-blog">
+              <div class="footer-title">
+                Novedades en nuestro Blog
+              </div>
+              <a href="#">
+                Aenean lacinia bibendum nulla sed
+                <small>On 2016/06/20 at 6:00 PM</small>
+              </a>
+              <a href="#">
+                Vestibulum id ligula porta felis euismod semper
+                <small>On 2016/06/18 at 7:12 PM</small>
+              </a>
+              <a href="#">
+                Vestibulum id ligula porta felis euismod semper
+                <small>On 2016/06/18 at 7:12 PM</small>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="footer-block">
+              <div class="footer-title">
+                Disclaimer
+              </div>
+              <div class="">
+                Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <span class="footer-copyright">&copy; TuCasa S. R. L.</span>
+          <a href="#">Sobre Nosotros</a>
+          <a href="#">Terminos &amp; Condiciones</a>
+          <a href="#">Politicas de Privacidad</a>
+          <a href="#">Agentes</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
