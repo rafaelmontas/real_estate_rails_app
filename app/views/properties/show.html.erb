@@ -1,0 +1,233 @@
+<section class="section section-show">
+  <div class="container">
+    <header class="section_title section_title-alt">
+      <div class="header-text">
+        <h2><%= @property.name %></h2>
+        <small><%= @property.address %></small>
+      </div>
+      <div class="actions actions-section">
+        <a href="#">
+          <i class="fa fa-heart-o" aria-hidden="true"></i>
+          Guardar
+        </a>
+        <a href="#" class="hidden-xs hidden-sm">
+          <i class="fa fa-print" aria-hidden="true"></i>
+          Imprimir
+        </a>
+      </div>
+    </header>
+    
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="detail-media">
+            <!-- Carousel -->
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+              </ol>
+
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                  <img class="resp" src="../images/apart.jpg" alt="image">
+                </div>
+                <div class="item">
+                  <!-- <img class="resp" src="../images/metro.jpg" alt="image"> -->
+                  <%= image_tag @property.image.url(:large) %>
+                </div>
+                <div class="item">
+                  <img class="resp" src="../images/boat.jpg" alt="image">
+                </div>
+              </div>
+
+              <!-- Controls -->
+              <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+            <!-- End Carousel -->
+          </div>
+          <div class="detail-info">
+            <div class="detail-info-header clearfix">
+              <strong><%= @property.price %></strong>
+              <!-- <small>fkfeofm</small> -->
+              <span><%= @property.sale %></span>
+            </div>
+            <div class="card-header">
+              <h2>Detalles de la Propiedad</h2>
+            </div>
+            <ul class="detail-info-list clearfix">
+              <li>
+                <span>Tipo de propiedad</span>
+                <span><%= @property.kind %></span>
+              </li>
+              <li>
+                <span>Terreno</span>
+                <span><%= @property.mts %></span>
+              </li>
+              <li>
+                <span>Dormitorios</span>
+                <span><%= @property.room %></span>
+              </li>
+              <li>
+                <span>Baños</span>
+                <span><%= @property.bath %></span>
+              </li>
+              <li>
+                <span>Parqueos</span>
+                <span><%= @property.parking %></span>
+              </li>
+              <li>
+                <span>Sector</span>
+                <span><%= @property.location %></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card detail-amenities">
+          <div class="card-header">
+            <h2>Caracteristicas</h2>
+            <small>Maecenas seddiam eget risus varius blandit sitamet nonmagna</small>
+          </div>
+          <div class="card-body">
+            <ul class="detail-amenities-list">
+
+
+              <li class="color1">Balcón</li>
+              <li class="color2">Planta Eléctrica Full</li>
+              <li class="color3">Área Social</li>
+              <li class="color4">Gym</li>
+              <li class="color5">Portón Electrico</li>
+              <li class="color6">Gás Común</li>
+              <li class="color7">Cuarto de servicio</li>
+              <li class="color8">Techo en yeso</li>
+              <li class="color9">Seguridad 24/7</li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h2>Datos Generales</h2>
+          </div>
+          <div class="card-body">
+            <p><%= @property.general %></p>
+          </div>
+        </div>
+      </div>
+      <div id="inquire" class="col-md-4 sidebar-mobile">
+        <form class="card hidden-print">
+          <div class="card-header">
+            <h2>Solicitar información</h2>
+            <small>Llamar o enviar Email</small>
+          </div>
+          <div class="card-body">
+            <div class="inquire-number">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              829-648-3530
+            </div>
+            <div class="form-group form-group-float form-group-active">
+              <input type="text" class="form-control">
+              <label for="">Name</label>
+            </div>
+            <div class="form-group form-group-float form-group-active">
+              <input type="text" class="form-control">
+              <label>Email</label>
+            </div>
+            <div class="form-group form-group-float form-group-active">
+              <input type="text" class="form-control">
+              <label>Número de contacto</label>
+            </div>
+            <div class="form-group form-group-float form-group-active">
+              <textarea class="form-control textarea-autoheight">Buenas, quisiera más información sobre este apartamento...</textarea>
+              <label>Mensaje</label>
+            </div>
+            <small class="text-muted">Al enviarnos su información, está de acuerdo con los terminos y politica de privacidad de TuCasa S. R. L.</small>
+          </div>
+          <div class="card-footer">
+            <button type="summit" class="btn btn-primary">Solicitar info.</button>
+            <button class="btn btn-link hidden-md hidden-lg">Cancelar</button>
+          </div>
+        </form>
+        <div class="card hidden-xs hidden-sm hidden-print">
+          <div class="card-header">
+            <h2>Inmobiliaria / Agente</h2>
+          </div>
+          <div class="list-group">
+            <a class="list-group-item media" href="#">
+              <div class="pull-left">
+                <img class="list-group-img img-circle" src="../images/remax.png" alt="image">
+              </div>
+              <div class="media-body list-group-text">
+                <strong>Remax RD</strong>
+                <small class="list-group-text">829-648-3530</small>
+              </div>
+            </a>
+            <a class="list-group-item media" href="agent.html">
+              <div class="pull-left">
+                <img class="list-group-img img-circle" src="../images/agent.jpg" alt="image">
+              </div>
+              <div class="media-body list-group-text">
+                <strong>Malinda Hollaway</strong>
+                <small class="list-group-text">829-648-3530</small>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="card hidden-xs hidden-sm hidden-print">
+          <div class="card-header">
+            <h2>Propiedades similares...</h2>
+          </div>
+          <div class="list-group">
+            <a class="list-group-item media" href="#">
+              <div class="pull-left">
+                <img class="list-group-img" src="../images/apart.jpg" alt="image">
+              </div>
+              <div class="media-body list-group-text">
+                <strong>Torre Cumbre VI</strong>
+                <small>$US320,000 . 03 habitaciones . 03 baños . </small>
+              </div>
+            </a>
+            <a class="list-group-item media" href="#">
+              <div class="pull-left">
+                <img class="list-group-img" src="../images/metro.jpg" alt="image">
+              </div>
+              <div class="media-body list-group-text">
+                <strong>Torre Calvin Arial</strong>
+                <small>$US150,000 . 04 habitaciones . 04 baños . </small>
+              </div>
+            </a>
+            <a class="list-group-item media" href="#">
+              <div class="pull-left">
+                <img class="list-group-img" src="../images/boat.jpg" alt="image">
+              </div>
+              <div class="media-body list-group-text">
+                <strong>Cap Cana</strong>
+                <small>$US520,000 . 03 habitaciones . 03 baños . </small>
+              </div>
+            </a>
+            <a class="list-group-item media" href="#">
+              <div class="pull-left">
+                <img class="list-group-img" src="../images/pool.jpg" alt="image">
+              </div>
+              <div class="media-body list-group-text">
+                <strong>Torre Cumbre VIII</strong>
+                <small>$US320,000 . 03 habitaciones . 03 baños . </small>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<button class="btn btn-action btn-circle hidden-md hidden-lg" data-rmd-action="block-open" data-rmd-target="#enquire"><i class="fa fa-info" aria-hidden="true"></i></button>

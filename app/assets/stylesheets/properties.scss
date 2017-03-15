@@ -7,6 +7,17 @@
 @import 'slick-theme';
 @import "font-awesome";
 
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+
 /*CSS Resets*/
 aside, article, section, header, footer, nav {
 	display: block;
@@ -1785,4 +1796,20 @@ strong {
 
 .mdc-text-light-blue {
   color: #03A9F4;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+// New property form styles
+
+form.new_property label {
+	display: block;
 }
