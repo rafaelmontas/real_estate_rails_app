@@ -1,5 +1,5 @@
 class Property < ApplicationRecord
-  mount_uploader :image, ImageUploader
+  include ImageUploader[:image]
 
   validates :name, presence: true
   validates :address, presence: true

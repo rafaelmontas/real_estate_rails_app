@@ -25,9 +25,9 @@ gem 'sass-rails', '~> 5.0'
 # AWS
 # gem 'aws-sdk', '~> 2.3'
 # CarrierWave
-gem 'carrierwave', '~> 1.0'
+# gem 'carrierwave', '~> 1.0'
 # rmagick
-gem 'rmagick', '~> 2.16'
+# gem 'rmagick', '~> 2.16'
 # jquery-file-upload
 # gem "jquery-fileupload-rails"
 # Use Uglifier as compressor for JavaScript assets
@@ -73,3 +73,5 @@ group :test do
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'shrine', '~> 2.5'
