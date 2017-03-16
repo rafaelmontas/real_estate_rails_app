@@ -20,8 +20,61 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :price %>
+    <%= f.label :price, "Precio $US" %>
     <%= f.number_field :price %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :sale, "Venta/Alquiler" %>
+    <%= f.select :sale, [['En Venta', 'venta'], ['En Alquiler', 'alquiler']], selected: 'venta' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :kind, "Tipo de Propiedad" %>
+    <%= f.select :kind, [['Apartamento', 'apartamento'],
+                         ['Penthouse', 'penthouse'],
+                         ['Casa', 'casa'],
+                         ['Villa', 'villa'],
+                         ['Solar', 'solar'],
+                         ['Oficina', 'oficina'],
+                         ['Edificio', 'edificio'],
+                         ['Local Comercial', 'local comercial']],
+                         selected: 'apartamento' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :room, "Habitaciones" %>
+    <%= f.select :room, [['1 habitación', 1],
+                         ['2 habitaciones', 2],
+                         ['3 habitaciones', 3],
+                         ['4 habitaciones', 4],
+                         ['5 habitaciones', 5],
+                         ['6 habitaciones', 6]] %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :bath, "Baños" %>
+    <%= f.select :bath, [['1+', 1], ['2+', 2], ['3+', 3], ['4+', 4], ['5+', 5], ['6+', 6]] %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :parking, "Parqueos" %>
+    <%= f.select :parking, [['1 Parque', 1], ['2 Parqueos', 2], ['3 Parqueos', 3], ['4 Parqueos', 4]] %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :mts, "Metro Cuadrados (mt2)" %>
+    <%= f.number_field :mts %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :location, "Dirección (Ubicación)" %>
+    <%= f.text_field :location %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :general, "Descripción" %>
+    <%= f.text_area :general %>
   </div>
 
   <%= f.submit "Publicar", class: "btn btn-primary" %>
