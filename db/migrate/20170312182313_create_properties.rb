@@ -9,9 +9,8 @@ class CreateProperties < ActiveRecord::Migration[5.0]
       t.integer :room
       t.float :bath
       t.integer :parking
-      t.integer :mts 
+      t.integer :mts
       t.string :location
-      t.string :tags, array: true
       t.text :general
       t.timestamps
     end

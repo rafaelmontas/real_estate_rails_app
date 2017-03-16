@@ -1348,6 +1348,10 @@ strong {
 	background-color: #78909C;
 }
 
+.color10 {
+	background-color: #03A9F4;
+}
+
 /*----- Side form ------*/
 
 @media screen and (max-width: 991px) {
@@ -1812,4 +1816,25 @@ strong {
 
 form.new_property label {
 	display: block;
+}
+
+// Check_box style
+
+form.new_property label.check_box_label {
+  display: inline;
+}
+
+form.new_property .tags .block {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.tags .form-group {
+  padding: 8px;
+  margin: 8px;
+}
+
+form.new_property .tags h3 {
+  margin: 8px;
+  padding: 8px;
 }

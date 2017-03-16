@@ -37,7 +37,9 @@
                 </div>
                 <div class="item">
                   <!-- <img class="resp" src="../images/metro.jpg" alt="image"> -->
-                  <%= image_tag @property.image_url, class: "resp" %>
+                  <% if @property.image.present? %>
+                    <%= image_tag @property.image_url, class: "resp" %>
+                  <% end %>
                 </div>
                 <div class="item">
                   <img class="resp" src="../images/boat.jpg" alt="image">
@@ -100,18 +102,36 @@
           </div>
           <div class="card-body">
             <ul class="detail-amenities-list">
-
-
-              <li class="color1">Balcón</li>
-              <li class="color2">Planta Eléctrica Full</li>
-              <li class="color3">Área Social</li>
-              <li class="color4">Gym</li>
-              <li class="color5">Portón Electrico</li>
-              <li class="color6">Gás Común</li>
-              <li class="color7">Cuarto de servicio</li>
-              <li class="color8">Techo en yeso</li>
-              <li class="color9">Seguridad 24/7</li>
-
+              <% if @property.balcon %>
+                <li class="color1">Balcón</li>
+              <% end %>
+              <% if @property.piscina %>
+                <li class="color2">Piscina</li>
+              <% end %>
+              <% if @property.cisterna %>
+                <li class="color3">Cisterna</li>
+              <% end %>
+              <% if @property.planta_electrica %>
+                <li class="color4">Planta Electrica</li>
+              <% end %>
+              <% if @property.jacuzzi %>
+                <li class="color5">Jacuzzi</li>
+              <% end %>
+              <% if @property.gym %>
+                <li class="color6">Gym</li>
+              <% end %>
+              <% if @property.habitacion_servicio %>
+                <li class="color7">Habitación De Servicio</li>
+              <% end %>
+              <% if @property.ascensor %>
+                <li class="color8">Ascensor</li>
+              <% end %>
+              <% if @property.seguridad %>
+                <li class="color9">Seguridad 24/7</li>
+              <% end %>
+              <% if @property.gas %>
+                <li class="color10">Gas Común</li>
+              <% end %>
             </ul>
           </div>
         </div>
