@@ -27,4 +27,44 @@ class PropertyTest < ActiveSupport::TestCase
     @property.price = 0
     assert_not @property.nil?
   end
+
+  test "sale should be present" do
+    @property.sale = "   "
+    assert_not @property.valid?
+  end
+
+  test "kind should be present" do
+    @property.kind = "   "
+    assert_not @property.valid?
+  end
+
+  test "room should be present" do
+    @property.room = 0
+    assert_not @property.nil?
+  end
+
+  test "bath should be present" do
+    @property.bath = 0
+    assert_not @property.nil?
+  end
+
+  test "parking should be present" do
+    @property.parking = 0
+    assert_not @property.nil?
+  end
+
+  test "location should be present" do
+    @property.location = "   "
+    assert_not @property.valid?
+  end
+
+  test "mts should be present" do
+    @property.mts = 0
+    assert_not @property.nil?
+  end
+
+  test "general should be present" do
+    @property.general = "   "
+    assert_not @property.valid?
+  end
 end
