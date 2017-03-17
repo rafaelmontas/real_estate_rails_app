@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20170315234505) do
     t.text     "general"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text     "image_data"
   end
 
 end

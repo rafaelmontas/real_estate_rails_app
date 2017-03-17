@@ -4,8 +4,16 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+one:
+  id: 1
+  name: "Torre Calvin Ariel"
+  address: "C/ Fabio Mota #9"
+  price: 300000
+  sale: "En Venta"
+  kind: "Apartamento"
+  room: 4
+  bath: 4.0
+  parking: 3
+  location: "Naco"
+  mts: 250
+  general: "Example text"

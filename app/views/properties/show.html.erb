@@ -37,7 +37,9 @@
                 </div>
                 <div class="item">
                   <!-- <img class="resp" src="../images/metro.jpg" alt="image"> -->
-                  <%= image_tag @property.image_url, class: "resp" %>
+                  <% if @property.image.present? %>
+                    <%= image_tag @property.image_url, class: "resp" %>
+                  <% end %>
                 </div>
                 <div class="item">
                   <img class="resp" src="../images/boat.jpg" alt="image">
@@ -58,7 +60,7 @@
           </div>
           <div class="detail-info">
             <div class="detail-info-header clearfix">
-              <strong><%= @property.price %></strong>
+              <strong><%= number_to_currency(@property.price, precision: 0, unit: "US$") %></strong>
               <!-- <small>fkfeofm</small> -->
               <span><%= @property.sale %></span>
             </div>
@@ -72,7 +74,7 @@
               </li>
               <li>
                 <span>Terreno</span>
-                <span><%= @property.mts %></span>
+                <span><%= @property.mts %> Mts2</span>
               </li>
               <li>
                 <span>Dormitorios</span>
@@ -93,7 +95,7 @@
             </ul>
           </div>
         </div>
-        <div class="card detail-amenities">
+        <!-- <div class="card detail-amenities">
           <div class="card-header">
             <h2>Caracteristicas</h2>
             <small>Maecenas seddiam eget risus varius blandit sitamet nonmagna</small>
@@ -114,7 +116,7 @@
 
             </ul>
           </div>
-        </div>
+        </div> -->
         <div class="card">
           <div class="card-header">
             <h2>Datos Generales</h2>

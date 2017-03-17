@@ -6,7 +6,7 @@ class PropertyTest < ActiveSupport::TestCase
   # end
 
   def setup
-    @property = Property.new(name: "Torre Calvin Ariel", address: "C/ Fabio Mota #9, Naco", price: 320000, sale: "En Venta", kind: "Apartamento", room: 4, bath: 4.0, parking: 3, location: "Naco", tags: ["Elevador", "Ascensor", "Planta Electrica Full", "Gas Común"])
+    @property = Property.new(name: "Torre Calvin Ariel", address: "C/ Fabio Mota #9, Naco", price: 320000, sale: "En Venta", kind: "Apartamento", room: 4, bath: 4.0, parking: 3, location: "Naco", mts: 250, general: "Example text")
   end
 
   test "should be valid" do
@@ -14,7 +14,7 @@ class PropertyTest < ActiveSupport::TestCase
   end
 
   test "name should be present" do
-    @property.name = "    "
+    @property.name = "   "
     assert_not @property.valid?
   end
 

@@ -20,13 +20,13 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :price, "Precio $US" %>
+    <%= f.label :price, "Precio US$" %>
     <%= f.number_field :price %>
   </div>
 
   <div class="form-group">
     <%= f.label :sale, "Venta/Alquiler" %>
-    <%= f.select :sale, [['En Venta', 'venta'], ['En Alquiler', 'alquiler']], selected: 'venta' %>
+    <%= f.select :sale, [['En Venta', 'en venta'], ['En Alquiler', 'en alquiler']], selected: 'venta' %>
   </div>
 
   <div class="form-group">
@@ -40,6 +40,12 @@
                          ['Edificio', 'edificio'],
                          ['Local Comercial', 'local comercial']],
                          selected: 'apartamento' %>
+  </div>
+
+  <div class="form-group">
+    <!-- Should be select field -->
+    <%= f.label :location, "Sector" %>
+    <%= f.select :location, [['Naco', 'naco'], ['Piantini', 'piantini'], ['Evaristo Morales', 'evaristo morales']] %>
   </div>
 
   <div class="form-group">
@@ -65,11 +71,6 @@
   <div class="form-group">
     <%= f.label :mts, "Metro Cuadrados (mt2)" %>
     <%= f.number_field :mts %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :location, "Dirección (Ubicación)" %>
-    <%= f.text_field :location %>
   </div>
 
   <div class="form-group">
