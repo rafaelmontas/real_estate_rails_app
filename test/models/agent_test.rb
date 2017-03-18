@@ -3,7 +3,9 @@ require 'test_helper'
 class AgentTest < ActiveSupport::TestCase
 
   def setup
-    @agent = Agent.new(name: "Rafael", email: "rafaelmontas1@gmail.com")
+    @agent = Agent.new(name: "Rafael", email: "rafaelmontas1@gmail.com",
+                       password: "foobar",
+                       password_confirmation: "foobar")
   end
 
   test "should be valid" do
@@ -58,5 +60,15 @@ class AgentTest < ActiveSupport::TestCase
     @agent.email = mixed_case_email
     @agent.save
     assert_equal mixed_case_email.downcase, @agent.reload.email
+  end
+
+  test "password should be present (nonblank)" do
+    @agent.password = @agent.password_confirmation = " " * 6
+    assert_not @agent.valid?
+  end
+
+  test "password should have a minimum length" do
+    @agent.password = @agent.password_confirmation = "a" * 5
+    assert_not @agent.valid?
   end
 end
