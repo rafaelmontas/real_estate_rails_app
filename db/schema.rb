@@ -18,8 +18,10 @@ ActiveRecord::Schema.define(version: 20170318220726) do
   create_table "agents", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "phone_number"
+    t.string   "alt_phone_number"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.string   "password_digest"
     t.index ["email"], name: "index_agents_on_email", unique: true, using: :btree
   end

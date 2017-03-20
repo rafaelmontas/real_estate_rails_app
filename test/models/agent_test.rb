@@ -4,8 +4,10 @@ class AgentTest < ActiveSupport::TestCase
 
   def setup
     @agent = Agent.new(name: "Rafael", email: "rafaelmontas1@gmail.com",
-                       password: "foobar",
-                       password_confirmation: "foobar")
+                                       phone_number: "8096483530",
+                                       alt_phone_number: "8099080343",
+                                       password: "foobar",
+                                       password_confirmation: "foobar")
   end
 
   test "should be valid" do
@@ -19,6 +21,11 @@ class AgentTest < ActiveSupport::TestCase
 
   test "email should be present" do
     @agent.email = "   "
+    assert_not @agent.valid?
+  end
+
+  test "phone number should be present" do
+    @agent.phone_number = "   "
     assert_not @agent.valid?
   end
 
