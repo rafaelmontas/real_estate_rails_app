@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>RealEstateRailsApp</title>
+    <title>TuCasa.com | Tu Casa</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -105,7 +105,7 @@
       <%= yield :header_search_recommended %>
     </header>
     <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
     <% end %>
     <%= yield %>
     <footer id="footer">

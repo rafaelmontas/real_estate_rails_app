@@ -1,2 +1,27 @@
-<h1>Agents#new</h1>
-<p>Find me in app/views/agents/new.html.erb</p>
+<h1>Registrarse</h1>
+
+<div class="col-sm-4 col-sm-offset-4 signup-form">
+  <%= form_for(@agent, url: agents_signup_path) do |f| %>
+    <%= render 'shared/error_messages' %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-control" %>
+
+    <%= f.label :phone_number, "Número Principal" %>
+    <%= f.text_field :phone_number, class: "form-control" %>
+
+    <%= f.label :alt_phone_number, "Número Secundario" %>
+    <%= f.text_field :alt_phone_number, class: "form-control" %>
+
+    <%= f.label :password, "Contraseña" %>
+    <%= f.password_field :password, class: "form-control" %>
+
+    <%= f.label :password_confirmation, "Confirmar Contraseña" %>
+    <%= f.password_field :password_confirmation, class: "form-control" %>
+
+    <%= f.submit "Crear cuenta", class: "btn btn-primary signup" %>
+  <% end %>
+</div>

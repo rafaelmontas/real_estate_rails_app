@@ -976,6 +976,7 @@ hr, img {
 #footer {
 	background-color: #3949AB;
   box-shadow: 0 0 20px rgba(0,0,0,.3);
+  clear: both;
 }
 
 #footer, .footer-block a {
@@ -1812,4 +1813,46 @@ strong {
 
 form.new_property label {
 	display: block;
+}
+
+// form Agents
+/* forms */
+
+.signup-form input, .signup-form textarea, .signup-form select, .signup-form .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+.signup-form input {
+  // height: auto !important;
+  height: 35px;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.signup-form {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.signup {
+  margin-bottom: 20px;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
 }

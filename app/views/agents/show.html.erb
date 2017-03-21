@@ -1,0 +1,5 @@
+<%= @agent.name %>, <%= @agent.email %>
+<%= number_to_phone(@agent.phone_number, area_code: true) %>
+<%= number_to_phone(@agent.alt_phone_number, area_code: true) %>
+<%= @agent.created_at %>
+<%= @agent.updated_at %>
