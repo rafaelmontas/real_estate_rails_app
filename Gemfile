@@ -29,6 +29,10 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 # Shrine
 gem 'shrine', '~> 2.5'
+# image_processing
+gem 'image_processing', '~> 0.4.1'
+# mini_magick
+gem 'mini_magick', '~> 4.6', '>= 4.6.1'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

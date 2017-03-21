@@ -1,5 +1,5 @@
 <% if @agent.avatar.present? %>
-  <%= image_tag @agent.avatar_url %>
+  <%= image_tag @agent.avatar[:small].url %>
 <% end %>
 <%= @agent.name %>, <%= @agent.email %>
 <%= number_to_phone(@agent.phone_number, area_code: true) %>

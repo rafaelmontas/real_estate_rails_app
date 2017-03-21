@@ -5,7 +5,7 @@
     <%= render 'shared/error_messages' %>
 
     <% if @agent.avatar.present? %>
-      <%= image_tag @agent.avatar_url %>
+      <%= image_tag @agent.avatar_url(:small) %>
     <% end %>
 
     <%= f.hidden_field :avatar, value: @agent.cached_avatar_data %>
