@@ -4,6 +4,13 @@
   <%= form_for(@agent, url: agents_signup_path) do |f| %>
     <%= render 'shared/error_messages' %>
 
+    <% if @agent.avatar.present? %>
+      <%= image_tag @agent.avatar_url %>
+    <% end %>
+
+    <%= f.hidden_field :avatar, value: @agent.cached_avatar_data %>
+    <%= f.file_field :avatar %>
+
     <%= f.label :name %>
     <%= f.text_field :name, class: "form-control" %>
 
