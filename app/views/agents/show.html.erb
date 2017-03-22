@@ -1,8 +1,160 @@
-<% if @agent.avatar.present? %>
-  <%= image_tag @agent.avatar[:small].url %>
-<% end %>
-<%= @agent.name %>, <%= @agent.email %>
-<%= number_to_phone(@agent.phone_number, area_code: true) %>
-<%= number_to_phone(@agent.alt_phone_number, area_code: true) %>
-<%= @agent.created_at %>
-<%= @agent.updated_at %>
+
+<section class="section">
+  <div class="container">
+    <header class="section_title section_title_agent text-left">
+      <h2><%= @agent.name %></h2>
+    </header>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card profile">
+          <div class="profile-img">
+            <% if @agent.avatar.present? %>
+              <%= image_tag @agent.avatar_url(:small) %>
+            <% end %>
+          </div>
+          <div class="profile-info">
+            <span class="label label-warning">Agente Premium</span>
+            <ul class="contact-list">
+              <li>
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <%= @agent.phone_number %>
+              </li>
+              <li>
+                <i class="fa fa-mobile" aria-hidden="true"></i>
+                <%= @agent.alt_phone_number %>
+              </li>
+              <li>
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <%= @agent.email %>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h2>Propiedades</h2>
+          </div>
+          <div class="listings-list listings-list-alt">
+            <div class="listings-grid-item">
+              <a href="show.html" class="media">
+                <div class="listings-grid-main pull-left">
+                  <img src="../images/apart.jpg" alt="image">
+                  <div class="listings-grid-price">$US350,000</div>
+                </div>
+                <div class="media-body">
+                  <div class="listings-grid-body">
+                    <small>Torre Calvin Ariel, Naco</small>
+                    <h5>Nullam iddolor idnibh ultricies vehicula</h5>
+                  </div>
+                  <ul class="listings-grid-attrs">
+                    <li>
+                      <i class="fa fa-bed" aria-hidden="true"></i>
+                      03
+                    </li>
+                    <li>
+                      <i class="fa fa-bath" aria-hidden="true"></i>
+                      02
+                    </li>
+                    <li>
+                      <i class="fa fa-car" aria-hidden="true"></i>
+                      02
+                    </li>
+                  </ul>
+                </div>
+              </a>
+            </div>
+            <div class="listings-grid-item">
+              <a href="show.html" class="media">
+                <div class="listings-grid-main pull-left">
+                  <img src="../images/metro.jpg" alt="image">
+                  <div class="listings-grid-price">$US350,000</div>
+                </div>
+                <div class="media-body">
+                  <div class="listings-grid-body">
+                    <small>Torre Cumbre VII, Naco</small>
+                    <h5>Nullam iddolor idnibh ultricies vehicula</h5>
+                  </div>
+                  <ul class="listings-grid-attrs">
+                    <li>
+                      <i class="fa fa-bed" aria-hidden="true"></i>
+                      03
+                    </li>
+                    <li>
+                      <i class="fa fa-bath" aria-hidden="true"></i>
+                      02
+                    </li>
+                    <li>
+                      <i class="fa fa-car" aria-hidden="true"></i>
+                      02
+                    </li>
+                  </ul>
+                </div>
+              </a>
+            </div>
+            <div class="listings-grid-item">
+              <a href="show.html" class="media">
+                <div class="listings-grid-main pull-left">
+                  <img src="../images/boat.jpg" alt="image">
+                  <div class="listings-grid-price">$US350,000</div>
+                </div>
+                <div class="media-body">
+                  <div class="listings-grid-body">
+                    <small>Cap Cana, Punta Cana</small>
+                    <h5>Nullam iddolor idnibh ultricies vehicula</h5>
+                  </div>
+                  <ul class="listings-grid-attrs">
+                    <li>
+                      <i class="fa fa-bed" aria-hidden="true"></i>
+                      03
+                    </li>
+                    <li>
+                      <i class="fa fa-bath" aria-hidden="true"></i>
+                      02
+                    </li>
+                    <li>
+                      <i class="fa fa-car" aria-hidden="true"></i>
+                      02
+                    </li>
+                  </ul>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="agent-question" class="col-md-4 sidebar-mobile">
+        <form class="card">
+          <div class="card-header">
+            <h2>Preguntar...</h2>
+          </div>
+          <div class="card-body m-t-10">
+            <div class="form-group form-group-float form-group-active">
+              <input type="text" class="form-control">
+              <label>Nombre</label>
+            </div>
+            <div class="form-group form-group-float form-group-active">
+              <input type="text" class="form-control">
+              <label>Email</label>
+            </div>
+            <div class="form-group form-group-float form-group-active">
+              <input type="text" class="form-control">
+              <label>Número De Contacto</label>
+            </div>
+            <div class="form-group form-group-float form-group-active">
+              <textarea class="form-control textarea-autoheight" rows="6" cols="80"></textarea>
+              <label>Mensaje</label>
+            </div>
+            <small class="text-muted">Al enviarnos su información, está de acuerdo con los terminos y politica de privacidad de TuCasa S. R. L.</small>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-primary">Solicitar Info.</button>
+            <button class="btn btn-sm btn-link visible-sm-inline visible-xs-inline">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<button class="btn btn-action btn-circle visible-sm visible-xs">
+  <i class="fa fa-commenting-o" aria-hidden="true"></i>
+</button>
