@@ -1,0 +1,14 @@
+<h1>Iniciar Sesión</h1>
+
+<div class="col-sm-4 col-sm-offset-4 signup-form">
+  <%= form_for(:session, url: agents_login_path) do |f| %>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-control" %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-control" %>
+
+    <%= f.submit "Iniciar Sesión", class: "btn btn-primary" %>
+  <% end %>
+  <p>Nuevo agente? <%= link_to "Registrate ahora!", agents_signup_path %></p>
+</div>
