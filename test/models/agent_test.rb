@@ -3,16 +3,16 @@ require 'test_helper'
 class AgentTest < ActiveSupport::TestCase
 
   def setup
-    @agent = Agent.new(name: "Rafael", email: "rafaelmontas1@gmail.com",
+    @agent = Agent.new(name: "Rafael", email: "rafaelmontas@gmail.com",
                                        phone_number: "8096483530",
                                        alt_phone_number: "8099080343",
                                        password: "password",
                                        password_confirmation: "password")
   end
 
-  # test "should be valid" do
-  #   assert @agent.valid?
-  # end
+  test "should be valid" do
+    assert @agent.valid?
+  end
 
   test "name should be present" do
     @agent.name = "   "
