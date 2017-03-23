@@ -330,6 +330,12 @@ a.logo {
     display: none;
 	}
 
+  .nav-drop-menu.nav-drop-menu-right {
+    left: auto;
+    right: 0;
+    border-radius: 2px 0 2px 2px;
+  }
+
 	.nav-drop-menu>li:first-child {
 		margin-top: 10px;
 	}
@@ -1855,4 +1861,11 @@ form.new_property label {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+// Image
+
+#header-image {
+  width: 25px;
+  border-radius: 50%
 }
