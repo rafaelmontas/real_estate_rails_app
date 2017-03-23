@@ -11,6 +11,7 @@ class AgentsController < ApplicationController
   def create
     @agent = Agent.new(agent_params)
     if @agent.save
+      log_in @agent
       flash[:success] = "Bienvenido a TuCasa.com"
       redirect_to @agent
     else

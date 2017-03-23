@@ -6,8 +6,8 @@ class AgentTest < ActiveSupport::TestCase
     @agent = Agent.new(name: "Rafael", email: "rafaelmontas1@gmail.com",
                                        phone_number: "8096483530",
                                        alt_phone_number: "8099080343",
-                                       password: "foobar",
-                                       password_confirmation: "foobar")
+                                       password: "password",
+                                       password_confirmation: "password")
   end
 
   test "should be valid" do

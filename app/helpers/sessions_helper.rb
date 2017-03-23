@@ -15,4 +15,10 @@ module SessionsHelper
     !current_agent.nil?
   end
 
+  # logs out the curren agent.
+  def log_out
+    session.delete(:agent_id)
+    @current_agent = nil
+  end
+
 end

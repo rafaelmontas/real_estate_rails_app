@@ -1,9 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# one:
-#   name: MyString
-#   email: MyString
-#
-# two:
-#   name: MyString
-#   email: MyString
+rafael:
+  name: "Rafael Montas"
+  email: "rafaelmontas1@gmail.com"
+  phone_number: "809000000"
+  alt_phone_number: "809000000"
+  password_digest: <%= Agent.digest('password') %>
