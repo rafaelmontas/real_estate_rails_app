@@ -1833,7 +1833,7 @@ form.new_property label {
 
 .signup-form input {
   // height: auto !important;
-  height: 35px;
+  // height: 35px;
   padding: 8px;
   border-radius: 5px;
   font-size: 15px;
@@ -1861,6 +1861,20 @@ form.new_property label {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+.checkbox {
+  // margin-top: -10px;
+  margin-bottom: 15px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
 }
 
 // Image

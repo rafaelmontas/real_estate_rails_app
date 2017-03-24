@@ -47,4 +47,17 @@ class AgentsLoginTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", agents_logout_path, count: 0
     assert_select "a[href=?]", agent_path(@agent), count: 0
   end
+
+  test "login with remembering" do
+    log_in_as(@agent, remember_me: '1')
+    assert_equal cookies['remember_token'], assigns(:agent).remember_token
+  end
+
+  test "login without remembering" do
+    # Log in to set the cookie.
+    log_in_as(@agent, remember_me: '1')
+    # Log in again and verify that the cookie is deleted.
+    log_in_as(@agent, remember_me: '0')
+    assert_empty cookies['remember_token']
+  end
 end

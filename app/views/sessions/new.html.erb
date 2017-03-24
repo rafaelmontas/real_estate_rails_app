@@ -8,6 +8,11 @@
     <%= f.label :password %>
     <%= f.password_field :password, class: "form-control" %>
 
+    <%= f.label :remember_me, class: "checkbox inline" do %>
+      <%= f.check_box :remember_me %>
+      <span>Recordarme en esta computadora</span>
+    <% end %>
+
     <%= f.submit "Iniciar Sesión", class: "btn btn-primary" %>
   <% end %>
   <p>Nuevo agente? <%= link_to "Registrate ahora!", agents_signup_path %></p>
