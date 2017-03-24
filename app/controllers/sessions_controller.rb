@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     agent = Agent.find_by(email: params[:session][:email].downcase)
     if agent && agent.authenticate(params[:session][:password])
       log_in agent
+      remember agent
       redirect_to agent
     else
       flash.now[:danger] = "Combinación email/contraseña incorrecta"
@@ -14,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
+    log_out if logged_in?
     redirect_to root_url
   end
 end

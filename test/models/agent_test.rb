@@ -78,4 +78,8 @@ class AgentTest < ActiveSupport::TestCase
     @agent.password = @agent.password_confirmation = "a" * 5
     assert_not @agent.valid?
   end
+
+  test "authenticated? should return false for a user with nil digest" do
+    assert_not @agent.authenticated?('')
+  end
 end

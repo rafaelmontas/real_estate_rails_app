@@ -39,6 +39,9 @@ class AgentsLoginTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", agent_path(@agent)
     delete agents_logout_path
     assert_not is_logged_in?
+    assert_redirected_to root_url
+    # Simulate an agent clicking logout in a second window.
+    delete agents_logout_path
     follow_redirect!
     assert_select "a[href=?]", agents_login_path
     assert_select "a[href=?]", agents_logout_path, count: 0
