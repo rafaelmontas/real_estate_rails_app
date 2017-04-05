@@ -1,0 +1,32 @@
+
+
+<%= form_for(@agent, url: yield(:url)) do |f| %>
+  <%= render 'shared/error_messages' %>
+
+  <% if @agent.avatar.present? %>
+    <%= image_tag @agent.avatar_url(:small) %>
+  <% end %>
+
+  <%= f.hidden_field :avatar, value: @agent.cached_avatar_data %>
+  <%= f.file_field :avatar %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email, class: "form-control" %>
+
+  <%= f.label :phone_number, "Número Principal" %>
+  <%= f.text_field :phone_number, class: "form-control" %>
+
+  <%= f.label :alt_phone_number, "Número Secundario" %>
+  <%= f.text_field :alt_phone_number, class: "form-control" %>
+
+  <%= f.label :password, "Contraseña" %>
+  <%= f.password_field :password, class: "form-control" %>
+
+  <%= f.label :password_confirmation, "Confirmar Contraseña" %>
+  <%= f.password_field :password_confirmation, class: "form-control" %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary signup" %>
+<% end %>

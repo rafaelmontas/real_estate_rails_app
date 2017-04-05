@@ -6,3 +6,10 @@ rafael:
   phone_number: "809000000"
   alt_phone_number: "809000000"
   password_digest: <%= Agent.digest('password') %>
+
+antonio:
+  name: "Antonio"
+  email: "antonio@gmail.com"
+  phone_number: "8099080000"
+  alt_phone_number: "8098090000"
+  password_digest: <%= Agent.digest('password') %>
