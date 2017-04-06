@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if @agent && @agent.authenticate(params[:session][:password])
       log_in @agent
       params[:session][:remember_me] == '1' ? remember(@agent) : forget(@agent)
-      redirect_to @agent
+      redirect_back_or @agent
     else
       flash.now[:danger] = "Combinación email/contraseña incorrecta"
       render 'new'

@@ -13,3 +13,26 @@ antonio:
   phone_number: "8099080000"
   alt_phone_number: "8098090000"
   password_digest: <%= Agent.digest('password') %>
+
+lana:
+  name: "Lana Kane"
+  email: "lana@gmail.com"
+  phone_number: "8097080000"
+  alt_phone_number: "8297090000"
+  password_digest: <%= Agent.digest('password') %>
+
+malory:
+  name: "Malory Wade"
+  email: "malory@gmail.com"
+  phone_number: "8098080000"
+  alt_phone_number: "8298090000"
+  password_digest: <%= Agent.digest('password') %>
+
+<% 30.times do |n| %>
+agent_<%= n %>:
+  name: <%= "Agent #{n}" %>
+  email: <%= "agent-#{n}@gmail.com" %>
+  phone_number: <%= "809#{n}080000" %>
+  alt_phone_number: <%= "809#{n+1}080000" %>
+  password_digest: <%= Agent.digest('password') %>
+<% end %>

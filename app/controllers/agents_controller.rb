@@ -2,6 +2,9 @@ class AgentsController < ApplicationController
   before_action :logged_in_agent, only: [:edit, :update]
   before_action :correct_agent, only: [:edit, :update]
 
+  def index
+    @agents = Agent.paginate(page: params[:page], per_page: 6)
+  end
 
   def show
     @agent = Agent.find(params[:id])
@@ -47,6 +50,7 @@ class AgentsController < ApplicationController
     # Confirms a logged-in agent.
     def logged_in_agent
       unless logged_in?
+        store_location
         flash[:danger] = "Por favor Inicie Sesión."
         redirect_to agents_login_url
       end
