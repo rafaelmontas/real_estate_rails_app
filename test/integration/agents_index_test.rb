@@ -10,11 +10,7 @@ class AgentsIndexTest < ActionDispatch::IntegrationTest
     get agents_path
     assert_template 'agents/index'
     assert_select 'div.pagination'
-    # error
-    Agent.paginate(page: 1).each do |agent|
-      assert_select 'a[href=?]', agent_path(agent), text: agent.name
-    end
+    assert_select 'a[href=?]', agent_path(@agent), text: @agent.name
   end
-
-
+  
 end
