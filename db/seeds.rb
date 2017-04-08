@@ -9,18 +9,19 @@
 Agent.create!(name: "Rafael Montas",
               email: "rafaelmontas1@gmail.com",
               phone_number: "8099080000",
-              password: "foobar",
-              password_confirmation: "foobar",
+              password: "montas20.",
+              password_confirmation: "montas20.",
               admin: true)
-
-49.times do |n|
-  name = Faker::Name.name
-  email = "example#{n+1}@gmail.com"
-  phone_number = "8099080000"
-  password = "password"
-  Agent.create!(name: name,
-                email: email,
-                phone_number: "8090#{n+1}0000",
-                password: password,
-                password_confirmation: password)
+if Rails.env.development?
+  49.times do |n|
+    name = Faker::Name.name
+    email = "example#{n+1}@gmail.com"
+    phone_number = "8099080000"
+    password = "password"
+    Agent.create!(name: name,
+                  email: email,
+                  phone_number: "8090#{n+1}0000",
+                  password: password,
+                  password_confirmation: password)
+  end
 end
