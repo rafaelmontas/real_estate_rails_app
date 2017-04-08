@@ -10,7 +10,8 @@ Agent.create!(name: "Rafael Montas",
               email: "rafaelmontas1@gmail.com",
               phone_number: "8099080000",
               password: "foobar",
-              password_confirmation: "foobar")
+              password_confirmation: "foobar",
+              admin: true)
 
 49.times do |n|
   name = Faker::Name.name

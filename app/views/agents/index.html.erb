@@ -9,6 +9,11 @@
         <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", size: "70x70") %>
       <% end %>
       <%= link_to agent.name, agent %>
+        <% if current_agent %>
+          <% if current_agent.admin? && !current_agent?(agent) %>
+            | <%= link_to "Eliminar", agent_path(agent), method: :delete, data: { confirm: "Seguro?" } %>
+          <% end %>
+        <% end %>
     </li>
   <% end %>
 </ul>

@@ -40,4 +40,28 @@ class AgentsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_url
   end
 
+  test "should not allow the admin attribute to be edited via the web" do
+    log_in_as(@other_agent)
+    assert_not @other_agent.admin?
+    patch agent_path(@other_agent), params: { agent: { password: "foobar",
+                                                      password_confirmation: "foobar",
+                                                      admin: true } }
+    assert_not @other_agent.reload.admin?
+  end
+
+  test "should redirect destroy when not logged in" do
+    assert_no_difference 'Agent.count' do
+      delete agent_path(@agent)
+    end
+    assert_redirected_to agents_login_url
+  end
+
+  test "should redirect destroy when logged in as a non-admin" do
+    log_in_as(@other_agent)
+    assert_no_difference 'Agent.count' do
+      delete agent_path(@agent)
+    end
+    assert_redirected_to root_url
+  end
+
 end
