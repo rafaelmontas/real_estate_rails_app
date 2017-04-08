@@ -28,8 +28,9 @@ class AgentsSignupTest < ActionDispatch::IntegrationTest
                                                   password: "foobar",
                                                   password_confirmation: "foobar" } }
     end
-    follow_redirect!
+    # follow_redirect!
     # assert_template "agents/show"
+    assert_template "agents/create"
     assert_not flash.empty?
     # assert is_logged_in?
   end

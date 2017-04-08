@@ -19,8 +19,8 @@ class AgentsController < ApplicationController
     @agent = Agent.new(agent_params)
     if @agent.save
       AgentMailer.account_activation(@agent).deliver_now
-      flash[:info] = "Por favor revisar email para activar cuenta."
-      redirect_to root_url
+      flash.now[:info] = "Por favor revisar email para activar cuenta."
+      # redirect_to root_url
     else
       render 'new'
     end
