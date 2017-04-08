@@ -1,0 +1,7 @@
+<h1>TuCasa.com</h1>
+
+<p>Hi <%= @agent.name %>,</p>
+
+<p>Bienvenido a TuCasa.com! Has click en el link para activar tu cuenta:</p>
+
+<%= link_to "Activar", edit_account_activation_url(@agent.activation_token, email: @agent.email) %>

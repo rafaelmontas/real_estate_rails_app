@@ -1,0 +1,5 @@
+Hi <%= @agent.name %>,
+
+Bienvenido a TuCasa.com! Has clik en link para activar tu cuenta:
+
+<%= edit_account_activation_url(@agent.activation_token, email: @agent.email) %>

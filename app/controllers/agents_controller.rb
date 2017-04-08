@@ -18,9 +18,9 @@ class AgentsController < ApplicationController
   def create
     @agent = Agent.new(agent_params)
     if @agent.save
-      log_in @agent
-      flash[:success] = "Bienvenido a TuCasa.com"
-      redirect_to @agent
+      AgentMailer.account_activation(@agent).deliver_now
+      flash[:info] = "Por favor revisar email para activar cuenta."
+      redirect_to root_url
     else
       render 'new'
     end
