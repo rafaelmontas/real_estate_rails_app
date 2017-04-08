@@ -11,7 +11,10 @@ Agent.create!(name: "Rafael Montas",
               phone_number: "8099080000",
               password: "montas20.",
               password_confirmation: "montas20.",
-              admin: true)
+              admin: true,
+              activated: true,
+              activated_at: Time.zone.now)
+
 if Rails.env.development?
   49.times do |n|
     name = Faker::Name.name
@@ -22,6 +25,8 @@ if Rails.env.development?
                   email: email,
                   phone_number: "8090#{n+1}0000",
                   password: password,
-                  password_confirmation: password)
+                  password_confirmation: password,
+                  activated: true,
+                  activated_at: Time.zone.now)
   end
 end

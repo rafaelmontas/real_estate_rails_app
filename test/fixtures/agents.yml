@@ -7,6 +7,8 @@ rafael:
   alt_phone_number: "809000000"
   password_digest: <%= Agent.digest('password') %>
   admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 antonio:
   name: "Antonio"
@@ -14,6 +16,8 @@ antonio:
   phone_number: "8099080000"
   alt_phone_number: "8098090000"
   password_digest: <%= Agent.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 lana:
   name: "Lana Kane"
@@ -21,6 +25,8 @@ lana:
   phone_number: "8097080000"
   alt_phone_number: "8297090000"
   password_digest: <%= Agent.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 malory:
   name: "Malory Wade"
@@ -28,6 +34,8 @@ malory:
   phone_number: "8098080000"
   alt_phone_number: "8298090000"
   password_digest: <%= Agent.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 <% 30.times do |n| %>
 agent_<%= n %>:
@@ -36,4 +44,6 @@ agent_<%= n %>:
   phone_number: <%= "809#{n}080000" %>
   alt_phone_number: <%= "809#{n+1}080000" %>
   password_digest: <%= Agent.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 <% end %>

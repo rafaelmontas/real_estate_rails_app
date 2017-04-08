@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   post "/agents/login", to: "sessions#create"
   delete "/agents/logout", to: "sessions#destroy"
   resources :properties, :agents
-
+  resources :account_activations, only: [:edit]
 end
