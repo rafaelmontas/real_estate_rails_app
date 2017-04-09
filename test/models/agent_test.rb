@@ -80,6 +80,6 @@ class AgentTest < ActiveSupport::TestCase
   end
 
   test "authenticated? should return false for a user with nil digest" do
-    assert_not @agent.authenticated?('')
+    assert_not @agent.authenticated?(:remember, '')
   end
 end

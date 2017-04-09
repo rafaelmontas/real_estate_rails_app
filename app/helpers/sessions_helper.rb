@@ -23,7 +23,7 @@ module SessionsHelper
       @current_agent ||= Agent.find_by(id: session[:agent_id])
     elsif cookies.signed[:agent_id]
       agent = Agent.find_by(id: cookies.signed[:agent_id])
-      if agent && agent.authenticated?(cookies[:remember_token])
+      if agent && agent.authenticated?(:remember, cookies[:remember_token])
         log_in agent
         @current_agent = agent
       end
