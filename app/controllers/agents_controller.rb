@@ -4,11 +4,12 @@ class AgentsController < ApplicationController
   before_action :admin_agent, only: [:destroy]
 
   def index
-    @agents = Agent.paginate(page: params[:page], per_page: 6)
+    @agents = Agent.where(activated: true).paginate(page: params[:page], per_page: 6)
   end
 
   def show
     @agent = Agent.find(params[:id])
+    redirect_to root_url and return unless @agent.activated?
   end
 
   def new
@@ -18,7 +19,7 @@ class AgentsController < ApplicationController
   def create
     @agent = Agent.new(agent_params)
     if @agent.save
-      AgentMailer.account_activation(@agent).deliver_now
+      @agent.send_activation_email
       flash.now[:info] = "Por favor revisar email para activar cuenta."
       # redirect_to root_url
     else
