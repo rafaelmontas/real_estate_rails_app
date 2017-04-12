@@ -15,9 +15,8 @@ class AgentMailer < ApplicationMailer
   #
   #   en.agent_mailer.password_reset.subject
   #
-  def password_reset
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+  def password_reset(agent)
+    @agent = agent
+    mail to: agent.email, subject: "Cambio de Contraseña"
   end
 end
