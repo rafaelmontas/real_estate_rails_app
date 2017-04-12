@@ -1,4 +1,7 @@
 class PasswordResetsController < ApplicationController
+  before_action :get_agent, only: [:edit, :update]
+  before_action :valid_agent, only: [:edit, :update]
+
   def new
   end
 
@@ -15,4 +18,21 @@ class PasswordResetsController < ApplicationController
 
   def edit
   end
+
+  def update
+
+  end
+
+  private
+
+    def get_agent
+      @agent = Agent.find_by(email: params[:email])
+    end
+
+    # Confirms a valid agent
+    def valid_agent
+      unless (@agent && @agent.activated? && @agent.authenticated?(:reset, params[:id]))
+        redirect_to root_url
+      end
+    end
 end
