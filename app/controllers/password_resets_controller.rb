@@ -1,6 +1,7 @@
 class PasswordResetsController < ApplicationController
   before_action :get_agent, only: [:edit, :update]
   before_action :valid_agent, only: [:edit, :update]
+  before_action :check_expiration, only: [:edit, :update]
 
   def new
   end
@@ -20,10 +21,24 @@ class PasswordResetsController < ApplicationController
   end
 
   def update
-
+    if params[:agent][:password].empty?
+      @agent.errors.add(:password, "can't be empty")
+      render 'edit'
+    elsif @agent.update_attributes(agent_params)
+      log_in @agent
+      @agent.update_attribute(:reset_digest, nil)
+      flash[:success] = "Contraseña Actualizada."
+      redirect_to @agent
+    else
+      render 'edit'
+    end
   end
 
   private
+
+    def agent_params
+      params.require(:agent).permit(:password, :password_confirmation)
+    end
 
     def get_agent
       @agent = Agent.find_by(email: params[:email])
@@ -33,6 +48,14 @@ class PasswordResetsController < ApplicationController
     def valid_agent
       unless (@agent && @agent.activated? && @agent.authenticated?(:reset, params[:id]))
         redirect_to root_url
+      end
+    end
+
+    # Checks expiration of reset token.
+    def check_expiration
+      if @agent.password_reset_expired?
+        flash[:danger] = "Link ha expirado. Por favor ingresar email otra vez."
+        redirect_to new_password_reset_url
       end
     end
 end
