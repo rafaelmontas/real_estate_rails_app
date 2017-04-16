@@ -1,7 +1,9 @@
 class AgentsController < ApplicationController
-  before_action :logged_in_agent, only: [:edit, :update, :destroy]
+  before_action :logged_in_agent, only: [:private_show, :edit, :update, :destroy]
   before_action :correct_agent, only: [:edit, :update]
   before_action :admin_agent, only: [:destroy]
+
+  layout "private_show", only: [:edit, :private_show]
 
   def index
     @agents = Agent.where(activated: true).paginate(page: params[:page], per_page: 6)
@@ -45,6 +47,9 @@ class AgentsController < ApplicationController
     redirect_to agents_url
   end
 
+  def private_show
+    current_agent
+  end
 
 
   private

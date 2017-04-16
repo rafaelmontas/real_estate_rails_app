@@ -1,0 +1,149 @@
+<aside id="main-sidebar">
+  <a href="" class="hidden-lg main-block-close">
+    <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+  </a>
+  <ul class="main-menu">
+    <li class="alt-profile-img">
+      <a href="">
+        <% if @current_agent.avatar.present? %>
+          <%= image_tag @current_agent.avatar_url(:small) %>
+          <h4><%= @current_agent.name %></h4>
+        <% else %>
+          <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg") %>
+          <h4><%= @current_agent.name %></h4>
+        <% end %>
+        <!-- <img src="../images/03.jpg" alt="profile">
+        <h4>Rafael Montas</h4> -->
+      </a>
+    </li>
+    <li>
+      <a href="../index.html">
+        <i class="fa fa-home" aria-hidden="true"></i>
+        Inicio
+      </a>
+    </li>
+    <!-- <li class="active">
+      <a href="#">
+        <i class="fa fa-user" aria-hidden="true"></i>
+        Perfil
+      </a>
+    </li> -->
+    <li>
+      <%= link_to(edit_agent_path(@current_agent)) do %>
+        <i class="fa fa-cog" aria-hidden="true"></i>
+        Editar Perfil
+      <% end %>
+      <!-- <a href="#">
+        <i class="fa fa-cog" aria-hidden="true"></i>
+        Editar Perfil
+      </a> -->
+    </li>
+    <li class="active">
+      <a href="#">
+        <i class="fa fa-th-list" aria-hidden="true"></i>
+        Propiedades
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa fa-sign-out" aria-hidden="true"></i>
+        Cerrar Sesión
+      </a>
+    </li>
+  </ul>
+</aside>
+<section id="main-content">
+  <div class="action-header-alt">
+    <div class="action-header-item action-header-add">
+      <a href="#" class="btn btn-danger btn-sm">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        Agregar Propiedad</a>
+    </div>
+  </div>
+  <div class="main-container">
+    <header class="main-title">
+      <h2>Propiedades</h2>
+    </header>
+    <div class="list-group list-group-block">
+      <div class="list-group-header text-left">
+        Total de Propiedades: 15
+      </div>
+      <div class="list-group-item media">
+        <div class="pull-left">
+          <img src="../images/metro.jpg" alt="image" class="list-group-img">
+        </div>
+        <div class="media-body list-group-text">
+          <strong>C/Fabio Mota #9. Naco</strong>
+          <small>$US 350,000. 4 Hab. 3 Baños...</small>
+          <div class="list-group-label list-group-label-float">
+            <span class="delete">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+              Eliminar
+            </span>
+            <span class="edit">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+              Editar
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="list-group-item media">
+        <div class="pull-left">
+          <img src="../images/apart.jpg" alt="image" class="list-group-img">
+        </div>
+        <div class="media-body list-group-text">
+          <strong>C/Fabio Mota #9. Naco</strong>
+          <small>$US 350,000. 4 Hab. 3 Baños...</small>
+          <div class="list-group-label list-group-label-float">
+            <span class="delete">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+              Eliminar
+            </span>
+            <span class="edit">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+              Editar
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="list-group-item media">
+        <div class="pull-left">
+          <img src="../images/pool.jpg" alt="image" class="list-group-img">
+        </div>
+        <div class="media-body list-group-text">
+          <strong>C/Fabio Mota #9. Naco</strong>
+          <small>$US 350,000. 4 Hab. 3 Baños...</small>
+          <div class="list-group-label list-group-label-float">
+            <span class="delete">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+              Eliminar
+            </span>
+            <span class="edit">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+              Editar
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="list-group-item media">
+        <div class="pull-left">
+          <img src="../images/metro.jpg" alt="image" class="list-group-img">
+        </div>
+        <div class="media-body list-group-text">
+          <strong>C/Fabio Mota #9. Naco</strong>
+          <small>$US 350,000. 4 Hab. 3 Baños...</small>
+          <div class="list-group-label list-group-label-float">
+            <span class="delete">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+              Eliminar
+            </span>
+            <span class="edit">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+              Editar
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

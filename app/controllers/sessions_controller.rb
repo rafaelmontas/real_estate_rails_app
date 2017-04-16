@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       if @agent.activated?
         log_in @agent
         params[:session][:remember_me] == '1' ? remember(@agent) : forget(@agent)
-        redirect_back_or @agent
+        redirect_back_or private_path
       else
         message = "Cuenta no ha sido activada. "
         message += "Revisar email para link de activación."

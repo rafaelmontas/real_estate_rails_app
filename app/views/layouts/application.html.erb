@@ -159,7 +159,11 @@
           <a href="#">Sobre Nosotros</a>
           <a href="#">Terminos &amp; Condiciones</a>
           <a href="#">Politicas de Privacidad</a>
-          <a href="#">Agentes</a>
+          <% if logged_in? %>
+            <%= link_to @current_agent.name, private_path, class: "login" %>
+          <% else %>
+            <%= link_to "Agentes", agents_login_path, class: "login" %>
+          <% end %>
         </div>
       </div>
     </footer>

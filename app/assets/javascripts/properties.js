@@ -13,6 +13,14 @@ $(document).on('turbolinks:load', function() {
     $("body").toggleClass("block-opened");
   });
 
+  $(".header-alt-trigger, .main-block-close").click(function() {
+    event.preventDefault();
+    $("#main-sidebar").toggleClass("toggled");
+    $("body").toggleClass("block-opened");
+  });
+
+
+
   $(".rent_or_buy").click(function() {
     $("div.search-type").removeClass("open")
   });
@@ -75,5 +83,5 @@ $(document).on('turbolinks:load', function() {
       }
     ]
   });
-  
+
 });
