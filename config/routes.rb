@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   post "/agents/signup", to: "agents#create"
   # get "/agents/:id/edit", to: "agents#edit"
   patch "/agents/:id/edit", to: "agents#update"
-  get "/agent/", to: "agents#private_show", as: "private"
+  get "/agent", to: "agents#private_show", as: "private"
 
   # Sessions routes
   get "/agents/login", to: "sessions#new"
