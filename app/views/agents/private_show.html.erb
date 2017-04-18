@@ -1,63 +1,11 @@
-<aside id="main-sidebar">
-  <a href="" class="hidden-lg main-block-close">
-    <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
-  </a>
-  <ul class="main-menu">
-    <li class="alt-profile-img">
-      <a href="">
-        <% if @current_agent.avatar.present? %>
-          <%= image_tag @current_agent.avatar_url(:small) %>
-          <h4><%= @current_agent.name %></h4>
-        <% else %>
-          <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg") %>
-          <h4><%= @current_agent.name %></h4>
-        <% end %>
-        <!-- <img src="../images/03.jpg" alt="profile">
-        <h4>Rafael Montas</h4> -->
-      </a>
-    </li>
-    <li>
-      <a href="../index.html">
-        <i class="fa fa-home" aria-hidden="true"></i>
-        Inicio
-      </a>
-    </li>
-    <!-- <li class="active">
-      <a href="#">
-        <i class="fa fa-user" aria-hidden="true"></i>
-        Perfil
-      </a>
-    </li> -->
-    <li>
-      <%= link_to(edit_agent_path(@current_agent)) do %>
-        <i class="fa fa-cog" aria-hidden="true"></i>
-        Editar Perfil
-      <% end %>
-      <!-- <a href="#">
-        <i class="fa fa-cog" aria-hidden="true"></i>
-        Editar Perfil
-      </a> -->
-    </li>
-    <li class="active">
-      <a href="#">
-        <i class="fa fa-th-list" aria-hidden="true"></i>
-        Propiedades
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class="fa fa-sign-out" aria-hidden="true"></i>
-        Cerrar Sesión
-      </a>
-    </li>
-  </ul>
-</aside>
+
 <section id="main-content">
   <div class="action-header-alt">
     <div class="action-header-item action-header-add">
-      <a href="#" class="btn btn-danger btn-sm">
+      <%= link_to(new_property_path, class: "btn btn-danger btn-sm") do %>
         <i class="fa fa-plus" aria-hidden="true"></i>
-        Agregar Propiedad</a>
+        Agregar Propiedad
+      <% end %>
     </div>
   </div>
   <div class="main-container">
