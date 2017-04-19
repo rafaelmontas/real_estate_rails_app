@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'password_resets/new'
-
-  get 'password_resets/edit'
+  # get 'users/new'
+  #
+  # get 'password_resets/new'
+  #
+  # get 'password_resets/edit'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -18,7 +20,7 @@ Rails.application.routes.draw do
   get "/agents/login", to: "sessions#new"
   post "/agents/login", to: "sessions#create"
   delete "/agents/logout", to: "sessions#destroy"
-  resources :properties, :agents
+  resources :properties, :agents, :users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
 end
