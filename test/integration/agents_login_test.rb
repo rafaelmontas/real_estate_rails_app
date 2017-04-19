@@ -19,9 +19,9 @@ class AgentsLoginTest < ActionDispatch::IntegrationTest
   test "login with valid information" do
     get agents_login_path
     post agents_login_path, params: { session: { email: @agent.email, password: "password" } }
-    assert_redirected_to @agent
+    assert_redirected_to private_url
     follow_redirect!
-    assert_template "agents/show"
+    assert_template "agents/private_show"
     assert_select "a[href=?]", agents_login_path, count: 0
     assert_select "a[href=?]", agents_logout_path
     assert_select "a[href=?]", agent_path(@agent)
@@ -31,9 +31,9 @@ class AgentsLoginTest < ActionDispatch::IntegrationTest
     get agents_login_path
     post agents_login_path, params: { session: { email: @agent.email, password: "password" } }
     assert is_logged_in?
-    assert_redirected_to @agent
+    assert_redirected_to private_url
     follow_redirect!
-    assert_template "agents/show"
+    assert_template "agents/private_show"
     assert_select "a[href=?]", agents_login_path, count: 0
     assert_select "a[href=?]", agents_logout_path
     assert_select "a[href=?]", agent_path(@agent)
