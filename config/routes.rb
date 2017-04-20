@@ -16,10 +16,16 @@ Rails.application.routes.draw do
   patch "/agents/:id/edit", to: "agents#update"
   get "/agent", to: "agents#private_show", as: "private"
 
+  # Users routes
+  get "users/signup", to: "users#new"
+  post "users/signup", to: "users#create"
+
   # Sessions routes
   get "/agents/login", to: "sessions#new"
   post "/agents/login", to: "sessions#create"
   delete "/agents/logout", to: "sessions#destroy"
+
+  # resources routes
   resources :properties, :agents, :users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
