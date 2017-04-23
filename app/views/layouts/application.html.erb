@@ -54,25 +54,20 @@
             <li>
               <a href="#">Contacto</a>
             </li>
-            <% if logged_in? %>
+            <% if user_logged_in? %>
               <li class="nav-drop">
-                <% if @current_agent.avatar.present? %>
-                <a href="#">
-                  <%= image_tag @current_agent.avatar_url(:small), id: "header-image" %>
-                  <%= @current_agent.name %>
-                </a>
-                <% else %>
-                  <a href="#"><%= @current_agent.name %></a>
-                <% end %>
+
+                  <a href="#"><%= @current_user.name %></a>
+                
                 <ul class="nav-drop-menu nav-drop-menu-right">
-                  <%= content_tag(:li, link_to("Perfil", @current_agent)) %>
-                  <%= content_tag(:li, link_to("Editar perfil", edit_agent_path(@current_agent))) %>
-                  <%= content_tag(:li, link_to("Cerrar sesión", agents_logout_path, method: "delete")) %>
+                  <%= content_tag(:li, link_to("Perfil", @current_user)) %>
+                  <%= content_tag(:li, link_to("Editar perfil", edit_user_path(@current_user))) %>
+                  <%= content_tag(:li, link_to("Cerrar sesión", users_logout_path, method: "delete")) %>
                 </ul>
               </li>
             <% else %>
               <%= content_tag(:li, class: "hidden-xs hidden-sm") do %>
-                <%= link_to(agents_login_path, class: "login") do %>
+                <%= link_to(users_login_path, class: "login") do %>
                   <%= fa_icon "user-o" %>
                   Iniciar Sesión
                 <% end %>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # get 'session_users/new'
+
   # get 'users/new'
   #
   # get 'password_resets/new'
@@ -24,6 +26,10 @@ Rails.application.routes.draw do
   get "/agents/login", to: "sessions#new"
   post "/agents/login", to: "sessions#create"
   delete "/agents/logout", to: "sessions#destroy"
+
+  get "/users/login", to: "session_users#new"
+  post "/users/login", to: "session_users#create"
+  delete "/users/logout", to: "session_users#destroy"
 
   # resources routes
   resources :properties, :agents, :users
