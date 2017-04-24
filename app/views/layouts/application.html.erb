@@ -58,7 +58,7 @@
               <li class="nav-drop">
 
                   <a href="#"><%= @current_user.name %></a>
-                
+
                 <ul class="nav-drop-menu nav-drop-menu-right">
                   <%= content_tag(:li, link_to("Perfil", @current_user)) %>
                   <%= content_tag(:li, link_to("Editar perfil", edit_user_path(@current_user))) %>

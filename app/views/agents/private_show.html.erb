@@ -9,6 +9,9 @@
     </div>
   </div>
   <div class="main-container">
+    <% flash.each do |message_type, message| %>
+      <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+    <% end %>
     <header class="main-title">
       <h2>Propiedades</h2>
     </header>

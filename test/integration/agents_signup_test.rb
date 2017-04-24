@@ -50,7 +50,7 @@ class AgentsSignupTest < ActionDispatch::IntegrationTest
     get edit_account_activation_path(agent.activation_token, email: agent.email)
     assert agent.reload.activated?
     follow_redirect!
-    assert_template "agents/show"
+    assert_template "agents/private_show"
     assert is_logged_in?
     assert_not flash.empty?
   end

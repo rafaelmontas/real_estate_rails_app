@@ -6,7 +6,7 @@ class AccountActivationsController < ApplicationController
       agent.activate
       log_in agent
       flash[:success] = "Cuenta Activada!"
-      redirect_to agent
+      redirect_to private_url
     else
       flash[:danger] = "Link de Activación Invalido"
       redirect_to root_url
