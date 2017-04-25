@@ -15,6 +15,13 @@ class ActiveSupport::TestCase
     !session[:user_id].nil?
   end
 
+  # Log in as a particular user.
+  def user_log_in_as(user)
+    session[:user_id] = user.id
+  end
+
+  # ----------------------------------------------
+
   # Returns true if a test agent is logged in.
   def is_logged_in?
     !session[:agent_id].nil?
@@ -27,6 +34,15 @@ class ActiveSupport::TestCase
 end
 
 class ActionDispatch::IntegrationTest
+
+  # Log in as a particular user.
+  def user_log_in_as(user, password: 'password', remember_me: '1')
+    post users_login_path, params: { session_user: { email: user.email,
+                                                     password: password,
+                                                     remember_me: remember_me } }
+  end
+
+  # ----------------------------------------------
 
   # Log in as a particular agent.
   def log_in_as(agent, password: 'password', remember_me: '1')
