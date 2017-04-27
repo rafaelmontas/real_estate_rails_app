@@ -12,6 +12,11 @@ module SessionUsersHelper
     cookies.permanent[:remember_token] = user.remember_token
   end
 
+  # Returns true if the given user is the current agent.
+  def current_user?(user)
+    user == current_user
+  end
+
   # Returns the current logged-in agent (if any).
   def current_user
     if session[:user_id]

@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   # Users routes
   get "users/signup", to: "users#new"
   post "users/signup", to: "users#create"
+  patch "users/:id/edit", to: "users#update"
 
   # Sessions routes
   get "/agents/login", to: "sessions#new"

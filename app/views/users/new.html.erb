@@ -1,22 +1,7 @@
+<%= provide(:user_button_text, "Crear Cuenta") %>
+<%= provide(:user_url, users_signup_path) %>
 <h1>Crear Cuenta</h1>
 
-
 <div class="col-sm-4 col-sm-offset-4 signup-form">
-  <%= form_for(@user, url: users_signup_path) do |f| %>
-    <%= render 'shared/user_error_messages' %>
-
-    <%= f.label :name %>
-    <%= f.text_field :name, class: "form-control" %>
-
-    <%= f.label :email %>
-    <%= f.email_field :email, class: "form-control" %>
-
-    <%= f.label :password %>
-    <%= f.password_field :password, class: "form-control" %>
-
-    <%= f.label :password_confirmation, "Confirmación" %>
-    <%= f.password_field :password_confirmation, class: "form-control" %>
-
-    <%= f.submit "Crear Cuenta", class: "btn btn-primary" %>
-  <% end %>
+  <%= render "form" %>
 </div>
