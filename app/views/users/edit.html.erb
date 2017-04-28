@@ -4,4 +4,7 @@
 
 <div class="col-sm-4 col-sm-offset-4 signup-form">
   <%= render "form" %>
+  <%= link_to "Eliminar Cuenta", @user, method: :delete,
+                                        data: { confirm: "Está seguro que desea eliminar su cuenta?" },
+                                        class: "btn btn-danger delete-account-btn" %>
 </div>
