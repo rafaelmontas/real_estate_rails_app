@@ -40,4 +40,9 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 
+  # Sends welcome email.
+  def send_welcome_email
+    UserMailer.new_user_welcome(self).deliver_now
+  end
+
 end
