@@ -11,6 +11,8 @@ class PasswordResetsController < ApplicationController
     if @agent
       @agent.create_reset_digest
       @agent.send_password_reset_email
+      flash[:info] = "Email ha sido enviado."
+      redirect_to root_url
     else
       flash.now[:danger] = "Email no se encuentra en base de datos."
       render 'new'

@@ -10,4 +10,10 @@ class UserMailer < ApplicationMailer
     mail to: user.email, subject: "Bienvenido a TuCasa.com"
     mail.transport_encoding = "8bit"
   end
+
+  def password_reset(user)
+    @user = user
+    mail to: user.email, subject: "Cambio de Contraseña"
+    mail.transport_encoding = "8bit"
+  end
 end

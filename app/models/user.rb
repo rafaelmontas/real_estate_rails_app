@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :reset_token
   before_save { self.email = email.downcase }
 
   validates :name, presence: true, length: { maximum: 50 }
@@ -43,6 +43,17 @@ class User < ApplicationRecord
   # Sends welcome email.
   def send_welcome_email
     UserMailer.new_user_welcome(self).deliver_now
+  end
+
+  # Sets the password reset attributes.
+  def create_reset_digest_user
+    self.reset_token = User.new_token
+    self.update_columns(reset_digest: User.digest(reset_token), reset_sent_at: Time.zone.now)
+  end
+
+  # Sends password reset email.
+  def send_password_reset_email_user
+    UserMailer.password_reset(self).deliver_now
   end
 
 end

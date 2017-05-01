@@ -1,0 +1,2 @@
+module PasswordResetUsersHelper
+end
