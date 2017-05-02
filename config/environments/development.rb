@@ -37,7 +37,7 @@ Rails.application.configure do
   password:             ENV["GMAIL_PASSWORD"],
   authentication:       'plain',
   enable_starttls_auto: true  }
-  host = '127.0.0.1'
+  host = 'localhost:3000'
   config.action_mailer.default_url_options = { host: host, protocol: 'http' }
 
   config.action_mailer.perform_caching = false

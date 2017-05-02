@@ -1,2 +1,17 @@
-<h1>PasswordResetUsers#edit</h1>
-<p>Find me in app/views/password_reset_users/edit.html.erb</p>
+<h1>Cambiar Contraseña</h1>
+
+<div class="col-sm-4 col-sm-offset-4 signup-form">
+  <%= form_for(@user, url: password_reset_user_path(params[:id])) do |f| %>
+    <%= render 'shared/user_error_messages' %>
+
+    <%= hidden_field_tag :email, @user.email %>
+
+    <%= f.label :password, "Contraseña" %>
+    <%= f.password_field :password, class: "form-control" %>
+
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+    <%= f.submit "Actualizar Contraseña", class: "btn btn-primary" %>
+  <% end %>
+</div>
