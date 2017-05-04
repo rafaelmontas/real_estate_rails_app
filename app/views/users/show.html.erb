@@ -1,1 +1,5 @@
 <%= @user.name %>, <%= @user.email %>
+
+<% if @user.avatar.present? %>
+  <%= image_tag @user.avatar_url(:small) %>
+<% end %>

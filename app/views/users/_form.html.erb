@@ -1,6 +1,13 @@
 <%= form_for(@user, url: yield(:user_url)) do |f| %>
   <%= render 'shared/user_error_messages' %>
 
+  <% if @user.avatar.present? %>
+    <%= image_tag @user.avatar_url(:small) %>
+  <% end %>
+
+  <%= f.hidden_field :avatar, value: @user.cached_avatar_data %>
+  <%= f.file_field :avatar %>
+
   <%= f.label :name %>
   <%= f.text_field :name, class: "form-control" %>
 
