@@ -1,12 +1,23 @@
 <%= form_for(@user, url: yield(:user_url)) do |f| %>
   <%= render 'shared/user_error_messages' %>
 
-  <% if @user.avatar.present? %>
-    <%= image_tag @user.avatar_url(:small) %>
+
+<div class="image_to_preview">
+  <% if @user.errors.any? && @user.avatar.present? %>
+    <%= image_tag @user.avatar_url(:small), size: "120x120", class: "default_image" %>
+  <% elsif @user.errors.any? %>
+    <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", size: "120x120", class: "default_image", id: "output") %>
+  <% elsif @user.avatar.present? %>
+    <%= image_tag @user.avatar_url(:small), size: "120x120", class: "default_image", id: "output" %>
+  <% else %>
+    <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", size: "120x120", class: "default_image", id: "output") %>
   <% end %>
+</div>
+
+
 
   <%= f.hidden_field :avatar, value: @user.cached_avatar_data %>
-  <%= f.file_field :avatar %>
+  <%= f.file_field :avatar, onchange: 'loadFile(event)', id: "hidden" %>
 
   <%= f.label :name %>
   <%= f.text_field :name, class: "form-control" %>

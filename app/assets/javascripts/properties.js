@@ -84,4 +84,41 @@ $(document).on('turbolinks:load', function() {
     ]
   });
 
+  //
+  // function readURL(input) {
+  //
+  //   if (input.files && input.files[0]) {
+  //     var reader = new FileReader();
+  //
+  //     reader.onload = function (e) {
+  //       $('#preview').attr('src', e.target.result);
+  //     }
+  //
+  //     reader.readAsDataURL(input.files[0]);
+  //   }
+  // }
+  //
+  // $("#user_avatar").change(function(){
+  //     readURL(this);
+  // });
+
+  $('.default_image').click(function() {
+    event.preventDefault();
+    $("input#hidden").click();
+  });
+
+
 });
+
+// $('.default_image').click(function() {
+//   $("#user_avatar input[type='button']").click();
+// });
+
+// $('.default_image').click(function() {
+//   $("#user_avatar").trigger('click');
+// });
+
+var loadFile = function(event) {
+  var output = document.getElementById('output');
+  output.src = URL.createObjectURL(event.target.files[0]);
+};

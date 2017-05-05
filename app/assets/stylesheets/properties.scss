@@ -2364,3 +2364,16 @@ left: auto;
   font-size: 15px;
   width: 100%;
 }
+
+.default_image {
+  cursor: pointer;
+  position: relative;
+  border-radius: 50%;
+  left: 135px;
+  bottom: 15px;
+  border: 2px solid cornflowerblue;
+}
+
+#hidden {
+  display: none;
+}
