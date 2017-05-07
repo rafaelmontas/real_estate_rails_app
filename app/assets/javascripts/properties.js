@@ -107,6 +107,7 @@ $(document).on('turbolinks:load', function() {
     $("input#hidden").click();
   });
 
+  // $('#new_property').fileupload();
 
 });
 
