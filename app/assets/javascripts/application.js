@@ -15,5 +15,4 @@
 //= require bootstrap
 //= require turbolinks
 //= require jquery.slick
-//= require jquery-fileupload/basic
 //= require_tree .
