@@ -1,5 +1,5 @@
 <%= @user.name %>, <%= @user.email %>
 
 <% if @user.avatar.present? %>
-  <%= image_tag @user.avatar_url(:small) %>
+  <%= image_tag @user.avatar_url(:small, public: true) %>
 <% end %>

@@ -38,7 +38,7 @@
                 <div class="item">
                   <!-- <img class="resp" src="../images/metro.jpg" alt="image"> -->
                   <% if @property.image.present? %>
-                    <%= image_tag @property.image_url(:large), class: "resp" %>
+                    <%= image_tag @property.image_url(:large, public: true), class: "resp" %>
                   <% end %>
                 </div>
                 <div class="item">

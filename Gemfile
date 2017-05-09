@@ -31,6 +31,10 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-fileupload-rails', '~> 0.4.7'
 # Shrine
 gem 'shrine', '~> 2.5'
+# AWS
+gem 'aws-sdk', '~> 2.9', '>= 2.9.15'
+# Roda for pre-signed keys
+gem 'roda', '~> 2.25'
 # image_processing
 gem 'image_processing', '~> 0.4.1'
 # mini_magick
