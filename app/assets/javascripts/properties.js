@@ -161,9 +161,7 @@ $(document).on('turbolinks:load', function() {
         processData: false,
         data: form_data,
         method: form.attr("method"),
-        dataType: "json",
-      }).done(function(data) {
-        console.log("done from rails", data);
+        dataType: "script",
       });
 
     }
