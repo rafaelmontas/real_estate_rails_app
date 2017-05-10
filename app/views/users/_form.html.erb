@@ -16,7 +16,7 @@
 
 
 
-  
+  <%= f.hidden_field :avatar, value: @user.cached_avatar_data %>
   <%= f.file_field :avatar, onchange: 'loadFile(event)', id: "hidden" %>
 
   <%= f.label :name %>

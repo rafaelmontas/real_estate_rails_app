@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :photos
   mount ImageUploader::UploadEndpoint => "/images/upload"
   # get 'password_reset_users/new'
   #
