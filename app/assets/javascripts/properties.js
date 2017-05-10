@@ -113,7 +113,7 @@ $(document).on('turbolinks:load', function() {
     add: function(e, data) {
       console.log("add", data);
 
-      data.progressBar = $("<div class='progress' style='width: 396px'><div class='progress-bar'></div></div>").insertAfter(".image_to_preview")
+      data.progressBar = $("<div class='progress' style='width: 396px'><div class='progress-bar'></div></div>").insertAfter("#images-upload-property")
       var options = {
         extension: data.files[0].name.match(/(\.\w+)?$/)[0], // Set the file extension.
         _: Date.now() // Prevent caching.
@@ -161,7 +161,10 @@ $(document).on('turbolinks:load', function() {
         processData: false,
         data: form_data,
         method: form.attr("method"),
-        dataType: "script",
+        dataType: "json",
+        success: function(response) {
+          console.log(response);
+        }
       });
 
     }

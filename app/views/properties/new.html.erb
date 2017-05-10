@@ -4,9 +4,9 @@
     <%= image_tag @property.image_url %>
   <% end %>
 
-  <div class="form-group">
+  <div class="form-group" id="images-upload-property">
     <%= f.hidden_field :image, value: @property.cached_image_data %>
-    <%= f.file_field :image %>
+    <%= f.file_field :image, multiple: true, name: "property[image]" %>
   </div>
 
   <div class="form-group">
