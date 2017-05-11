@@ -13,10 +13,10 @@
   <tbody>
     <% @photos.each do |photo| %>
       <tr>
-        <td><%= photo.image_data %></td>
-        <td><%= link_to 'Show', photo %></td>
-        <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-        <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= image_tag photo.image_url(:small, public: true) %></td>
+        <td><%= link_to 'Show', property_photo_path(@property, photo) %></td>
+        <td><%= link_to 'Edit', edit_property_photo_path(@property, photo) %></td>
+        <td><%= link_to 'Destroy', property_photo_url(@property, photo), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Photo', new_photo_path %>
+<%= link_to 'New Photo', new_property_photo_path %>

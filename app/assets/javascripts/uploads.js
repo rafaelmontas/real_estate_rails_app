@@ -57,9 +57,9 @@ $(document).on('turbolinks:load', function() {
         dataType: "json",
         success: function(response) {
           console.log(response);
+          window.setTimeout(function(){location.reload()},1000) // Refresh page after upload 1sec.
         }
       });
-
     }
   });
 

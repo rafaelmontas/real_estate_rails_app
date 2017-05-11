@@ -1,5 +1,6 @@
 class Property < ApplicationRecord
-  include ImageUploader[:image]
+  has_many :photos, dependent: :destroy
+  
 
   validates :name, presence: true
   validates :address, presence: true

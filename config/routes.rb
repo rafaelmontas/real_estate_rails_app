@@ -1,17 +1,5 @@
 Rails.application.routes.draw do
-  resources :photos
   mount ImageUploader::UploadEndpoint => "/images/upload"
-  # get 'password_reset_users/new'
-  #
-  # get 'password_reset_users/edit'
-
-  # get 'session_users/new'
-
-  # get 'users/new'
-  #
-  # get 'password_resets/new'
-  #
-  # get 'password_resets/edit'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -39,7 +27,10 @@ Rails.application.routes.draw do
   delete "/users/logout", to: "session_users#destroy"
 
   # resources routes
-  resources :properties, :agents, :users
+  resources :properties do
+    resources :photos
+  end
+  resources :agents, :users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :password_reset_users, only: [:new, :create, :edit, :update]

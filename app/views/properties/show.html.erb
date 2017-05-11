@@ -1,5 +1,9 @@
 <section class="section section-show">
   <div class="container">
+
+    <%= render partial: "photos/form", locals: {photo: Photo.new} %>
+
+
     <header class="section_title section_title-alt">
       <div class="header-text">
         <h2><%= @property.name %></h2>
@@ -32,18 +36,29 @@
 
               <!-- Wrapper for slides -->
               <div class="carousel-inner" role="listbox">
-                <div class="item active">
+
+
+                <% @property.photos.each_with_index do |photo, index| %>
+                  <% if index == 0 %>
+                    <% active = "active" %>
+                  <% end %>
+                  <%= content_tag(:div, class: "item #{active}") do %>
+                    <%= image_tag photo.image_url(:large, public: true), class: "resp" %>
+                  <% end %>
+                  <!-- <div class="item active"> -->
+                    <%#= image_tag photo.image_url(:large, public: true), class: "resp" %>
+                  <!-- </div> -->
+                <% end %>
+                <!-- <div class="item active">
                   <img class="resp" src="../images/apart.jpg" alt="image">
                 </div>
                 <div class="item">
-                  <!-- <img class="resp" src="../images/metro.jpg" alt="image"> -->
-                  <% if @property.image.present? %>
-                    <%= image_tag @property.image_url(:large, public: true), class: "resp" %>
-                  <% end %>
+                  <img class="resp" src="../images/metro.jpg" alt="image">
+
                 </div>
                 <div class="item">
                   <img class="resp" src="../images/boat.jpg" alt="image">
-                </div>
+                </div> -->
               </div>
 
               <!-- Controls -->
