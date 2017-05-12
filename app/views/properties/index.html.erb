@@ -126,13 +126,9 @@
           <div class="listings-grid-item">
 
               <div class="listings-grid-main">
-                <% property.photos.each do |photo| %>
-                  <%= image_tag photo.image_url(:medium, public: true) %>
-                <% end %>
-
-                <%# if property.image.present? %>
-                  <%#= image_tag property.image_url(:medium) %>
-                <%# end %>
+                  <% if property.photos.first %>
+		                <%= image_tag property.photos.first.image_url(:medium, public: true) %>
+	                <% end %>
                 <div class="listings-grid-price">DOP$ 8,500,000</div>
               </div>
               <div class="listings-grid-body">
