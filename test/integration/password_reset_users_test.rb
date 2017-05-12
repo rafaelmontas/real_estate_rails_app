@@ -22,7 +22,7 @@ class PasswordResetUsersTest < ActionDispatch::IntegrationTest
     user = assigns(:user)
     assert_redirected_to root_url
     follow_redirect!
-    assert_template 'properties/index'
+    assert_template 'static_pages/home'
 
     # Wrong email
     get edit_password_reset_user_path(user.reset_token, email: "")
