@@ -1,7 +1,8 @@
 class PropertiesController < ApplicationController
 
   def index
-    @properties = Property.all
+    @q = Property.ransack(params[:q])
+    @properties = @q.result
   end
 
   def show

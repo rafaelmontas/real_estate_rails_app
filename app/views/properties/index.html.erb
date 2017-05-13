@@ -1,0 +1,92 @@
+<section class="section">
+
+  <%= search_form_for @q, html: { style: "margin-bottom: 25px;" } do |f| %>
+
+    <%= f.label :price_gteq, "Precio Desde US$" %>
+    <%= f.number_field :price_gteq %>
+    <%= f.label :price_lteq, "Precio Hasta US$" %>
+    <%= f.number_field :price_lteq %>
+
+    <%= f.label :room_eq, "Habitaciones" %>
+    <%= f.select :room_eq, [['1 habitación', 1],
+                         ['2 habitaciones', 2],
+                         ['3 habitaciones', 3],
+                         ['4 habitaciones', 4],
+                         ['5 habitaciones', 5],
+                         ['6 habitaciones', 6]] %>
+
+    <%= f.label :bath_eq, "Baños" %>
+    <%= f.select :bath_eq, [['1+', 1], ['2+', 2], ['3+', 3], ['4+', 4], ['5+', 5], ['6+', 6]] %>
+
+    <%= f.submit %>
+    <%= sort_link(@q, :price, 'Precio', default_order: :asc) %>
+  <% end %>
+
+
+  <div class="container">
+    <header class="section_title">
+      <h2>Duis mollisest non commodo luctus nisierat porttito</h2>
+      <small>Vestibulum id ligula porta felis euismod semper</small>
+    </header>
+    <div class="row">
+      <div class="col-sm-8 listings-list">
+        <% @properties.each do |property| %>
+          <div class="listings-grid-item">
+            <%= link_to(property_url(property), class: "media") do %>
+              <div class="listings-grid-main pull-left">
+                <% if property.photos.first %>
+                  <%= image_tag property.photos.first.image_url(:large, public: true) %>
+                <% end %>
+                <div class="listings-grid-price">
+                  <%= number_to_currency(property.price, precision: 0, unit: "US$") %>
+                </div>
+              </div>
+              <div class="media-body">
+                <div class="listings-grid-body">
+                  <small><%= property.name %></small>
+                  <h5><%= property.address %></h5>
+                </div>
+                <ul class="listings-grid-attrs">
+                  <li>
+                    <%= fa_icon "bed" %>
+                    <%= property.room %>
+                  </li>
+                  <li>
+                    <%= fa_icon "bath" %>
+                    <%= property.bath %>
+                  </li>
+                  <li>
+                    <%= fa_icon "car" %>
+                    <%= property.parking %>
+                  </li>
+                  <li class="pull-right">
+                    <%= fa_icon "heart-o" %>
+                  </li>
+                </ul>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <aside class="col-sm-4 hidden-xs">
+        <div class="card subscribe mdc-bg-light-blue">
+          <div class="subscribe-icon">
+            <%= fa_icon "envelope-o" %>
+          </div>
+          <h2>Subscribirse...</h2>
+          <small>Así recibiras emails de nuevas publicaciones que te puedan interesar</small>
+          <!-- Modify form -->
+          <form>
+            <div class="form-group form-group-light form-group-float form-group-active">
+              <label>Email</label>
+              <input type="text" class="form-control text-center" >
+            </div>
+            <button class="btn btn-circle">
+              <i class="fa fa-check mdc-text-light-blue" aria-hidden="true"></i>
+            </button>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
