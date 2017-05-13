@@ -363,7 +363,7 @@ a.logo {
 	padding-bottom: 35px;
 	position: relative;
 	z-index: 10;
-	max-width: 750px;
+	max-width: 650px;
 	margin: 0 auto;
 }
 
@@ -2375,5 +2375,105 @@ left: auto;
 }
 
 #hidden {
+  display: none;
+}
+
+
+//  Home search
+
+#header .header-search .property-status-wrapper {
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+#header .header-search .property-status-wrapper .radio {
+  float: left;
+  width: 50%;
+  margin: 0;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 0 0 0 2px;
+}
+
+#header .header-search .property-status-wrapper .radio:first-child {
+  padding: 0;
+}
+
+#header .header-search .property-status-wrapper .radio input[type="radio"] {
+  opacity: 0;
+}
+
+#header .header-search .property-status-wrapper .radio input[type="radio"]:checked+label {
+  font-weight: 700;
+}
+
+#header .header-search .property-status-wrapper .radio label {
+  border-radius: 2px;
+  background-color: rgba(0,0,0,0.65);
+  display: block;
+  position: relative;
+  color: #fff;
+  padding: 15px 0 10px;
+  cursor: pointer;
+  border-bottom: 5px solid transparent;
+}
+
+#header .header-search .property-status-wrapper .radio input[type="radio"]:checked+label, #header .header-search .property-status-wrapper .radio label:hover {
+  background-color: black;
+  border-color: #d92228;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+}
+
+#header .header-search .search-input-group {
+  background-color: rgba(255,255,255,0.9);
+}
+
+#header .header-search .search-input-group input[type="text"] {
+  width: 100%;
+  font-size: 16px;
+  padding: 2px 0 0 10px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.input-group-btn {
+  display: table-cell;
+}
+
+.input-group-btn {
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.search-input-group .btn-primary {
+  padding: 0 30px;
+}
+
+.search-input-group button {
+  border-radius: 0;
+}
+
+.search-input-group button.btn-primary:hover {
+  background-color: #2196F3;
+}
+
+.search-input-group input, .search-input-group button {
+  height: 48px;
+  font-size: 18px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 0 none;
+}
+
+#header .header-search input[type="submit"] {
   display: none;
 }

@@ -107,7 +107,27 @@ $(document).on('turbolinks:load', function() {
     $("input#hidden").click();
   });
 
-  
+  // Home search
+  $('#property-status-wrapper #comprar').click(function() {
+    $("#property-status-wrapper input[type='radio']#q_sale_cont_venta").click();
+  });
+
+  $('#property-status-wrapper #alquilar').click(function() {
+    $("#property-status-wrapper input[type='radio']#q_sale_cont_alquiler").click();
+  });
+
+
+
+      var availableTags = [
+        "Naco",
+        "Piantini",
+        "Arroyo Hondo"
+      ];
+      $(".search-input-group input[type='text']").autocomplete({
+        source: availableTags
+      });
+
+
 
 });
 
