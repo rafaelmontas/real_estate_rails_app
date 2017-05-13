@@ -17,9 +17,16 @@ $(document).on('turbolinks:load', function() {
         data.formData = result['fields'];
         data.url = result['url'];
         data.paramName = "file";
-        data.submit()
+
 
       });
+
+      data.context = $('<button/>').text('Upload')
+                .insertAfter("#images_for_property")
+                .click(function () {
+                    data.context = $('<p/>').text('Uploading...').replaceAll($(this));
+                    data.submit();
+                });
 
     },
     progress: function(e, data) {
@@ -57,7 +64,7 @@ $(document).on('turbolinks:load', function() {
         dataType: "json",
         success: function(response) {
           console.log(response);
-          window.setTimeout(function(){location.reload()},1000) // Refresh page after upload 1sec.
+          // window.setTimeout(function(){location.reload()},1000) // Refresh page after upload 1sec.
         }
       });
     }
