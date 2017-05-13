@@ -2,7 +2,7 @@ class PropertiesController < ApplicationController
 
   def index
     @q = Property.ransack(params[:q])
-    @properties = @q.result
+    @properties = @q.result.paginate(page: params[:page], per_page: 4)
   end
 
   def show
