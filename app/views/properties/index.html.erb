@@ -1,29 +1,49 @@
 <section class="section">
 
-  <%= search_form_for @q, html: { style: "margin-bottom: 25px;" } do |f| %>
+  <div class="navbar navbar-static facet-bar affix-top">
+    <div class="container facet-bar-container">
+      <%= search_form_for @q do |f| %>
+        <div class="float-left facet-location">
+          <div class="form-group facet-search-wrapper">
+            <div class="input-group search-input-group">
+              <%= f.text_field :location_cont, placeholder: "Sector...", class: "form-control" %>
+              <span class="input-group-btn">
+                <button class="btn btn-primary">
+                  <%= fa_icon "search" %>
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
-    <%= f.label :price_gteq, "Precio Desde US$" %>
-    <%= f.number_field :price_gteq %>
-    <%= f.label :price_lteq, "Precio Hasta US$" %>
-    <%= f.number_field :price_lteq %>
 
-    <%= f.label :room_eq, "Habitaciones" %>
-    <%= f.select :room_eq, [['1 habitación', 1],
+  <%#= search_form_for @q, html: { style: "margin-bottom: 25px;" } do |f| %>
+
+    <%#= f.label :price_gteq, "Precio Desde US$" %>
+    <%#= f.number_field :price_gteq %>
+    <%#= f.label :price_lteq, "Precio Hasta US$" %>
+    <%#= f.number_field :price_lteq %>
+
+    <%#= f.label :room_eq, "Habitaciones" %>
+    <%#= f.select :room_eq, [['1 habitación', 1],
                          ['2 habitaciones', 2],
                          ['3 habitaciones', 3],
                          ['4 habitaciones', 4],
                          ['5 habitaciones', 5],
                          ['6 habitaciones', 6]] %>
 
-    <%= f.label :bath_eq, "Baños" %>
-    <%= f.select :bath_eq, [['1+', 1], ['2+', 2], ['3+', 3], ['4+', 4], ['5+', 5], ['6+', 6]] %>
+    <%#= f.label :bath_eq, "Baños" %>
+    <%#= f.select :bath_eq, [['1+', 1], ['2+', 2], ['3+', 3], ['4+', 4], ['5+', 5], ['6+', 6]] %>
 
-    <%= f.submit %>
-    <%= sort_link(@q, :price, 'Precio', default_order: :asc) %>
-  <% end %>
+    <%#= f.submit %>
+    <%#= sort_link(@q, :price, 'Precio', default_order: :asc) %>
+  <%# end %>
 
 
-  <div class="container">
+  <div class="container search-results">
     <header class="section_title">
       <h2>Duis mollisest non commodo luctus nisierat porttito</h2>
       <small>Vestibulum id ligula porta felis euismod semper</small>

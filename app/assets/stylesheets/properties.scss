@@ -959,7 +959,7 @@ hr, img {
 
 @media screen and (max-width: 991px) {
 	.section {
-		padding: 40px 0;
+		padding-bottom: 40px;
 	}
 
 	.card-header {
@@ -969,7 +969,7 @@ hr, img {
 
 @media screen and (min-width: 992px) {
 	.section {
-	  padding: 60px 0;
+	  padding-bottom: 60px 0;
 	}
 
 	.card-header {
@@ -2444,6 +2444,16 @@ left: auto;
   box-shadow: none;
 }
 
+.facet-search-wrapper .search-input-group input[type="text"] {
+  width: 100%;
+  height: 32px;
+}
+
+.facet-search-wrapper .search-input-group span.input-group-btn button {
+  padding: 0 20px;
+  height: 32px;
+}
+
 .input-group-btn {
   display: table-cell;
 }
@@ -2481,4 +2491,68 @@ left: auto;
 .listings-list div.pagination {
   display: block;
   text-align: center;
+}
+
+
+// index fixed navbar
+
+.facet-bar {
+  background-color: #f7f7f7;
+  border-width: 0;
+  margin-bottom: 0;
+  z-index: 10;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.25);
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.25);
+}
+
+.facet-bar.affix {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+
+.navbar {
+  position: relative;
+  min-height: 48px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+
+.facet-bar .facet-location {
+  right: 75px;
+}
+
+@media screen and (min-width: 481px) {
+  .facet-bar .facet-location {
+    position: absolute;
+    left: 10px;
+    right: 190px;
+  }
+}
+
+.facet-bar .facet-search-wrapper {
+  margin: 8px 15px 8px 0;
+  position: relative;
+}
+
+.search-input-group .form-control {
+  padding: 8px 13px;
+  background-color: #fff;
+}
+
+.facet-bar .facet-search-wrapper .search-input-group {
+  width: 100%;
+}
+
+@media screen and (min-width: 767px) {
+  .facet-bar .facet-search-wrapper .search-input-group {
+    width: 190px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .facet-bar .facet-search-wrapper .search-input-group {
+    width: 290px;
+  }
 }

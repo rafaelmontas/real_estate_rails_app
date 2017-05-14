@@ -165,6 +165,7 @@ $(document).on('turbolinks:load', function() {
 
 
 
+
 });
 
 // $('.default_image').click(function() {
@@ -179,3 +180,12 @@ var loadFile = function(event) {
   var output = document.getElementById('output');
   output.src = URL.createObjectURL(event.target.files[0]);
 };
+
+// Fixed header search results
+$(window).scroll(function(){
+  var sticky = $('.affix-top'),
+      scroll = $(window).scrollTop();
+
+  if (scroll >= 114) sticky.addClass('affix'), $(".search-results").css( "margin-top", "68px" );
+  else sticky.removeClass('affix'), $(".search-results").css("margin-top", "0px");
+});
