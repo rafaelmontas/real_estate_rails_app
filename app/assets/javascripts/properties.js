@@ -117,7 +117,7 @@ $(document).on('turbolinks:load', function() {
   });
 
 
-
+      // Home search autocomplete jquery
       var availableTags = [
         "Naco",
         "Piantini",
@@ -126,6 +126,42 @@ $(document).on('turbolinks:load', function() {
       $(".search-input-group input[type='text']").autocomplete({
         source: availableTags
       });
+
+      // Preview multiple images  (pure JavaScript)
+      function previewImages() {
+
+        var preview = document.querySelector('#preview');
+
+        if (this.files) {
+          [].forEach.call(this.files, readAndPreview);
+        }
+
+        function readAndPreview(file) {
+
+          // Make sure `file.name` matches our extensions criteria
+          if (!/\.(jpe?g|png|gif)$/i.test(file.name)) {
+            return alert(file.name + " is not an image");
+          } // else...
+
+          var reader = new FileReader();
+
+          reader.addEventListener("load", function() {
+            var image = new Image();
+            image.height = 100;
+            image.title  = file.name;
+            image.src    = this.result;
+            preview.appendChild(image);
+          }, false);
+
+          reader.readAsDataURL(file);
+
+        }
+
+      }
+
+      document.querySelector('#images_for_property').addEventListener("change", previewImages, false);
+
+
 
 
 
