@@ -15,6 +15,43 @@
             </div>
           </div>
         </div>
+        <ul class="nav navbar-nav facet-options-list float-left">
+          <li class="dropdown facet-price hidden-xxs">
+            <a href="#" class="dropdown-toggle drop-menu" data-toggle="dropdown" aria-expanded="false">
+              <span>Precio</span>
+              <%= fa_icon "caret-down" %>
+            </a>
+            <ul class="dropdown-menu dropdown-price js-prevent-dropdown-close">
+              <li>
+                <div class="clearfix facet-price-form">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="facet-price-wrap">
+                        <%= f.select :price_gteq, [['$us Minimo', 100000],
+                                                   ['$us 100,000', 100000],
+                                                   ['$us 200,000', 200000],
+                                                   ['$us 300,000', 300000],
+                                                   ['$us 400,000', 400000],
+                                                   ['$us 500,000', 500000],
+                                                   ['$us 600,000', 600000]] %>
+                      </div>
+                      <span class="input-range-indicator"></span>
+                      <div class="facet-price-wrap">
+                        <%= f.select :price_lteq, [['$us Maximo', 100000],
+                                                   ['$us 100,000', 100000],
+                                                   ['$us 200,000', 200000],
+                                                   ['$us 300,000', 300000],
+                                                   ['$us 400,000', 400000],
+                                                   ['$us 500,000', 500000],
+                                                   ['$us 600,000', 600000]] %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
       <% end %>
     </div>
   </div>

@@ -161,8 +161,10 @@ $(document).on('turbolinks:load', function() {
 
       document.querySelector('#images_for_property').addEventListener("change", previewImages, false);
 
-
-
+      // Navbar
+      $('.drop-menu').click(function() {
+        $('.fa-caret-down').replaceWith( "<i class='fa fa-caret-up'></i>" );
+      });
 
 
 
