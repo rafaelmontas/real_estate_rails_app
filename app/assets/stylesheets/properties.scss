@@ -2627,3 +2627,20 @@ left: auto;
 .facet-price-form .col-sm-12 .facet-price-wrap:first-child {
   margin-left: 12px;
 }
+
+.facet-options-list>li>a:hover {
+  background-color: #efefef;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  background-color: #fff;
+  border-color: #337ab7;
+}
+
+.open .dropdown-menu {
+  display: block;
+}
+
+// .open {
+//   display: block;
+// }

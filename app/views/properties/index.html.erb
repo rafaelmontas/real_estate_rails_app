@@ -51,6 +51,41 @@
               </li>
             </ul>
           </li>
+          <li class="dropdown facet-bd">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              <span>Dormitorios</span>
+              <%= fa_icon "caret-down" %>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <div class="clearfix facet-price-form">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="facet-price-wrap">
+                        <%= f.select :price_gteq, [['$us Minimo', 100000],
+                                                   ['$us 100,000', 100000],
+                                                   ['$us 200,000', 200000],
+                                                   ['$us 300,000', 300000],
+                                                   ['$us 400,000', 400000],
+                                                   ['$us 500,000', 500000],
+                                                   ['$us 600,000', 600000]] %>
+                      </div>
+                      <span class="input-range-indicator"></span>
+                      <div class="facet-price-wrap">
+                        <%= f.select :price_lteq, [['$us Maximo', 100000],
+                                                   ['$us 100,000', 100000],
+                                                   ['$us 200,000', 200000],
+                                                   ['$us 300,000', 300000],
+                                                   ['$us 400,000', 400000],
+                                                   ['$us 500,000', 500000],
+                                                   ['$us 600,000', 600000]] %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
         </ul>
       <% end %>
     </div>
