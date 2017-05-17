@@ -1996,7 +1996,7 @@ form.new_property label {
 
 
 
-.dropdown-menu:before {
+.dropdown-menu-agent:before {
    position: absolute;
    top: -7px;
    left: 9px;
@@ -2010,7 +2010,7 @@ form.new_property label {
 
 
 /*dropdown-menu triangle*/
-.dropdown-menu:after {
+.dropdown-menu-agent:after {
     position: absolute;
     top: -6px;
     left: 10px;
@@ -2021,12 +2021,12 @@ form.new_property label {
     content: '';
   }
 
-.dropdown-menu:before, .dropdown-menu.pull-right:before {
+.dropdown-menu-agent:before, .dropdown-menu-agent.pull-right:before {
 right: 12px;
 left: auto;
 }
 
-.dropdown-menu::after, .dropdown-menu.pull-right:after {
+.dropdown-menu-agent::after, .dropdown-menu-agent.pull-right:after {
 right: 13px;
 left: auto;
 }
@@ -2525,12 +2525,12 @@ left: auto;
   float: left;
 }
 
-@media screen and (max-width: 766px) {
+@media screen and (max-width: 767px) {
   .facet-bar .facet-location {
     position: absolute;
     left: 10px;
-    right: 190px;
-    top: 0;
+    right: 75px;
+    top: 0px;
   }
 }
 
@@ -2548,7 +2548,7 @@ left: auto;
   width: 100%;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .facet-bar .facet-search-wrapper .search-input-group {
     width: 190px;
   }
@@ -2559,7 +2559,7 @@ left: auto;
   }
 }
 
-@media screen and (max-width: 766px) {
+@media screen and (max-width: 767px) {
   .facet-bar .facet-options-list {
     float: none;
   }
@@ -2607,6 +2607,10 @@ left: auto;
   float: left;
 }
 
+.facet-options-list {
+  margin: 0px;
+}
+
 .facet-options-list .input-range-indicator {
   border: 0;
   color: #ccc;
@@ -2637,10 +2641,162 @@ left: auto;
   border-color: #337ab7;
 }
 
-.open .dropdown-menu {
-  display: block;
+.facet-options-list>li>.dropdown-menu>li>a {
+  padding: 6px 20px;
 }
 
-// .open {
-//   display: block;
-// }
+.dropdown-menu>li>a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857;
+  color: #333;
+  white-space: nowrap;
+}
+
+.facet-property-type .dropdown-menu li {
+  padding: 5px 20px 0;
+}
+
+.radio, .checkbox {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.facet-property-type .dropdown-menu li .checkbox>label {
+  font-weight: 400;
+}
+
+.radio>label, .checkbox>label {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 300;
+}
+
+.radio label, .checkbox label {
+  min-height: 20px;
+  padding-left: 20px;
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+ul.facet-options-list li.facet-property-type a {
+  padding: 14px 22px;
+}
+
+.facet-bar .facet-options-list>.facet-morefilters {
+  position: relative;
+}
+
+
+
+@media screen and (max-width: 767px) {
+  .facet-bar .facet-morefilters {
+    float: right;
+    border-left: 0px;
+    margin: 8px 0;
+  }
+
+  .facet-bar .facet-property-type {
+    border-left: 0px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .facet-bar .facet-morefilters>a {
+    padding: 5px 14px;
+    width: 62px;
+    color: #d92228;
+    border: 1px solid #d92228;
+  }
+}
+
+
+
+.open>.btn-default.dropdown-toggle {
+  color: #d92228;
+  background-color: #e6e6e6;
+  border-color: #a41a1e;
+}
+
+.btn-default.dropdown-toggle, .open>.btn-default.dropdown-toggle {
+  color: #333;
+}
+
+.facet-morefilters .btn {
+  text-transform: none;
+}
+
+.btn-default.dropdown-toggle, .open>.btn-default.dropdown-toggle {
+  color: #333;
+}
+
+@media screen and (max-width: 767px) {
+  .facet-bar .facet-morefilters.open span[data-role="facet-label"] {
+    display: none;
+  }
+
+  .facet-bar .facet-morefilters span#filter-close {
+    display: none;
+  }
+  .facet-bar .facet-morefilters.open span#filter-close {
+    display: block;
+    font-size: 16px;
+  }
+}
+
+
+.facet-bar .facet-options-list>.facet-morefilters>.dropdown-menu {
+  width: 100%;
+  padding: 10px 0;
+  white-space: normal;
+}
+
+.facet-bar .facet-options-list>.facet-morefilters.open>.dropdown-menu {
+  overflow-x: auto;
+  position: fixed;
+  top: 48px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .facet-mobile-list .container {
+    margin-bottom: 10px;
+  }
+}
+
+.facet-price-input select {
+  width: 200px !important;
+  height: 30px !important;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  .facet-options-list .facet-price-input select {
+    width: 130px !important;
+  }
+}
+
+.facet-options-list .input-range-indicator {
+  border: 0;
+  color: #ccc;
+  background-color: #ccc;
+  display: inline-block;
+  height: 1px;
+  width: 10px;
+  position: relative;
+  vertical-align: middle;
+  float: left;
+  margin: 15px 5px;
+}
