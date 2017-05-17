@@ -2800,3 +2800,46 @@ ul.facet-options-list li.facet-property-type a {
   float: left;
   margin: 15px 5px;
 }
+
+.radio-btn-group.radio-btn-group-justified {
+  width: 100%;
+}
+
+.radio-btn-group input[type=radio] {
+  display: none;
+  margin: 10px;
+}
+
+.radio-btn-group.radio-btn-group-justified input[type=radio]+label {
+  display: table-cell;
+  float: none;
+  width: 1%;
+}
+
+.radio-btn-group input[type=radio]+label:first-of-type {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+
+.radio-btn-group input[type=radio]+label {
+  display: inline-block;
+  margin: -2px;
+  padding: 6px 4px;
+  background-color: #fff;
+  border: 1px solid #999;
+  text-align: center;
+  border-right-width: 0px;
+  font-weight: normal;
+}
+
+.radio-btn-group input[type=radio]:checked+label {
+  background-image: none;
+  background-color: #d92228;
+  color: #fff;
+}
+
+.radio-btn-group input[type=radio]+label:last-of-type {
+  border-right-width: 1px;
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+}

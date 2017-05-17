@@ -150,7 +150,7 @@
             </ul>
           </li>
           <li class="dropdown facet-morefilters">
-            <a href="#" class="dropdown-toggle dropdown-toggle-mobile-footer hidden-sm hidden-md hidden-lg btn btn-default" data-toggle="dropdown" aria-expanded="false">
+            <a href="#" id="scroll" class="dropdown-toggle dropdown-toggle-mobile-footer hidden-sm hidden-md hidden-lg btn btn-default" data-toggle="dropdown" aria-expanded="false">
               <span data-role="facet-label">Filtro</span>
               <span id="filter-close">
                 <%= fa_icon "times" %>
@@ -186,6 +186,40 @@
                         </div>
                       </div>
                     </div>
+                  </div>
+                </div>
+                <div class="container mobile-facet-beds">
+                  <h5>Dormitorios</h5>
+                  <div class="radio-btn-group radio-btn-group-justified">
+                    <%= f.radio_button(:sale_eq, "") %>
+                    <%= f.label :sale_eq, "..." %>
+                    <%= f.radio_button(:sale_eq, "1") %>
+                    <%= f.label :sale_eq, "1+" %>
+                    <%= f.radio_button(:sale_eq, "2") %>
+                    <%= f.label :sale_eq, "2+" %>
+                    <%= f.radio_button(:sale_eq, "3") %>
+                    <%= f.label :sale_eq, "3+" %>
+                    <%= f.radio_button(:sale_eq, "4") %>
+                    <%= f.label :sale_eq, "4+" %>
+                    <%= f.radio_button(:sale_eq, "5") %>
+                    <%= f.label :sale_eq, "5+" %>
+                  </div>
+                </div>
+                <div class="container mobile-facet-baths">
+                  <h5>Baños</h5>
+                  <div class="radio-btn-group radio-btn-group-justified">
+                    <%= f.radio_button(:bath_eq, "") %>
+                    <%= f.label :bath_eq, "..." %>
+                    <%= f.radio_button(:bath_eq, "1") %>
+                    <%= f.label :bath_eq, "1+" %>
+                    <%= f.radio_button(:bath_eq, "2") %>
+                    <%= f.label :bath_eq, "2+" %>
+                    <%= f.radio_button(:bath_eq, "3") %>
+                    <%= f.label :bath_eq, "3+" %>
+                    <%= f.radio_button(:bath_eq, "4") %>
+                    <%= f.label :bath_eq, "4+" %>
+                    <%= f.radio_button(:bath_eq, "5") %>
+                    <%= f.label :bath_eq, "5+" %>
                   </div>
                 </div>
               </div>

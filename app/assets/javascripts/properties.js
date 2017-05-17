@@ -169,7 +169,7 @@ $(document).on('turbolinks:load', function() {
         // $(this).toggleClass('open');
 
       // });
-    
+
 
 
 });
@@ -194,4 +194,10 @@ $(window).scroll(function(){
 
   if (scroll >= 114) sticky.addClass('affix'), $(".search-results").css( "margin-top", "68px" );
   else sticky.removeClass('affix'), $(".search-results").css("margin-top", "0px");
+});
+
+$("#scroll").click(function (){
+    $('html, body').animate({
+      scrollTop: $("#scroll").offset().top
+    }, 2000);
 });
