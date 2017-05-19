@@ -164,7 +164,7 @@
                     <div class="col-xs-12">
                       <div class="pull-left">
                         <div class="input-group facet-price-input">
-                          <%= f.select :price_gteq, [['$us Minimo', 100000],
+                          <%= f.select :price_gteq, [['$us Minimo', 0],
                                                      ['$us 100,000', 100000],
                                                      ['$us 200,000', 200000],
                                                      ['$us 300,000', 300000],
@@ -176,7 +176,7 @@
                       <span class="input-range-indicator"></span>
                       <div class="pull-left">
                         <div class="input-group facet-price-input">
-                          <%= f.select :price_gteq, [['$us Minimo', 100000],
+                          <%= f.select :price_lteq, [['$us Maximo', 1000000],
                                                      ['$us 100,000', 100000],
                                                      ['$us 200,000', 200000],
                                                      ['$us 300,000', 300000],
@@ -191,18 +191,18 @@
                 <div class="container mobile-facet-beds">
                   <h5>Dormitorios</h5>
                   <div class="radio-btn-group radio-btn-group-justified">
-                    <%= f.radio_button(:sale_eq, "") %>
-                    <%= f.label :sale_eq, "..." %>
-                    <%= f.radio_button(:sale_eq, "1") %>
-                    <%= f.label :sale_eq, "1+" %>
-                    <%= f.radio_button(:sale_eq, "2") %>
-                    <%= f.label :sale_eq, "2+" %>
-                    <%= f.radio_button(:sale_eq, "3") %>
-                    <%= f.label :sale_eq, "3+" %>
-                    <%= f.radio_button(:sale_eq, "4") %>
-                    <%= f.label :sale_eq, "4+" %>
-                    <%= f.radio_button(:sale_eq, "5") %>
-                    <%= f.label :sale_eq, "5+" %>
+                    <%= f.radio_button(:room_eq, "") %>
+                    <%= f.label :room_eq, "...", id: "none" %>
+                    <%= f.radio_button(:room_eq, "1") %>
+                    <%= f.label :room_eq, "1+", id: "one" %>
+                    <%= f.radio_button(:room_eq, "2") %>
+                    <%= f.label :room_eq, "2+", id: "two" %>
+                    <%= f.radio_button(:room_eq, "3") %>
+                    <%= f.label :room_eq, "3+", id: "three" %>
+                    <%= f.radio_button(:room_eq, "4") %>
+                    <%= f.label :room_eq, "4+", id: "four" %>
+                    <%= f.radio_button(:room_eq, "5") %>
+                    <%= f.label :room_eq, "5+", id: "five" %>
                   </div>
                 </div>
                 <div class="container mobile-facet-baths">
@@ -222,10 +222,100 @@
                     <%= f.label :bath_eq, "5+" %>
                   </div>
                 </div>
+                <div class=" container morefilters-property-type hidden-lg hidden-md">
+                  <div class="row gutter-sm">
+                    <div class="col-lg-10 col-lg-offset-1">
+                      <div class="morefilters-row">
+                        <div class="row gutter-sm">
+                          <div class="col-md-2">
+                            <h5>Tipo de Propiedad</h5>
+                          </div>
+                          <div class="col-md-9 col-sm-11">
+                            <div id="facet-prop-type">
+                              <div class="row">
+                                <div class="col-sm-4">
+                                  <div class="checkbox">
+                                    <label>
+                                      <%= f.check_box :kind_cont, {}, "apartamento", "" %>
+                                      Apartamento
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-sm-4">
+                                  <div class="checkbox">
+                                    <label>
+                                      <%= f.check_box :kind_cont, {}, "casa", "" %>
+                                      Casa
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-sm-4">
+                                  <div class="checkbox">
+                                    <label>
+                                      <%= f.check_box :kind_cont, {}, "penthouse", "" %>
+                                      Penthouse
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-sm-4">
+                                  <div class="checkbox">
+                                    <label>
+                                      <%= f.check_box :kind_cont, {}, "villa", "" %>
+                                      Villa
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-sm-4">
+                                  <div class="checkbox">
+                                    <label>
+                                      <%= f.check_box :kind_cont, {}, "oficina", "" %>
+                                      Oficina
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-sm-4">
+                                  <div class="checkbox">
+                                    <label>
+                                      <%= f.check_box :kind_cont, {}, "local comercial", "" %>
+                                      Local Comercial
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="morefilters-action">
+                <div class="container link-secondary">
+                  <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                      <div class="morefilters-action-btns">
+                        <div class="row">
+
+                          <div class="col-md-push-3 col-md-offset-3 col-md-3 col-sm-push-4  col-sm-offset-2 col-sm-4">
+                            <%= f.submit class: "js-update-properties btn btn-primary btn-block btn-update-facet" do %>
+                              <span>Buscar</span>
+                            <% end %>
+
+                          </div>
+                          <div class="col-md-pull-3 col-md-3 col-sm-pull-4 col-sm-4">
+                            <a href="#" class="btn btn-default btn-block btn-close-facet">Cancelar</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </li>
         </ul>
+
       <% end %>
     </div>
   </div>

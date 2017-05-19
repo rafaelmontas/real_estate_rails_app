@@ -1498,7 +1498,7 @@ strong {
 }
 
 .btn {
-  border: 0;
+  // border: 0;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2788,16 +2788,7 @@ ul.facet-options-list li.facet-property-type a {
   }
 }
 
-.facet-options-list .input-range-indicator {
-  border: 0;
-  color: #ccc;
-  background-color: #ccc;
-  display: inline-block;
-  height: 1px;
-  width: 10px;
-  position: relative;
-  vertical-align: middle;
-  float: left;
+.facet-options-list .mobile-facet-price .input-range-indicator {
   margin: 15px 5px;
 }
 
@@ -2842,4 +2833,56 @@ ul.facet-options-list li.facet-property-type a {
   border-right-width: 1px;
   border-bottom-right-radius: 2px;
   border-top-right-radius: 2px;
+}
+
+.facet-bar .facet-options-list>.facet-morefilters .morefilters-row {
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.row.gutter-sm {
+  margin-right: -5px;
+  margin-left: -5px;
+}
+
+.row.gutter-sm>[class^="col-"], .row.gutter-sm>[class*=" col-"] {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.facet-bar .facet-options-list>.facet-morefilters .morefilters-action {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 10px 0;
+}
+
+@media screen and (max-width: 767px) {
+  .morefilters-action-btns .btn-update-facet {
+    margin-bottom: 5px;
+  }
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.link-secondary a {
+  color: #4a4a4a;
+  border-color: #d92228;
+}
+
+.link-secondary a:hover {
+  text-decoration: underline;
+}
+
+.dropdown-menu .facet-mobile-list {
+  margin-bottom: 100px;
 }

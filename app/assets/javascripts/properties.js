@@ -127,7 +127,7 @@ $(document).on('turbolinks:load', function() {
         source: availableTags
       });
 
-      // Preview multiple images  (pure JavaScript)
+      // Preview multiple images  (pure JavaScript)////////////////////////////////////////////////////////////////////
       function previewImages() {
 
         var preview = document.querySelector('#preview');
@@ -159,7 +159,12 @@ $(document).on('turbolinks:load', function() {
 
       }
 
-      document.querySelector('#images_for_property').addEventListener("change", previewImages, false);
+      var images_for_property = document.querySelector('#images_for_property');
+
+      if (images_for_property) {
+        document.querySelector('#images_for_property').addEventListener("change", previewImages, false);
+      }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
       // Navbar
       // $('li.dropnav a').click(function(event) {
@@ -170,8 +175,37 @@ $(document).on('turbolinks:load', function() {
 
       // });
 
+      $("#scroll").click(function (){
+        $('body').toggleClass("nav-opened");
+        $('html, body').animate({
+          scrollTop: $("#scroll").offset().top
+        }, 0);
+      });
+
+      $('.dropdown-menu .facet-mobile-list #none').click(function() {
+        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_room_eq_").click();
+      });
+      $('.dropdown-menu .facet-mobile-list #one').click(function() {
+        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_room_eq_1").click();
+      });
+      $('.dropdown-menu .facet-mobile-list #two').click(function() {
+        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_room_eq_2").click();
+      });
+      $('.dropdown-menu .facet-mobile-list #three').click(function() {
+        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_room_eq_3").click();
+      });
+      $('.dropdown-menu .facet-mobile-list #four').click(function() {
+        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_room_eq_4").click();
+      });
+      $('.dropdown-menu .facet-mobile-list #five').click(function() {
+        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_room_eq_5").click();
+      });
 
 
+
+      $('.dropdown-menu').click(function (event){
+        event.stopPropagation();
+      });
 });
 
 // $('.default_image').click(function() {
@@ -194,10 +228,4 @@ $(window).scroll(function(){
 
   if (scroll >= 114) sticky.addClass('affix'), $(".search-results").css( "margin-top", "68px" );
   else sticky.removeClass('affix'), $(".search-results").css("margin-top", "0px");
-});
-
-$("#scroll").click(function (){
-    $('html, body').animate({
-      scrollTop: $("#scroll").offset().top
-    }, 2000);
 });
