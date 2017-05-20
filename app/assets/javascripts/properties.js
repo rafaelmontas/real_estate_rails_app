@@ -182,6 +182,7 @@ $(document).on('turbolinks:load', function() {
         }, 0);
       });
 
+      // Bedrooms
       $('.dropdown-menu .facet-mobile-list #none').click(function() {
         $(".dropdown-menu .facet-mobile-list input[type='radio']#q_room_eq_").click();
       });
@@ -199,6 +200,26 @@ $(document).on('turbolinks:load', function() {
       });
       $('.dropdown-menu .facet-mobile-list #five').click(function() {
         $(".dropdown-menu .facet-mobile-list input[type='radio']#q_room_eq_5").click();
+      });
+
+      // Bathrooms
+      $('.dropdown-menu .facet-mobile-list #nonebath').click(function() {
+        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_bath_eq_").click();
+      });
+      $('.dropdown-menu .facet-mobile-list #1bath').click(function() {
+        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_bath_eq_1").click();
+      });
+      $('.dropdown-menu .facet-mobile-list #2bath').click(function() {
+        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_bath_eq_2").click();
+      });
+      $('.dropdown-menu .facet-mobile-list #3bath').click(function() {
+        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_bath_eq_3").click();
+      });
+      $('.dropdown-menu .facet-mobile-list #4bath').click(function() {
+        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_bath_eq_4").click();
+      });
+      $('.dropdown-menu .facet-mobile-list #5bath').click(function() {
+        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_bath_eq_5").click();
       });
 
 
