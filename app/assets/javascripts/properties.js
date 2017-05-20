@@ -184,7 +184,7 @@ $(document).on('turbolinks:load', function() {
 
       // Bedrooms
       $(".facet-bd .dropdown-menu li label.click").click(function() {
-        $(this).next().click();
+        $(this).prev().click();
       });
 
       $(".facet-bd .dropdown-menu li input[type='radio']").click(function() {
