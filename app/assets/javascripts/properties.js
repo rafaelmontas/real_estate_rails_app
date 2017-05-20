@@ -183,24 +183,63 @@ $(document).on('turbolinks:load', function() {
       });
 
       // Bedrooms
+      $(".facet-bd .dropdown-menu li label.click").click(function() {
+        $(this).next().click();
+      });
+
+      $(".facet-bd .dropdown-menu li input[type='radio']").click(function() {
+        var target = $("#text-bd");
+        if ($(this).val()) {
+          target.html("Dormitorios " + "(" + $(this).val() + ")");
+        } else {
+          target.html("Dormitorios");
+        }
+      });
+
+
+
+      // ... beds
       $('.dropdown-menu .facet-mobile-list #none').click(function() {
         $(".dropdown-menu .facet-mobile-list input[type='radio']#q_room_eq_").click();
       });
+      $(".facet-bd .dropdown-menu li #none_main").click(function() {
+        $(".facet-bd .dropdown-menu li input[type='radio']#none_button").click();
+      });
+      // 1 bed
       $('.dropdown-menu .facet-mobile-list #one').click(function() {
         $(".dropdown-menu .facet-mobile-list input[type='radio']#q_room_eq_1").click();
       });
+      // $(".facet-bd .dropdown-menu li #one_main").click(function() {
+      //   $(".facet-bd .dropdown-menu li input[type='radio']#one_button").click();
+      // });
+      // 2 beds
       $('.dropdown-menu .facet-mobile-list #two').click(function() {
         $(".dropdown-menu .facet-mobile-list input[type='radio']#q_room_eq_2").click();
       });
+      // $(".facet-bd .dropdown-menu li #two_main").click(function() {
+      //   $(".facet-bd .dropdown-menu li input[type='radio']#two_button").click();
+      // });
+      // 3 beds
       $('.dropdown-menu .facet-mobile-list #three').click(function() {
         $(".dropdown-menu .facet-mobile-list input[type='radio']#q_room_eq_3").click();
       });
+      // $(".facet-bd .dropdown-menu li #three_main").click(function() {
+      //   $(".facet-bd .dropdown-menu li input[type='radio']#three_button").click();
+      // });
+      // 4 beds
       $('.dropdown-menu .facet-mobile-list #four').click(function() {
         $(".dropdown-menu .facet-mobile-list input[type='radio']#q_room_eq_4").click();
       });
+      // $(".facet-bd .dropdown-menu li #four_main").click(function() {
+      //   $(".facet-bd .dropdown-menu li input[type='radio']#four_button").click();
+      // });
+      // 5 beds
       $('.dropdown-menu .facet-mobile-list #five').click(function() {
         $(".dropdown-menu .facet-mobile-list input[type='radio']#q_room_eq_5").click();
       });
+      // $(".facet-bd .dropdown-menu li #five_main").click(function() {
+      //   $(".facet-bd .dropdown-menu li input[type='radio']#five_button").click();
+      // });
 
       // Bathrooms
       $('.dropdown-menu .facet-mobile-list #nonebath').click(function() {

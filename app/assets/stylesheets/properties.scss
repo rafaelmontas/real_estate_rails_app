@@ -2655,6 +2655,39 @@ left: auto;
   white-space: nowrap;
 }
 
+.facet-options-list>li>.dropdown-menu>li>label {
+  padding: 6px 20px;
+}
+
+.dropdown-menu>li>label {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857;
+  color: #333;
+  white-space: nowrap;
+}
+
+.facet-bd .dropdown-menu>li>input[type="radio"] {
+  display: none;
+}
+
+.facet-bd .dropdown-menu>li>input[type="radio"]:checked + label {
+  background-image: none;
+  background-color: #d92228;
+  color: #fff;
+}
+
+.facet-bd .dropdown-menu>li>label:hover {
+  cursor: pointer;
+  background-color: #f5f5f5;
+}
+
+.facet-bd .dropdown-menu>li>label {
+  margin: 0;
+}
+
 .facet-property-type .dropdown-menu li {
   padding: 5px 20px 0;
 }

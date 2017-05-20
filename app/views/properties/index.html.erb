@@ -53,27 +53,39 @@
           </li>
           <li class="dropdown facet-bd">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-              <span>Dormitorios</span>
+              <span id="text-bd">Dormitorios</span>
               <%= fa_icon "caret-down" %>
             </a>
             <ul class="dropdown-menu">
-              <li data-value>
-                <a href="#">...</a>
+              <li>
+                <%#= f.radio_button(:room_eq, "", id: "none_button") %>
+                <%= f.label :room_eq, "...", class: "click", id: "none_main", for: "none_button" %>
+                <%= f.radio_button(:room_eq, "", id: "none_button") %>
               </li>
-              <li data-value="1">
-                <a href="#">1+</a>
+              <li>
+                <%#= f.radio_button(:room_eq, "1", id: "one_button") %>
+                <%= f.label :room_eq, "1+", class: "click", id: "one_main", for: "one_button" %>
+                <%= f.radio_button(:room_eq, "1", id: "one_button") %>
               </li>
-              <li data-value="2">
-                <a href="#">2+</a>
+              <li>
+                <%#= f.radio_button(:room_eq, "2", id: "two_button") %>
+                <%= f.label :room_eq, "2+", class: "click", id: "two", for: "two_button" %>
+                <%= f.radio_button(:room_eq, "2", id: "two_button") %>
               </li>
-              <li data-value="3">
-                <a href="#">3+</a>
+              <li>
+                <%#= f.radio_button(:room_eq, "3", id: "three_button") %>
+                <%= f.label :room_eq, "3+", class: "click", id: "three", for: "three_button" %>
+                <%= f.radio_button(:room_eq, "3", id: "three_button") %>
               </li>
-              <li data-value="4">
-                <a href="#">4+</a>
+              <li>
+                <%#= f.radio_button(:room_eq, "4", id: "four_button") %>
+                <%= f.label :room_eq, "4+", class: "click", id: "four", for: "four_button" %>
+                <%= f.radio_button(:room_eq, "4", id: "four_button") %>
               </li>
-              <li data-value="5">
-                <a href="#">5+</a>
+              <li>
+                <%#= f.radio_button(:room_eq, "5", id: "five_button") %>
+                <%= f.label :room_eq, "5+", class: "click", id: "five", for: "five_button" %>
+                <%= f.radio_button(:room_eq, "5", id: "five_button") %>
               </li>
             </ul>
           </li>
