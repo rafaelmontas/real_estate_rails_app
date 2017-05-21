@@ -18,7 +18,8 @@
         <ul class="nav navbar-nav facet-options-list float-left">
           <li class="dropdown facet-price hidden-xxs">
             <a href="#" class="dropdown-toggle drop-menu" data-toggle="dropdown" aria-expanded="false">
-              <span>Precio</span>
+              <span id="text-price">Precio</span>
+              <span id="text-price-max"></span>
               <%= fa_icon "caret-down" %>
             </a>
             <ul class="dropdown-menu dropdown-price js-prevent-dropdown-close">
@@ -85,27 +86,33 @@
           </li>
           <li class="dropdown facet-ba">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-              <span>Baños</span>
+              <span id="text-ba">Baños</span>
               <%= fa_icon "caret-down" %>
             </a>
             <ul class="dropdown-menu">
               <li data-value>
-                <a href="#">...</a>
+                <%= f.radio_button(:bath_eq, "") %>
+                <%= f.label :bath_eq, "...", class: "click-ba", id: "nonebath" %>
               </li>
               <li data-value="1">
-                <a href="#">1+</a>
+                <%= f.radio_button(:bath_eq, "1") %>
+                <%= f.label :bath_eq, "1+", class: "click-ba", id: "1bath" %>
               </li>
               <li data-value="2">
-                <a href="#">2+</a>
+                <%= f.radio_button(:bath_eq, "2") %>
+                <%= f.label :bath_eq, "2+", class: "click-ba", id: "2bath" %>
               </li>
               <li data-value="3">
-                <a href="#">3+</a>
+                <%= f.radio_button(:bath_eq, "3") %>
+                <%= f.label :bath_eq, "3+", class: "click-ba", id: "3bath" %>
               </li>
               <li data-value="4">
-                <a href="#">4+</a>
+                <%= f.radio_button(:bath_eq, "4") %>
+                <%= f.label :bath_eq, "4+", class: "click-ba", id: "4bath" %>
               </li>
               <li data-value="5">
-                <a href="#">5+</a>
+                <%= f.radio_button(:bath_eq, "5") %>
+                <%= f.label :bath_eq, "5+", class: "click-ba", id: "5bath" %>
               </li>
             </ul>
           </li>
@@ -203,35 +210,35 @@
                 <div class="container mobile-facet-beds">
                   <h5>Dormitorios</h5>
                   <div class="radio-btn-group radio-btn-group-justified">
-                    <%= f.radio_button(:room_eq, "") %>
-                    <%= f.label :room_eq, "...", id: "none" %>
-                    <%= f.radio_button(:room_eq, "1") %>
-                    <%= f.label :room_eq, "1+", id: "one" %>
-                    <%= f.radio_button(:room_eq, "2") %>
-                    <%= f.label :room_eq, "2+", id: "two" %>
-                    <%= f.radio_button(:room_eq, "3") %>
-                    <%= f.label :room_eq, "3+", id: "three" %>
-                    <%= f.radio_button(:room_eq, "4") %>
-                    <%= f.label :room_eq, "4+", id: "four" %>
-                    <%= f.radio_button(:room_eq, "5") %>
-                    <%= f.label :room_eq, "5+", id: "five" %>
+                    <%#= f.radio_button(:room_eq, "") %>
+                    <%#= f.label :room_eq, "...", id: "none" %>
+                    <%#= f.radio_button(:room_eq, "1") %>
+                    <%#= f.label :room_eq, "1+", id: "one" %>
+                    <%#= f.radio_button(:room_eq, "2") %>
+                    <%#= f.label :room_eq, "2+", id: "two" %>
+                    <%#= f.radio_button(:room_eq, "3") %>
+                    <%#= f.label :room_eq, "3+", id: "three" %>
+                    <%#= f.radio_button(:room_eq, "4") %>
+                    <%#= f.label :room_eq, "4+", id: "four" %>
+                    <%#= f.radio_button(:room_eq, "5") %>
+                    <%#= f.label :room_eq, "5+", id: "five" %>
                   </div>
                 </div>
                 <div class="container mobile-facet-baths">
                   <h5>Baños</h5>
                   <div class="radio-btn-group radio-btn-group-justified">
-                    <%= f.radio_button(:bath_eq, "") %>
-                    <%= f.label :bath_eq, "...", id: "nonebath" %>
-                    <%= f.radio_button(:bath_eq, "1") %>
-                    <%= f.label :bath_eq, "1+", id: "1bath" %>
-                    <%= f.radio_button(:bath_eq, "2") %>
-                    <%= f.label :bath_eq, "2+", id: "2bath" %>
-                    <%= f.radio_button(:bath_eq, "3") %>
-                    <%= f.label :bath_eq, "3+", id: "3bath" %>
-                    <%= f.radio_button(:bath_eq, "4") %>
-                    <%= f.label :bath_eq, "4+", id: "4bath" %>
-                    <%= f.radio_button(:bath_eq, "5") %>
-                    <%= f.label :bath_eq, "5+", id: "5bath" %>
+                    <%#= f.radio_button(:bath_eq, "") %>
+                    <%#= f.label :bath_eq, "...", id: "nonebath" %>
+                    <%#= f.radio_button(:bath_eq, "1") %>
+                    <%#= f.label :bath_eq, "1+", id: "1bath" %>
+                    <%#= f.radio_button(:bath_eq, "2") %>
+                    <%#= f.label :bath_eq, "2+", id: "2bath" %>
+                    <%#= f.radio_button(:bath_eq, "3") %>
+                    <%#= f.label :bath_eq, "3+", id: "3bath" %>
+                    <%#= f.radio_button(:bath_eq, "4") %>
+                    <%#= f.label :bath_eq, "4+", id: "4bath" %>
+                    <%#= f.radio_button(:bath_eq, "5") %>
+                    <%#= f.label :bath_eq, "5+", id: "5bath" %>
                   </div>
                 </div>
                 <div class=" container morefilters-property-type hidden-lg hidden-md">

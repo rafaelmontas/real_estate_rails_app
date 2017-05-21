@@ -182,20 +182,115 @@ $(document).on('turbolinks:load', function() {
         }, 0);
       });
 
+      // Price
+      $(".facet-price .dropdown-menu li #q_price_gteq").change(function() {
+        var price_value = $(this).val();
+        var target = $("#text-price");
+        switch (price_value) {
+          case "100000":
+            price_value_output = "100k"
+            break;
+          case "200000":
+            price_value_output = "200k"
+            break;
+          case "300000":
+            price_value_output = "300k"
+            break;
+          case "400000":
+            price_value_output = "400k"
+            break;
+          case "500000":
+            price_value_output = "500k"
+            break;
+          case "600000":
+            price_value_output = "600k"
+            break;
+          default:
+            price_value_output = "Precio"
+        }
+        target.html("US$" + price_value_output);
+      });
+
+      $(".facet-price .dropdown-menu li #q_price_lteq").change(function() {
+        var max_price_value = $(this).val();
+        var target = $("#text-price-max");
+        switch (max_price_value) {
+          case "100000":
+            max_price_value_output = "100k"
+            break;
+          case "200000":
+            max_price_value_output = "200k"
+            break;
+          case "300000":
+            max_price_value_output = "300k"
+            break;
+          case "400000":
+            max_price_value_output = "400k"
+            break;
+          case "500000":
+            max_price_value_output = "500k"
+            break;
+          case "600000":
+            max_price_value_output = "600k"
+            break;
+          default:
+            max_price_value_output = "Precio"
+          }
+          target.html("- US$" + max_price_value_output);
+      });
+
+      // $(".facet-price .dropdown-menu li #q_price_gteq").click(function() {
+      //   var target = $("#text-price");
+      //   if ($(this).val()) {
+      //     target.html("$" + "(" + $(this).val() + ")");
+      //   } else {
+      //     target.html("Dormitorios");
+      //   }
+      // });
+
+
       // Bedrooms
       $(".facet-bd .dropdown-menu li label.click").click(function() {
         $(this).prev().click();
       });
-
+      // Change text based on value selected before search...
+      var target_bd = $("#text-bd");
+      var prev_bd_selected = $(".facet-bd .dropdown-menu li input[type='radio']:checked").val();
+      if (prev_bd_selected) {
+        target_bd.html("Dormitorios " + "(" + prev_bd_selected + ")");
+      }
+      // Change text based on value selected
       $(".facet-bd .dropdown-menu li input[type='radio']").click(function() {
         var target = $("#text-bd");
         if ($(this).val()) {
           target.html("Dormitorios " + "(" + $(this).val() + ")");
+          $(document).load(function() {
+            $(this).prop("checked", true)
+          });
         } else {
           target.html("Dormitorios");
         }
       });
 
+      // Bathrooms
+      $(".facet-ba .dropdown-menu li label.click-ba").click(function() {
+        $(this).prev().click();
+      });
+      // Change text based on value selected before search...
+      var target_ba = $("#text-ba");
+      var prev_ba_selected = $(".facet-ba .dropdown-menu li input[type='radio']:checked").val();
+      if (prev_ba_selected) {
+        target_ba.html("Dormitorios " + "(" + prev_ba_selected + ")");
+      }
+      // Change text based on value selected
+      $(".facet-ba .dropdown-menu li input[type='radio']").click(function() {
+        var target = $("#text-ba");
+        if ($(this).val()) {
+          target.html("Baños " + "(" + $(this).val() + ")");
+        } else {
+          target.html("Baños");
+        }
+      });
 
 
       // ... beds
