@@ -182,6 +182,107 @@ $(document).on('turbolinks:load', function() {
         }, 0);
       });
 
+      // Buy or Rent
+      $(".facet-sale .dropdown-menu li label.click-sale").click(function() {
+        $(this).prev().click();
+      });
+      // Change text based on value selected before search...
+      var target_sale = $("#text-sale");
+      var prev_sale_selected = $(".facet-sale .dropdown-menu li input[type='radio']:checked").next().text();
+      if (prev_sale_selected) {
+        target_sale.html(prev_sale_selected);
+      }
+      // Change text based on value selected
+      $(".facet-sale .dropdown-menu li input[type='radio']").click(function() {
+        var target = $("#text-sale");
+
+        if ($(this).val()) {
+          target.html($(this).next().text());
+          // $(document).load(function() {
+          //   $(this).prop("checked", true)
+          // });
+        } else {
+          target.html("Comp/Alq");
+        }
+      });
+
+      // Change price based on prev selected
+      var target_sale = $("#text-sale");
+      var prev_sale_selected = $(".facet-sale .dropdown-menu li input[type='radio']:checked").next().text();
+      if (prev_sale_selected) {
+        target_sale.html(prev_sale_selected);
+      }
+      // Change price range based on Buy or Rent option
+      $(".facet-sale .dropdown-menu li input[type='radio']").click(function() {
+        if ($(this).val() == "venta") {
+          $(".facet-price .dropdown-menu li #q_price_gteq option").val(function() {
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(1)").val(100000);
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(1)").text('$US Minimo');
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(2)").val(100000);
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(2)").text('$US 100,000');
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(3)").val(200000);
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(3)").text('$US 200,000');
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(4)").val(300000);
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(4)").text('$US 300,000');
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(5)").val(400000);
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(5)").text('$US 400,000');
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(6)").val(500000);
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(6)").text('$US 500,000');
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(7)").val(600000);
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(7)").text('$US 600,000');
+          });
+          $(".facet-price .dropdown-menu li #q_price_lteq option").val(function() {
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(1)").val(100000);
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(1)").text('$US Minimo');
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(2)").val(100000);
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(2)").text('$US 100,000');
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(3)").val(200000);
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(3)").text('$US 200,000');
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(4)").val(300000);
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(4)").text('$US 300,000');
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(5)").val(400000);
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(5)").text('$US 400,000');
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(6)").val(500000);
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(6)").text('$US 500,000');
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(7)").val(600000);
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(7)").text('$US 600,000');
+          });
+        } else if ($(this).val() == "alquiler") {
+          $(".facet-price .dropdown-menu li #q_price_gteq option").val(function() {
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(1)").val(500);
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(1)").text('$US Minimo');
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(2)").val(500);
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(2)").text('$US 500');
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(3)").val(750);
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(3)").text('$US 750');
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(4)").val(1000);
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(4)").text('$US 1,000');
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(5)").val(1250);
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(5)").text('$US 1,250');
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(6)").val(1500);
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(6)").text('$US 1,500');
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(7)").val(1750);
+            $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(7)").text('$US 1,750');
+          });
+          $(".facet-price .dropdown-menu li #q_price_lteq option").val(function() {
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(1)").val(750);
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(1)").text('$US Maximo');
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(2)").val(750);
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(2)").text('$US 750');
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(3)").val(1000);
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(3)").text('$US 1,000');
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(4)").val(1250);
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(4)").text('$US 1,250');
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(5)").val(1500);
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(5)").text('$US 1,500');
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(6)").val(1750);
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(6)").text('$US 1,750');
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(7)").val(2000);
+            $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(7)").text('$US 2,000');
+          });
+        }
+      });
+
       // Price
       $(".facet-price .dropdown-menu li #q_price_gteq").change(function() {
         var price_value = $(this).val();

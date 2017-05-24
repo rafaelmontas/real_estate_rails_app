@@ -11,11 +11,30 @@
                 <button class="btn btn-primary">
                   <%= fa_icon "search" %>
                 </button>
+                <%#= f.submit class: "btn btn-primary" do %>
+                  <%#= fa_icon "search" %>
+                <%# end %>
               </span>
             </div>
           </div>
         </div>
         <ul class="nav navbar-nav facet-options-list float-left">
+          <li class="dropdown facet-sale">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              <span id="text-sale">Dormitorios</span>
+              <%= fa_icon "caret-down" %>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <%= f.radio_button(:sale_cont, "alquiler") %>
+                <%= f.label :sale_cont, "Alquilar", class: "click-sale", id: "alquilar" %>
+              </li>
+              <li>
+                <%= f.radio_button(:sale_cont, "venta") %>
+                <%= f.label :sale_cont, "Comprar", class: "click-sale",id: "comprar" %>
+              </li>
+            </ul>
+          </li>
           <li class="dropdown facet-price hidden-xxs">
             <a href="#" class="dropdown-toggle drop-menu" data-toggle="dropdown" aria-expanded="false">
               <span id="text-price">Precio</span>
@@ -168,6 +187,8 @@
               </li>
             </ul>
           </li>
+      <%# end %>
+        <%#= search_form_for @q do |f| %>
           <li class="dropdown facet-morefilters">
             <a href="#" id="scroll" class="dropdown-toggle dropdown-toggle-mobile-footer hidden-sm hidden-md hidden-lg btn btn-default" data-toggle="dropdown" aria-expanded="false">
               <span data-role="facet-label">Filtro</span>
