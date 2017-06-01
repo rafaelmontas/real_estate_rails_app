@@ -212,9 +212,9 @@ $(document).on('turbolinks:load', function() {
       if (prev_sale_selected) {
         target_sale.html(prev_sale_selected);
       }
-      // Change price range based on Buy or Rent option
-      $(".facet-sale .dropdown-menu li input[type='radio']").click(function() {
-        if ($(this).val() == "venta") {
+
+      function changePrice() {
+        if ($(".facet-sale #text-sale").text() == "Comprar") {
           $(".facet-price .dropdown-menu li #q_price_gteq option").val(function() {
             $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(1)").val(100000);
             $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(1)").text('$US Minimo');
@@ -247,7 +247,7 @@ $(document).on('turbolinks:load', function() {
             $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(7)").val(600000);
             $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(7)").text('$US 600,000');
           });
-        } else if ($(this).val() == "alquiler") {
+        } else if ($(".facet-sale #text-sale").text() == "Alquilar") {
           $(".facet-price .dropdown-menu li #q_price_gteq option").val(function() {
             $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(1)").val(500);
             $(".facet-price .dropdown-menu li #q_price_gteq option:nth-child(1)").text('$US Minimo');
@@ -281,13 +281,40 @@ $(document).on('turbolinks:load', function() {
             $(".facet-price .dropdown-menu li #q_price_lteq option:nth-child(7)").text('$US 2,000');
           });
         }
+      }
+      changePrice();
+
+      // Change price range based on Buy or Rent option
+      $(".facet-sale .dropdown-menu li input[type='radio']").click(function() {
+        changePrice();
       });
+
 
       // Price
       $(".facet-price .dropdown-menu li #q_price_gteq").change(function() {
         var price_value = $(this).val();
         var target = $("#text-price");
         switch (price_value) {
+          // Alquiler price range
+          case "500":
+            price_value_output = "500"
+            break;
+          case "750":
+            price_value_output = "750"
+            break;
+          case "1000":
+            price_value_output = "1,000"
+            break;
+          case "1250":
+            price_value_output = "1,250"
+            break;
+          case "1500":
+            price_value_output = "1,500"
+            break;
+          case "1750":
+            price_value_output = "1,750"
+            break;
+          // Compra price range
           case "100000":
             price_value_output = "100k"
             break;
@@ -316,6 +343,26 @@ $(document).on('turbolinks:load', function() {
         var max_price_value = $(this).val();
         var target = $("#text-price-max");
         switch (max_price_value) {
+          // Alquiler price range lteq
+          case "750":
+            max_price_value_output = "750"
+            break;
+          case "1000":
+            max_price_value_output = "1,000"
+            break;
+          case "1250":
+            max_price_value_output = "1,250"
+            break;
+          case "1500":
+            max_price_value_output = "1,500"
+            break;
+          case "1750":
+            max_price_value_output = "1,750"
+            break;
+          case "2000":
+            max_price_value_output = "2,000"
+            break;
+          // Compra price range lteq
           case "100000":
             max_price_value_output = "100k"
             break;
