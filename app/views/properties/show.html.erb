@@ -9,15 +9,8 @@
         <h2><%= @property.name %></h2>
         <small><%= @property.address %></small>
       </div>
-      <div class="actions actions-section">
-        <a href="#">
-          <i class="fa fa-heart-o" aria-hidden="true"></i>
-          Guardar
-        </a>
-        <a href="#" class="hidden-xs hidden-sm">
-          <i class="fa fa-print" aria-hidden="true"></i>
-          Imprimir
-        </a>
+      <div class="actions actions-section" id="likes">
+        <%= render "likes" %>
       </div>
     </header>
 

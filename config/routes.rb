@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   # resources routes
   resources :properties do
     resources :photos
+    resource :like, module: :properties
   end
   resources :agents, :users
   resources :account_activations, only: [:edit]

@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :likes
   include ImageUploader[:avatar]
 
   attr_accessor :remember_token, :reset_token
@@ -61,6 +62,11 @@ class User < ApplicationRecord
   # Returns true if a password reset has expired.
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
+  end
+
+  # like method
+  def likes?(property)
+    property.likes.where(user_id: id).any?
   end
 
 end
