@@ -54,9 +54,8 @@
     </div>
     <div class="listings-grid">
       <% @featured_properties.each do |property| %>
-        <%= link_to(property_path(property)) do %>
-          <div class="listings-grid-item">
-
+        <div class="listings-grid-item">
+          <%= link_to(property_path(property)) do %>
               <div class="listings-grid-main">
                   <% if property.photos.first %>
 		                <%= image_tag property.photos.first.image_url(:medium, public: true) %>
@@ -72,16 +71,14 @@
                 <li><i class="listings-grid-icon fa fa-bath" aria-hidden="true"> 02</i></li>
                 <li><i class="listings-grid-icon fa fa-car" aria-hidden="true"> 02</i></li>
               </ul>
-
-            <div class="listings-grid-favorite">
-              <i class="listings-grid-icon fa fa-heart-o" aria-hidden="true"></i>
+          <% end %>
+          <div class="actions listings-grid-favorite">
+            <div class="actions-toggle like-color" id="property_<%= property.id %>_likes">
+              <%= render partial: "properties/likes", locals: { property: property } %>
             </div>
           </div>
-        <% end %>
+        </div>
       <% end %>
-        <!-- <div>your content</div> -->
-
-
     </div>
   </div>
 <% end %>

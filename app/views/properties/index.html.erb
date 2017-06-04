@@ -420,12 +420,17 @@
                     <%= fa_icon "car" %>
                     <%= property.parking %>
                   </li>
-                  <li class="pull-right">
-                    <%= fa_icon "heart-o" %>
-                  </li>
+                  <!-- <li class="pull-right">
+                    <%#= fa_icon "heart-o" %>
+                  </li> -->
                 </ul>
               </div>
             <% end %>
+            <div class="actions listings-grid-favorite">
+              <div class="actions-toggle like-color" id="property_<%= property.id %>_likes">
+                <%= render partial: "likes", locals: { property: property } %>
+              </div>
+            </div>
           </div>
         <% end %>
         <%= will_paginate %>

@@ -3,3 +3,7 @@
 <% if @user.avatar.present? %>
   <%= image_tag @user.avatar_url(:small, public: true) %>
 <% end %>
+
+<% @user.likes.each do |like| %>
+  <%= like.property_id %>
+<% end %>

@@ -9,8 +9,8 @@
         <h2><%= @property.name %></h2>
         <small><%= @property.address %></small>
       </div>
-      <div class="actions actions-section" id="likes">
-        <%= render "likes" %>
+      <div class="actions actions-section like-color" id="property_<%= @property.id %>_likes">
+        <%= render partial: "likes", locals: { property: @property } %>
       </div>
     </header>
 

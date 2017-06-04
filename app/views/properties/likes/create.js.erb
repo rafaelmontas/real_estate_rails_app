@@ -1,1 +1,1 @@
-$('#likes').html("<%=j render partial: 'properties/likes' %>");
+$('#property_<%= @property.id %>_likes').html("<%=j render partial: 'properties/likes', locals: { property: @property } %>");

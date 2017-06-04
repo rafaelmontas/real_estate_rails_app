@@ -2920,3 +2920,46 @@ ul.facet-options-list li.facet-property-type a {
 .dropdown-menu .facet-mobile-list {
   margin-bottom: 100px;
 }
+
+.like-color a[data-method="post"] {
+  color: grey;
+}
+.like-color a[data-method="delete"] {
+  color: #d92228;
+}
+
+.listings-grid-favorite {
+  position: absolute;
+  z-index: 1;
+  bottom: 6px;
+  right: 10px;
+}
+
+.listings-grid-favorite .actions-toggle a .fa-heart, .listings-grid-favorite .actions-toggle a .fa-heart-o {
+  font-size: 18px;
+}
+.listings-grid-favorite .actions-toggle a span {
+  display: none;
+}
+.listings-grid-favorite .actions-toggle a:hover {
+  cursor: default;
+}
+
+.listings-grid-favorite .actions>a, .actions>div {
+  padding-top: 5px;
+}
+.listings-grid-favorite .actions>a, .actions>div, .actions>div>a {
+  display: inline-block;
+  vertical-align: top;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+.listings-grid-favorite .actions-toggle {
+  cursor: pointer;
+  position: relative;
+}
+
+.actions>div.like-color:hover i.fa-heart-o {
+  color: #d92228;
+}
