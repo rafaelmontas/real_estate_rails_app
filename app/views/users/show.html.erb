@@ -4,6 +4,71 @@
   <%= image_tag @user.avatar_url(:small, public: true) %>
 <% end %>
 
-<% @user.likes.each do |like| %>
-  <%= like.property_id %>
-<% end %>
+<%# @user.likes.each do |like| %>
+  <%#= like.property_id %>
+<%# end %>
+
+<%#= @properties_liked %>
+<%# @user.properties.each do |liked| %>
+  <%#= liked.name %>
+  <%# if liked.photos.first %>
+    <%#= image_tag liked.photos.first.image_url(:large, public: true) %>
+  <%# end %>
+<%# end %>
+
+<section class="section">
+  <div class="container search-results">
+    <header class="section_title">
+      <h2>Duis mollisest non commodo luctus nisierat porttito</h2>
+      <small>Vestibulum id ligula porta felis euismod semper</small>
+    </header>
+    <div class="row">
+      <div class="col-sm-8 listings-list">
+        <% @user.properties.each do |property_liked| %>
+          <div class="listings-grid-item">
+            <%= link_to(property_url(property_liked), class: "media") do %>
+              <div class="listings-grid-main pull-left">
+                <% if property_liked.photos.first %>
+                  <%= image_tag property_liked.photos.first.image_url(:large, public: true) %>
+                <% end %>
+                <div class="listings-grid-price">
+                  <%= number_to_currency(property_liked.price, precision: 0, unit: "US$") %>
+                </div>
+              </div>
+              <div class="media-body">
+                <div class="listings-grid-body">
+                  <small><%= property_liked.name %></small>
+                  <h5><%= property_liked.address %></h5>
+                </div>
+                <ul class="listings-grid-attrs">
+                  <li>
+                    <%= fa_icon "bed" %>
+                    <%= property_liked.room %>
+                  </li>
+                  <li>
+                    <%= fa_icon "bath" %>
+                    <%= property_liked.bath %>
+                  </li>
+                  <li>
+                    <%= fa_icon "car" %>
+                    <%= property_liked.parking %>
+                  </li>
+                  <!-- <li class="pull-right">
+                    <%#= fa_icon "heart-o" %>
+                  </li> -->
+                </ul>
+              </div>
+            <% end %>
+            <div class="actions listings-grid-favorite">
+              <div class="actions-toggle like-color" id="property_<%= property_liked.id %>_likes">
+                <%= render partial: "properties/likes", locals: { property: property_liked } %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <%#= will_paginate %>
+      </div>
+
+    </div>
+  </div>
+</section>

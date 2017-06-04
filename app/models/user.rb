@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :likes
+  has_many :properties, through: :likes
   include ImageUploader[:avatar]
 
   attr_accessor :remember_token, :reset_token
@@ -68,5 +69,9 @@ class User < ApplicationRecord
   def likes?(property)
     property.likes.where(user_id: id).any?
   end
+
+  # def liked_search
+  #   Like.find_by_sql("SELECT property_id FROM likes WHERE user_id = ?", id)
+  # end
 
 end

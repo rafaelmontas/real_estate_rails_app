@@ -1,6 +1,7 @@
 class Property < ApplicationRecord
   has_many :photos, dependent: :destroy
   has_many :likes
+  has_many :users, through: :likes
 
 
   validates :name, presence: true

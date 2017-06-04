@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
   def show
     @user = User.find(params[:id])
+    # @likes = Like.find_by_sql("SELECT property_id FROM likes WHERE user_id = ?", id)
+    # @properties_liked = Property.find_by_sql("")
   end
 
   def new
