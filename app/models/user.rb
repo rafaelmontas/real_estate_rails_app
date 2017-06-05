@@ -70,8 +70,4 @@ class User < ApplicationRecord
     property.likes.where(user_id: id).any?
   end
 
-  # def liked_search
-  #   Like.find_by_sql("SELECT property_id FROM likes WHERE user_id = ?", id)
-  # end
-
 end

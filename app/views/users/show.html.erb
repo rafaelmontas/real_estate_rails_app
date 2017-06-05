@@ -4,20 +4,9 @@
   <%= image_tag @user.avatar_url(:small, public: true) %>
 <% end %>
 
-<%# @user.likes.each do |like| %>
-  <%#= like.property_id %>
-<%# end %>
-
-<%#= @properties_liked %>
-<%# @user.properties.each do |liked| %>
-  <%#= liked.name %>
-  <%# if liked.photos.first %>
-    <%#= image_tag liked.photos.first.image_url(:large, public: true) %>
-  <%# end %>
-<%# end %>
 
 <section class="section">
-  <div class="container search-results">
+  <div class="container">
     <header class="section_title">
       <h2>Duis mollisest non commodo luctus nisierat porttito</h2>
       <small>Vestibulum id ligula porta felis euismod semper</small>
@@ -53,9 +42,6 @@
                     <%= fa_icon "car" %>
                     <%= property_liked.parking %>
                   </li>
-                  <!-- <li class="pull-right">
-                    <%#= fa_icon "heart-o" %>
-                  </li> -->
                 </ul>
               </div>
             <% end %>
@@ -68,7 +54,6 @@
         <% end %>
         <%#= will_paginate %>
       </div>
-
     </div>
   </div>
 </section>

@@ -21,7 +21,7 @@
         <ul class="nav navbar-nav facet-options-list float-left">
           <li class="dropdown facet-sale">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-              <span id="text-sale">Dormitorios</span>
+              <span id="text-sale">Comp/Alq</span>
               <%= fa_icon "caret-down" %>
             </a>
             <ul class="dropdown-menu">
@@ -203,8 +203,8 @@
                   <div class="row">
                     <div class="col-xs-12">
                       <div class="pull-left">
-                        <div class="input-group facet-price-input">
-                          <%= f.select :price_gteq, [['$us Minimo', 0],
+                        <div class="input-group facet-price-input" style="display:none;">
+                          <%#= f.select :price_gteq, [['$us Minimo', 0],
                                                      ['$us 100,000', 100000],
                                                      ['$us 200,000', 200000],
                                                      ['$us 300,000', 300000],
@@ -215,8 +215,8 @@
                       </div>
                       <span class="input-range-indicator"></span>
                       <div class="pull-left">
-                        <div class="input-group facet-price-input">
-                          <%= f.select :price_lteq, [['$us Maximo', 1000000],
+                        <div class="input-group facet-price-input" style="display:none;">
+                          <%#= f.select :price_lteq, [['$us Maximo', 1000000],
                                                      ['$us 100,000', 100000],
                                                      ['$us 200,000', 200000],
                                                      ['$us 300,000', 300000],
