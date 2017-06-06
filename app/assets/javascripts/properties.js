@@ -212,16 +212,16 @@ $(document).on('turbolinks:load', function() {
       });
 
       // Change price based on prev selected
-      var targetMinPrice = $("#text-price");
-      var targetMaxPrice = $("#text-price-max");
-      var prev_min_price_selected = $(".facet-price .dropdown-menu li select#q_price_gteq").val();
-      var prev_max_price_selected = $(".facet-price .dropdown-menu li select#q_price_lteq").val();
-      var prev_price_selected_text = $(".facet-price .dropdown-menu li select#q_price_gteq option:selected").text();
-      if (prev_price_selected_text == "$us Minimo") {
-        targetMinPrice.html("Precio");
-      } else {
-        targetMinPrice.html(prev_price_selected_text);
-      }
+      // var targetMinPrice = $("#text-price");
+      // var targetMaxPrice = $("#text-price-max");
+      // var prev_min_price_selected = $(".facet-price .dropdown-menu li select#q_price_gteq").val();
+      // var prev_max_price_selected = $(".facet-price .dropdown-menu li select#q_price_lteq").val();
+      // var prev_price_selected_text = $(".facet-price .dropdown-menu li select#q_price_gteq option:selected").text();
+      // if (prev_price_selected_text == "$us Minimo") {
+      //   targetMinPrice.html("Precio");
+      // } else {
+      //   targetMinPrice.html(prev_price_selected_text);
+      // }
 
       // function changePriceBasedSelected() {
       //   switch (prev_min_price_selected) {

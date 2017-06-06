@@ -47,23 +47,39 @@
                   <div class="row">
                     <div class="col-sm-12">
                       <div class="facet-price-wrap">
-                        <%= f.select :price_gteq, [['$us Minimo', 100000],
-                                                   ['$us 100,000', 100000],
-                                                   ['$us 200,000', 200000],
-                                                   ['$us 300,000', 300000],
-                                                   ['$us 400,000', 400000],
-                                                   ['$us 500,000', 500000],
-                                                   ['$us 600,000', 600000]] %>
+                        <div class="input-group facet-price-input">
+                          <span class="input-group-addon">$</span>
+                          <%= f.text_field :price_gteq, placeholder: "Min", class: "form-control" %>
+                        </div>
                       </div>
                       <span class="input-range-indicator"></span>
                       <div class="facet-price-wrap">
-                        <%= f.select :price_lteq, [['$us Maximo', 100000],
-                                                   ['$us 100,000', 100000],
-                                                   ['$us 200,000', 200000],
-                                                   ['$us 300,000', 300000],
-                                                   ['$us 400,000', 400000],
-                                                   ['$us 500,000', 500000],
-                                                   ['$us 600,000', 600000]] %>
+                        <div class="input-group facet-price-input">
+                          <span class="input-group-addon">$</span>
+                          <%= f.text_field :price_lteq, placeholder: "Max", class: "form-control" %>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12">
+                      <div class="facet-price-list-wrap">
+                        <ul class="facet-price-list" id="facet-price-list-min">
+                          <li data-val="0">$0</li>
+                          <li data-val="50000">$50K</li>
+                          <li data-val="100000">$100K</li>
+                          <li data-val="150000">$150K</li>
+                          <li data-val="200000">$200K</li>
+                          <li data-val="250000">$250K</li>
+                          <li data-val="300000">$300K</li>
+                        </ul>
+                        <ul class="facet-price-list" id="facet-price-list-max">
+                          <li data-val="0">$0</li>
+                          <li data-val="50000">$50K</li>
+                          <li data-val="100000">$100K</li>
+                          <li data-val="150000">$150K</li>
+                          <li data-val="200000">$200K</li>
+                          <li data-val="250000">$250K</li>
+                          <li data-val="300000">$300K</li>
+                        </ul>
                       </div>
                     </div>
                   </div>
