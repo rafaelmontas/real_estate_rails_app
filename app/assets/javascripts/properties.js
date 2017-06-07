@@ -10,6 +10,7 @@ $(document).on('turbolinks:load', function() {
   });
   $(".btn-action, .btn-link").click(function() {
     $(".sidebar-mobile").toggleClass("toggled");
+    $(".rmd-sidebar").toggleClass("toggled");
     $("body").toggleClass("block-opened");
   });
 
