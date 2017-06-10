@@ -183,6 +183,21 @@ $(document).on('turbolinks:load', function() {
         }, 0);
       });
 
+      // Mobile search///////////////////////////////////////////////////////////////////////////
+      $('.radio-mobile #comprar-mobile').click(function() {
+        $(".radio-mobile input[type='radio']#q_sale_cont_venta_mobile").click();
+      });
+
+      $('.radio-mobile #alquilar-mobile').click(function() {
+        $(".radio-mobile input[type='radio']#q_sale_cont_alquiler_mobile").click();
+      });
+
+
+      
+
+      ////////////////////////////////////////////////////////////////////////////////////////////////
+
+
       // Buy or Rent
       $(".facet-sale .dropdown-menu li label.click-sale").click(function() {
         $(this).prev().click();

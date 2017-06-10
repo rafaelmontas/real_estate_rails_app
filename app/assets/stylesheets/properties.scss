@@ -3075,3 +3075,78 @@ ul.facet-options-list li.facet-property-type a {
   margin: 0;
   padding-bottom: 80px;
 }
+
+// .btn-group-justified.radio-mobile {
+//   background-color: #eee;
+// }
+
+
+
+.card-body .form-group .radio-mobile {
+  float: left;
+  width: 50%;
+  margin: 0;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 0 0 0 2px;
+}
+
+.card-body .form-group .radio-mobile input[type="radio"] {
+  opacity: 0;
+}
+.radio-mobile input[type="radio"] {
+  position: absolute;
+  margin-left: -20px;
+}
+
+.radio-mobile input[type="radio"] + label {
+  border-radius: 2px;
+  background-color: #eee;
+  display: block;
+  position: relative;
+  color: #828282;
+  padding: 8px 13px;
+  cursor: pointer;
+  border-bottom: 0px;
+  font-size: 12px;
+  text-transform: none;
+}
+
+.radio-mobile input[type="radio"]:checked + label {
+  background-color: #29B6F6;
+  color: #fff;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.rmd-sidebar .form-group #q_kind_cont {
+  width: 100%;
+  height: 35px;
+}
+
+.price-mobile-div, .price-mobile-div .text-min-max {
+  overflow: hidden;
+}
+.price-mobile-div .pull-left:not(span) {
+  width: 146px;
+}
+.price-mobile-div .pull-left select {
+  height: 35px;
+  width: 100%;
+}
+.price-mobile-div span.pull-left {
+  margin-top: 8px;
+  width: 5px;
+  margin-left: 2px;
+  margin-right: 1px;
+}
+
+.price-mobile-div .text-min-max h4 {
+  float: right;
+  font-size: 12px;
+  margin: 0px 1px 5px;
+}
+.price-mobile-div .text-min-max h4:first-child {
+  float: left;
+}

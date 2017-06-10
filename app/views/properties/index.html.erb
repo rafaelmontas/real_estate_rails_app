@@ -488,6 +488,54 @@
       </div>
       <div class="form-group">
         <label>Tipo De Busqueda</label>
+        <div class="btn-group btn-group-justified">
+          <div class="radio-mobile">
+            <%= f.radio_button(:sale_cont, "venta", id: "q_sale_cont_venta_mobile") %>
+            <%= f.label :sale_cont, "Comprar", id: "comprar-mobile" %>
+          </div>
+          <div class="radio-mobile">
+            <%= f.radio_button(:sale_cont, "alquiler", id: "q_sale_cont_alquiler_mobile") %>
+            <%= f.label :sale_cont, "Alquilar", id: "alquilar-mobile" %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Tipo De Propiedad</label>
+        <%= f.select :kind_cont, [['apartamento'],
+                                 ['casa'],
+                                 ['penthouse'],
+                                 ['villa'],
+                                 ['oficina'],
+                                 ['local comercial']] %>
+      </div>
+      <div class="form-group">
+        <%= f.label :price_gteq, "Rango De Precio" %>
+        <div class="price-mobile-div">
+          <div class="text-min-max">
+            <h4>Minimo</h4>
+            <h4>Maximo</h4>
+          </div>
+          <div class="pull-left">
+            <%= f.select :price_gteq, [['US$ 50,000', 50000],
+                                      ['US$ 100,000', 100000],
+                                      ['US$ 150,000', 150000],
+                                      ['US$ 200,000', 200000],
+                                      ['US$ 250,000', 250000],
+                                      ['US$ 300,000', 350000]] %>
+
+          </div>
+          <span class="pull-left">-</span>
+          <div class="pull-left">
+            <%= f.select :price_lteq, [['US$ 50,000', 50000],
+                                      ['US$ 100,000', 100000],
+                                      ['US$ 150,000', 150000],
+                                      ['US$ 200,000', 200000],
+                                      ['US$ 350,000', 350000],
+                                      ['US$ 600,000', 600000]] %>
+
+          </div>
+        </div>
+        
       </div>
     </div>
   <% end %>
