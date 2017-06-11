@@ -183,6 +183,8 @@ $(document).on('turbolinks:load', function() {
         }, 0);
       });
 
+///////////////////////////////////// -Mobile- /////////////////////////////////////////////////////////////
+
       // Mobile search///////////////////////////////////////////////////////////////////////////
       $('.radio-mobile #comprar-mobile').click(function() {
         $(".radio-mobile input[type='radio']#q_sale_cont_venta_mobile").click();
@@ -192,8 +194,56 @@ $(document).on('turbolinks:load', function() {
         $(".radio-mobile input[type='radio']#q_sale_cont_alquiler_mobile").click();
       });
 
+      // ... beds Mobile
+      $('.rmd-sidebar .form-group #none').click(function() {
+        $(".rmd-sidebar .form-group input[type='radio']#q_room_eq_").click();
+      });
+      $(".facet-bd .dropdown-menu li #none_main").click(function() {
+        $(".facet-bd .dropdown-menu li input[type='radio']#none_button").click();
+      });
+      // 1 bed
+      $('.rmd-sidebar .form-group #one').click(function() {
+        $(".rmd-sidebar .form-group input[type='radio']#q_room_eq_1").click();
+      });
+      // 2 beds
+      $('.rmd-sidebar .form-group #two').click(function() {
+        $(".rmd-sidebar .form-group input[type='radio']#q_room_eq_2").click();
+      });
+      // 3 beds
+      $('.rmd-sidebar .form-group #three').click(function() {
+        $(".rmd-sidebar .form-group input[type='radio']#q_room_eq_3").click();
+      });
+      // 4 beds
+      $('.rmd-sidebar .form-group #four').click(function() {
+        $(".rmd-sidebar .form-group input[type='radio']#q_room_eq_4").click();
+      });
+      // 5 beds
+      $('.rmd-sidebar .form-group #five').click(function() {
+        $(".rmd-sidebar .form-group input[type='radio']#q_room_eq_5").click();
+      });
 
-      
+      // Bathrooms Mobile
+      $('.rmd-sidebar .form-group #nonebath').click(function() {
+        $(".rmd-sidebar .form-group input[type='radio']#q_bath_eq_").click();
+      });
+      $('.rmd-sidebar .form-group #one-bath').click(function() {
+        $(".rmd-sidebar .form-group input[type='radio']#q_bath_eq_1").click();
+      });
+      $('.rmd-sidebar .form-group #two-bath').click(function() {
+        $(".rmd-sidebar .form-group input[type='radio']#q_bath_eq_2").click();
+      });
+      $('.rmd-sidebar .form-group #three-bath').click(function() {
+        $(".rmd-sidebar .form-group input[type='radio']#q_bath_eq_3").click();
+      });
+      $('.rmd-sidebar .form-group #four-bath').click(function() {
+        $(".rmd-sidebar .form-group input[type='radio']#q_bath_eq_4").click();
+      });
+      $('.rmd-sidebar .form-group #five-bath').click(function() {
+        $(".rmd-sidebar .form-group input[type='radio']#q_bath_eq_5").click();
+      });
+
+
+
 
       ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -448,68 +498,7 @@ $(document).on('turbolinks:load', function() {
       });
 
 
-      // ... beds
-      $('.dropdown-menu .facet-mobile-list #none').click(function() {
-        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_room_eq_").click();
-      });
-      $(".facet-bd .dropdown-menu li #none_main").click(function() {
-        $(".facet-bd .dropdown-menu li input[type='radio']#none_button").click();
-      });
-      // 1 bed
-      $('.dropdown-menu .facet-mobile-list #one').click(function() {
-        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_room_eq_1").click();
-      });
-      // $(".facet-bd .dropdown-menu li #one_main").click(function() {
-      //   $(".facet-bd .dropdown-menu li input[type='radio']#one_button").click();
-      // });
-      // 2 beds
-      $('.dropdown-menu .facet-mobile-list #two').click(function() {
-        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_room_eq_2").click();
-      });
-      // $(".facet-bd .dropdown-menu li #two_main").click(function() {
-      //   $(".facet-bd .dropdown-menu li input[type='radio']#two_button").click();
-      // });
-      // 3 beds
-      $('.dropdown-menu .facet-mobile-list #three').click(function() {
-        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_room_eq_3").click();
-      });
-      // $(".facet-bd .dropdown-menu li #three_main").click(function() {
-      //   $(".facet-bd .dropdown-menu li input[type='radio']#three_button").click();
-      // });
-      // 4 beds
-      $('.dropdown-menu .facet-mobile-list #four').click(function() {
-        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_room_eq_4").click();
-      });
-      // $(".facet-bd .dropdown-menu li #four_main").click(function() {
-      //   $(".facet-bd .dropdown-menu li input[type='radio']#four_button").click();
-      // });
-      // 5 beds
-      $('.dropdown-menu .facet-mobile-list #five').click(function() {
-        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_room_eq_5").click();
-      });
-      // $(".facet-bd .dropdown-menu li #five_main").click(function() {
-      //   $(".facet-bd .dropdown-menu li input[type='radio']#five_button").click();
-      // });
 
-      // Bathrooms
-      $('.dropdown-menu .facet-mobile-list #nonebath').click(function() {
-        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_bath_eq_").click();
-      });
-      $('.dropdown-menu .facet-mobile-list #1bath').click(function() {
-        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_bath_eq_1").click();
-      });
-      $('.dropdown-menu .facet-mobile-list #2bath').click(function() {
-        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_bath_eq_2").click();
-      });
-      $('.dropdown-menu .facet-mobile-list #3bath').click(function() {
-        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_bath_eq_3").click();
-      });
-      $('.dropdown-menu .facet-mobile-list #4bath').click(function() {
-        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_bath_eq_4").click();
-      });
-      $('.dropdown-menu .facet-mobile-list #5bath').click(function() {
-        $(".dropdown-menu .facet-mobile-list input[type='radio']#q_bath_eq_5").click();
-      });
 
 
 

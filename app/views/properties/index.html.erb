@@ -205,171 +205,7 @@
           </li>
       <%# end %>
         <%#= search_form_for @q do |f| %>
-          <li class="dropdown facet-morefilters">
-            <a href="#" id="scroll" class="dropdown-toggle dropdown-toggle-mobile-footer hidden-sm hidden-md hidden-lg btn btn-default" data-toggle="dropdown" aria-expanded="false">
-              <span data-role="facet-label">Filtro</span>
-              <span id="filter-close">
-                <%= fa_icon "times" %>
-              </span>
-            </a>
-            <div class="dropdown-menu">
-              <div class="facet-mobile-list hidden-lg hidden-md hidden-sm">
-                <div class="container mobile-facet-price hidden-lg hidden-md hidden-sm">
-                  <h5>Precio</h5>
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <div class="pull-left">
-                        <div class="input-group facet-price-input" style="display:none;">
-                          <%= f.select :price_gteq, [['$us Minimo', 0],
-                                                     ['$us 100,000', 100000],
-                                                     ['$us 200,000', 200000],
-                                                     ['$us 300,000', 300000],
-                                                     ['$us 400,000', 400000],
-                                                     ['$us 500,000', 500000],
-                                                     ['$us 600,000', 600000]] %>
-                        </div>
-                      </div>
-                      <span class="input-range-indicator"></span>
-                      <div class="pull-left">
-                        <div class="input-group facet-price-input" style="display:none;">
-                          <%= f.select :price_lteq, [['$us Maximo', 1000000],
-                                                     ['$us 100,000', 100000],
-                                                     ['$us 200,000', 200000],
-                                                     ['$us 300,000', 300000],
-                                                     ['$us 400,000', 400000],
-                                                     ['$us 500,000', 500000],
-                                                     ['$us 600,000', 600000]] %>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="container mobile-facet-beds">
-                  <h5>Dormitorios</h5>
-                  <div class="radio-btn-group radio-btn-group-justified">
-                    <%= f.radio_button(:room_eq, "") %>
-                    <%= f.label :room_eq, "...", id: "none" %>
-                    <%= f.radio_button(:room_eq, "1") %>
-                    <%= f.label :room_eq, "1+", id: "one" %>
-                    <%= f.radio_button(:room_eq, "2") %>
-                    <%= f.label :room_eq, "2+", id: "two" %>
-                    <%= f.radio_button(:room_eq, "3") %>
-                    <%= f.label :room_eq, "3+", id: "three" %>
-                    <%= f.radio_button(:room_eq, "4") %>
-                    <%= f.label :room_eq, "4+", id: "four" %>
-                    <%= f.radio_button(:room_eq, "5") %>
-                    <%= f.label :room_eq, "5+", id: "five" %>
-                  </div>
-                </div>
-                <div class="container mobile-facet-baths">
-                  <h5>Baños</h5>
-                  <div class="radio-btn-group radio-btn-group-justified">
-                    <%= f.radio_button(:bath_eq, "") %>
-                    <%= f.label :bath_eq, "...", id: "nonebath" %>
-                    <%= f.radio_button(:bath_eq, "1") %>
-                    <%= f.label :bath_eq, "1+", id: "1bath" %>
-                    <%= f.radio_button(:bath_eq, "2") %>
-                    <%= f.label :bath_eq, "2+", id: "2bath" %>
-                    <%= f.radio_button(:bath_eq, "3") %>
-                    <%= f.label :bath_eq, "3+", id: "3bath" %>
-                    <%= f.radio_button(:bath_eq, "4") %>
-                    <%= f.label :bath_eq, "4+", id: "4bath" %>
-                    <%= f.radio_button(:bath_eq, "5") %>
-                    <%= f.label :bath_eq, "5+", id: "5bath" %>
-                  </div>
-                </div>
-                <div class=" container morefilters-property-type hidden-lg hidden-md">
-                  <div class="row gutter-sm">
-                    <div class="col-lg-10 col-lg-offset-1">
-                      <div class="morefilters-row">
-                        <div class="row gutter-sm">
-                          <div class="col-md-2">
-                            <h5>Tipo de Propiedad</h5>
-                          </div>
-                          <div class="col-md-9 col-sm-11">
-                            <div id="facet-prop-type">
-                              <div class="row">
-                                <div class="col-sm-4">
-                                  <div class="checkbox">
-                                    <label>
-                                      <%= f.check_box :kind_cont_any, { name: "q[kind_cont_any][]" }, "apartamento", "" %>
-                                      Apartamento
-                                    </label>
-                                  </div>
-                                </div>
-                                <div class="col-sm-4">
-                                  <div class="checkbox">
-                                    <label>
-                                      <%= f.check_box :kind_cont_any, { name: "q[kind_cont_any][]" }, "casa", "" %>
-                                      Casa
-                                    </label>
-                                  </div>
-                                </div>
-                                <div class="col-sm-4">
-                                  <div class="checkbox">
-                                    <label>
-                                      <%= f.check_box :kind_cont_any, { name: "q[kind_cont_any][]" }, "penthouse", "" %>
-                                      Penthouse
-                                    </label>
-                                  </div>
-                                </div>
-                                <div class="col-sm-4">
-                                  <div class="checkbox">
-                                    <label>
-                                      <%= f.check_box :kind_cont_any, { name: "q[kind_cont_any][]" }, "villa", "" %>
-                                      Villa
-                                    </label>
-                                  </div>
-                                </div>
-                                <div class="col-sm-4">
-                                  <div class="checkbox">
-                                    <label>
-                                      <%= f.check_box :kind_cont_any, { name: "q[kind_cont_any][]" }, "oficina", "" %>
-                                      Oficina
-                                    </label>
-                                  </div>
-                                </div>
-                                <div class="col-sm-4">
-                                  <div class="checkbox">
-                                    <label>
-                                      <%= f.check_box :kind_cont_any, { name: "q[kind_cont_any][]" }, "local comercial", "" %>
-                                      Local Comercial
-                                    </label>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="morefilters-action">
-                <div class="container link-secondary">
-                  <div class="row">
-                    <div class="col-lg-10 col-lg-offset-1">
-                      <div class="morefilters-action-btns">
-                        <div class="row">
 
-                          <div class="col-md-push-3 col-md-offset-3 col-md-3 col-sm-push-4  col-sm-offset-2 col-sm-4">
-                            <%= f.submit class: "js-update-properties btn btn-primary btn-block btn-update-facet" do %>
-                              <span>Buscar</span>
-                            <% end %>
-
-                          </div>
-                          <div class="col-md-pull-3 col-md-3 col-sm-pull-4 col-sm-4">
-                            <a href="#" class="btn btn-default btn-block btn-close-facet">Cancelar</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
         </ul>
 
       <% end %>
@@ -473,7 +309,7 @@
     </div>
   </div>
 </section>
-<button class="btn btn-action btn-circle hidden-md hidden-lg" data-rmd-action="block-open" data-rmd-target="#mobile-search">
+<button class="btn btn-action btn-circle hidden-sm hidden-md hidden-lg" data-rmd-action="block-open" data-rmd-target="#mobile-search">
   <i class="fa fa-search" aria-hidden="true"></i>
 </button>
 <aside class="rmd-sidebar" id="mobile-search">
@@ -535,8 +371,45 @@
 
           </div>
         </div>
-        
       </div>
+      <div class="form-group">
+        <h5>Dormitorios</h5>
+        <div class="radio-btn-group radio-btn-group-justified">
+          <%= f.radio_button(:room_eq, "") %>
+          <%= f.label :room_eq, "...", id: "none" %>
+          <%= f.radio_button(:room_eq, "1") %>
+          <%= f.label :room_eq, "1+", id: "one" %>
+          <%= f.radio_button(:room_eq, "2") %>
+          <%= f.label :room_eq, "2+", id: "two" %>
+          <%= f.radio_button(:room_eq, "3") %>
+          <%= f.label :room_eq, "3+", id: "three" %>
+          <%= f.radio_button(:room_eq, "4") %>
+          <%= f.label :room_eq, "4+", id: "four" %>
+          <%= f.radio_button(:room_eq, "5") %>
+          <%= f.label :room_eq, "5+", id: "five" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <h5>Baños</h5>
+        <div class="radio-btn-group radio-btn-group-justified">
+          <%= f.radio_button(:bath_eq, "") %>
+          <%= f.label :bath_eq, "...", id: "nonebath" %>
+          <%= f.radio_button(:bath_eq, "1") %>
+          <%= f.label :bath_eq, "1+", id: "one-bath" %>
+          <%= f.radio_button(:bath_eq, "2") %>
+          <%= f.label :bath_eq, "2+", id: "two-bath" %>
+          <%= f.radio_button(:bath_eq, "3") %>
+          <%= f.label :bath_eq, "3+", id: "three-bath" %>
+          <%= f.radio_button(:bath_eq, "4") %>
+          <%= f.label :bath_eq, "4+", id: "four-bath" %>
+          <%= f.radio_button(:bath_eq, "5") %>
+          <%= f.label :bath_eq, "5+", id: "five-bath" %>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <%= f.submit "Buscar", class: "btn btn-sm btn-primary" %>
+      <a class="btn btn-link" data-turbolinks="false">Cancelar</a>
     </div>
   <% end %>
 </aside>

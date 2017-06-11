@@ -2529,7 +2529,7 @@ left: auto;
   .facet-bar .facet-location {
     position: absolute;
     left: 10px;
-    right: 75px;
+    // right: 75px;
     top: 0px;
   }
 }
@@ -3149,4 +3149,27 @@ ul.facet-options-list li.facet-property-type a {
 }
 .price-mobile-div .text-min-max h4:first-child {
   float: left;
+}
+
+.rmd-sidebar .card-body .form-group:last-child {
+  margin-bottom: 0px;
+}
+
+.rmd-sidebar .card .card-footer {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+}
+
+.rmd-sidebar .btn-sm, .rmd-sidebar .btn-link {
+  padding: 7px 12px;
+}
+
+.rmd-sidebar .btn-link {
+  color: #2e353b;
+}
+
+.btn-link:hover {
+  text-decoration: none;
 }
