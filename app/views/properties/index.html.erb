@@ -160,42 +160,36 @@
               <li>
                 <div class="checkbox">
                   <label>
-                    <%#= f.check_box :kind_cont, {}, "apartamento", "" %>
                     <%= f.check_box :kind_cont_any, { name: "q[kind_cont_any][]" }, "apartamento", "" %>
                     Apartamento
                   </label>
                 </div>
                 <div class="checkbox">
                   <label>
-                    <%#= f.check_box :kind_cont, {}, "casa", "" %>
                     <%= f.check_box :kind_cont_any, { name: "q[kind_cont_any][]" }, "casa", "" %>
                     Casa
                   </label>
                 </div>
                 <div class="checkbox">
                   <label>
-                    <%#= f.check_box :kind_cont, {}, "penthouse", "" %>
                     <%= f.check_box :kind_cont_any, { name: "q[kind_cont_any][]" }, "penthouse", "" %>
                     Penthouse
                   </label>
                 </div>
                 <div class="checkbox">
                   <label>
-                    <%#= f.check_box :kind_cont, {}, "villa", "" %>
                     <%= f.check_box :kind_cont_any, { name: "q[kind_cont_any][]" }, "villa", "" %>
                     Villa
                   </label>
                 </div>
                 <div class="checkbox">
                   <label>
-                    <%#= f.check_box :kind_cont, {}, "oficina", "" %>
                     <%= f.check_box :kind_cont_any, { name: "q[kind_cont_any][]" }, "oficina", "" %>
                     Oficina
                   </label>
                 </div>
                 <div class="checkbox">
                   <label>
-                    <%#= f.check_box :kind_cont, {}, "local comercial", "" %>
                     <%= f.check_box :kind_cont_any, { name: "q[kind_cont_any][]" }, "local comercial", "" %>
                     Local Comercial
                   </label>
@@ -203,39 +197,10 @@
               </li>
             </ul>
           </li>
-      <%# end %>
-        <%#= search_form_for @q do |f| %>
-
         </ul>
-
       <% end %>
     </div>
   </div>
-
-
-  <%#= search_form_for @q, html: { style: "margin-bottom: 25px;" } do |f| %>
-
-    <%#= f.label :price_gteq, "Precio Desde US$" %>
-    <%#= f.number_field :price_gteq %>
-    <%#= f.label :price_lteq, "Precio Hasta US$" %>
-    <%#= f.number_field :price_lteq %>
-
-    <%#= f.label :room_eq, "Habitaciones" %>
-    <%#= f.select :room_eq, [['1 habitación', 1],
-                         ['2 habitaciones', 2],
-                         ['3 habitaciones', 3],
-                         ['4 habitaciones', 4],
-                         ['5 habitaciones', 5],
-                         ['6 habitaciones', 6]] %>
-
-    <%#= f.label :bath_eq, "Baños" %>
-    <%#= f.select :bath_eq, [['1+', 1], ['2+', 2], ['3+', 3], ['4+', 4], ['5+', 5], ['6+', 6]] %>
-
-    <%#= f.submit %>
-    <%#= sort_link(@q, :price, 'Precio', default_order: :asc) %>
-  <%# end %>
-
-
   <div class="container search-results">
     <header class="section_title">
       <h2>Duis mollisest non commodo luctus nisierat porttito</h2>

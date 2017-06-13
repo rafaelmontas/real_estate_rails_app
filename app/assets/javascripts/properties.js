@@ -185,7 +185,7 @@ $(document).on('turbolinks:load', function() {
 
 ///////////////////////////////////// -Mobile- /////////////////////////////////////////////////////////////
 
-      // Mobile search///////////////////////////////////////////////////////////////////////////
+      // Mobile buy/rent click ///////////////////////////////////////////////////////////////////////////
       $('.radio-mobile #comprar-mobile').click(function() {
         $(".radio-mobile input[type='radio']#q_sale_cont_venta_mobile").click();
       });
@@ -193,6 +193,77 @@ $(document).on('turbolinks:load', function() {
       $('.radio-mobile #alquilar-mobile').click(function() {
         $(".radio-mobile input[type='radio']#q_sale_cont_alquiler_mobile").click();
       });
+
+      // Change price based on buy/rent
+      function changeMobilePrice() {
+        if ($(".radio-mobile input:checked").val() == "alquiler") {
+          // Min
+          $(".price-mobile-div #q_price_gteq option:nth-child(1)").val("500");
+          $(".price-mobile-div #q_price_gteq option:nth-child(1)").text("US$ 500");
+          $(".price-mobile-div #q_price_gteq option:nth-child(2)").val("750");
+          $(".price-mobile-div #q_price_gteq option:nth-child(2)").text("US$ 750");
+          $(".price-mobile-div #q_price_gteq option:nth-child(3)").val("1000");
+          $(".price-mobile-div #q_price_gteq option:nth-child(3)").text("US$ 1,000");
+          $(".price-mobile-div #q_price_gteq option:nth-child(4)").val("1250");
+          $(".price-mobile-div #q_price_gteq option:nth-child(4)").text("US$ 1,250");
+          $(".price-mobile-div #q_price_gteq option:nth-child(5)").val("1500");
+          $(".price-mobile-div #q_price_gteq option:nth-child(5)").text("US$ 1,500");
+          $(".price-mobile-div #q_price_gteq option:nth-child(6)").val("1750");
+          $(".price-mobile-div #q_price_gteq option:nth-child(6)").text("US$ 1,750");
+          // Max
+          $(".price-mobile-div #q_price_lteq option:nth-child(1)").val("750");
+          $(".price-mobile-div #q_price_lteq option:nth-child(1)").text("US$ 750");
+          $(".price-mobile-div #q_price_lteq option:nth-child(2)").val("1000");
+          $(".price-mobile-div #q_price_lteq option:nth-child(2)").text("US$ 1,000");
+          $(".price-mobile-div #q_price_lteq option:nth-child(3)").val("1500");
+          $(".price-mobile-div #q_price_lteq option:nth-child(3)").text("US$ 1,500");
+          $(".price-mobile-div #q_price_lteq option:nth-child(4)").val("1750");
+          $(".price-mobile-div #q_price_lteq option:nth-child(4)").text("US$ 1,750");
+          $(".price-mobile-div #q_price_lteq option:nth-child(5)").val("2000");
+          $(".price-mobile-div #q_price_lteq option:nth-child(5)").text("US$ 2,000");
+          $(".price-mobile-div #q_price_lteq option:nth-child(6)").val("2500");
+          $(".price-mobile-div #q_price_lteq option:nth-child(6)").text("US$ 2,500");
+
+        } else if ($(".radio-mobile input:checked").val() == "venta") {
+          // Min
+          $(".price-mobile-div #q_price_gteq option:nth-child(1)").val("50000");
+          $(".price-mobile-div #q_price_gteq option:nth-child(1)").text("US$ 50,000");
+          $(".price-mobile-div #q_price_gteq option:nth-child(2)").val("100000");
+          $(".price-mobile-div #q_price_gteq option:nth-child(2)").text("US$ 100,000");
+          $(".price-mobile-div #q_price_gteq option:nth-child(3)").val("150000");
+          $(".price-mobile-div #q_price_gteq option:nth-child(3)").text("US$ 150,000");
+          $(".price-mobile-div #q_price_gteq option:nth-child(4)").val("200000");
+          $(".price-mobile-div #q_price_gteq option:nth-child(4)").text("US$ 200,000");
+          $(".price-mobile-div #q_price_gteq option:nth-child(5)").val("250000");
+          $(".price-mobile-div #q_price_gteq option:nth-child(5)").text("US$ 250,000");
+          $(".price-mobile-div #q_price_gteq option:nth-child(6)").val("300000");
+          $(".price-mobile-div #q_price_gteq option:nth-child(6)").text("US$ 300,000");
+          // Max
+          $(".price-mobile-div #q_price_lteq option:nth-child(1)").val("50000");
+          $(".price-mobile-div #q_price_lteq option:nth-child(1)").text("US$ 50,000");
+          $(".price-mobile-div #q_price_lteq option:nth-child(2)").val("100000");
+          $(".price-mobile-div #q_price_lteq option:nth-child(2)").text("US$ 100,000");
+          $(".price-mobile-div #q_price_lteq option:nth-child(3)").val("150000");
+          $(".price-mobile-div #q_price_lteq option:nth-child(3)").text("US$ 150,000");
+          $(".price-mobile-div #q_price_lteq option:nth-child(4)").val("200000");
+          $(".price-mobile-div #q_price_lteq option:nth-child(4)").text("US$ 200,000");
+          $(".price-mobile-div #q_price_lteq option:nth-child(5)").val("350000");
+          $(".price-mobile-div #q_price_lteq option:nth-child(5)").text("US$ 350,000");
+          $(".price-mobile-div #q_price_lteq option:nth-child(6)").val("600000");
+          $(".price-mobile-div #q_price_lteq option:nth-child(6)").text("US$ 600,000");
+        }
+      }
+      // Change price on change.
+      $(".radio-mobile input").change(function() {
+        changeMobilePrice();
+      });
+      // Check if buy or rent are selected and change price based on that.
+      if ($(".radio-mobile input:checked").val()) {
+        changeMobilePrice();
+      } else {
+        // Set Buy as default if neither buy nor rent is selected.
+        $(".radio-mobile input#q_sale_cont_venta_mobile").prop("checked", true);
+      }
 
       // ... beds Mobile
       $('.rmd-sidebar .form-group #none').click(function() {
