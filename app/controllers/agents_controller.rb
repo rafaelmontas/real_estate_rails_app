@@ -35,7 +35,7 @@ class AgentsController < ApplicationController
   def update
     if @agent.update_attributes(agent_params)
       flash[:success] = "Perfil actualizado"
-      redirect_to @agent
+      redirect_to private_path
     else
       render 'edit'
     end

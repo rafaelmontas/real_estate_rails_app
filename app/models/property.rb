@@ -1,4 +1,5 @@
 class Property < ApplicationRecord
+  belongs_to :agent
   has_many :photos, dependent: :destroy
   has_many :likes
   has_many :users, through: :likes

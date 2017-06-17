@@ -27,9 +27,12 @@ Rails.application.routes.draw do
   delete "/users/logout", to: "session_users#destroy"
 
   # resources routes
-  resources :properties do
+  resources :properties, only: [:show, :index] do
     resources :photos
     resource :like, module: :properties
+  end
+  resources :agents do
+    resources :properties, only: [:new, :create, :edit, :update, :destroy]
   end
   resources :agents, :users
   resources :account_activations, only: [:edit]

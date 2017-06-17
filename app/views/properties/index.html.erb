@@ -214,6 +214,8 @@
               <div class="listings-grid-main pull-left">
                 <% if property.photos.first %>
                   <%= image_tag property.photos.first.image_url(:large, public: true) %>
+                <% else %>
+                  <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg") %>
                 <% end %>
                 <div class="listings-grid-price">
                   <%= number_to_currency(property.price, precision: 0, unit: "US$") %>

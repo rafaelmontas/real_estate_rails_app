@@ -1,4 +1,6 @@
 class Agent < ApplicationRecord
+  has_many :properties, dependent: :destroy
+
   include ImageUploader[:avatar]
 
   attr_accessor :remember_token, :activation_token, :reset_token

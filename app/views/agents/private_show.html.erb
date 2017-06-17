@@ -2,7 +2,7 @@
 <section id="main-content">
   <div class="action-header-alt">
     <div class="action-header-item action-header-add">
-      <%= link_to(new_property_path, class: "btn btn-danger btn-sm") do %>
+      <%= link_to(new_agent_property_path(current_agent), class: "btn btn-danger btn-sm") do %>
         <i class="fa fa-plus" aria-hidden="true"></i>
         Agregar Propiedad
       <% end %>
@@ -17,84 +17,38 @@
     </header>
     <div class="list-group list-group-block">
       <div class="list-group-header text-left">
-        Total de Propiedades: 15
+        Total de Propiedades: <%= current_agent.properties.count %>
       </div>
-      <div class="list-group-item media">
-        <div class="pull-left">
-          <img src="../images/metro.jpg" alt="image" class="list-group-img">
-        </div>
-        <div class="media-body list-group-text">
-          <strong>C/Fabio Mota #9. Naco</strong>
-          <small>$US 350,000. 4 Hab. 3 Baños...</small>
-          <div class="list-group-label list-group-label-float">
-            <span class="delete">
-              <i class="fa fa-trash-o" aria-hidden="true"></i>
-              Eliminar
-            </span>
-            <span class="edit">
-              <i class="fa fa-pencil" aria-hidden="true"></i>
-              Editar
-            </span>
+      <% current_agent.properties.each do |property| %>
+        <div class="list-group-item media">
+          <div class="pull-left">
+            <!-- <img src="../images/metro.jpg" alt="image" class="list-group-img"> -->
+            <% if property.photos.first %>
+              <%= image_tag property.photos.first.image_url(:large, public: true), class: "list-group-img" %>
+            <% else %>
+              <%= image_tag "https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", class: "list-group-img" %>
+            <% end %>
+          </div>
+          <div class="media-body list-group-text">
+            <strong><%= property.address %></strong>
+            <!-- <small><%#= number_to_currency(property.price, precision: 0, unit: "US$") %></small> -->
+            <small class="inline-ame">US$ <%= property.price %>.</small>
+            <small class="inline-ame"><%= property.room %> Hab.</small>
+            <small class="inline-ame"><%= property.bath %> Baños...</small>
+            <!-- <small>$US 350,000. 4 Hab. 3 Baños...</small> -->
+            <div class="list-group-label list-group-label-float">
+              <span class="delete">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                Eliminar
+              </span>
+              <span class="edit">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+                Editar
+              </span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="list-group-item media">
-        <div class="pull-left">
-          <img src="../images/apart.jpg" alt="image" class="list-group-img">
-        </div>
-        <div class="media-body list-group-text">
-          <strong>C/Fabio Mota #9. Naco</strong>
-          <small>$US 350,000. 4 Hab. 3 Baños...</small>
-          <div class="list-group-label list-group-label-float">
-            <span class="delete">
-              <i class="fa fa-trash-o" aria-hidden="true"></i>
-              Eliminar
-            </span>
-            <span class="edit">
-              <i class="fa fa-pencil" aria-hidden="true"></i>
-              Editar
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="list-group-item media">
-        <div class="pull-left">
-          <img src="../images/pool.jpg" alt="image" class="list-group-img">
-        </div>
-        <div class="media-body list-group-text">
-          <strong>C/Fabio Mota #9. Naco</strong>
-          <small>$US 350,000. 4 Hab. 3 Baños...</small>
-          <div class="list-group-label list-group-label-float">
-            <span class="delete">
-              <i class="fa fa-trash-o" aria-hidden="true"></i>
-              Eliminar
-            </span>
-            <span class="edit">
-              <i class="fa fa-pencil" aria-hidden="true"></i>
-              Editar
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="list-group-item media">
-        <div class="pull-left">
-          <img src="../images/metro.jpg" alt="image" class="list-group-img">
-        </div>
-        <div class="media-body list-group-text">
-          <strong>C/Fabio Mota #9. Naco</strong>
-          <small>$US 350,000. 4 Hab. 3 Baños...</small>
-          <div class="list-group-label list-group-label-float">
-            <span class="delete">
-              <i class="fa fa-trash-o" aria-hidden="true"></i>
-              Eliminar
-            </span>
-            <span class="edit">
-              <i class="fa fa-pencil" aria-hidden="true"></i>
-              Editar
-            </span>
-          </div>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </section>

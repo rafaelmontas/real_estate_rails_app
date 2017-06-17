@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 rafael:
+  id: 1
   name: "Rafael Montas"
   email: "rafaelmontas1@gmail.com"
   phone_number: "809000000"

@@ -28,7 +28,7 @@ class AgentsEditTest < ActionDispatch::IntegrationTest
                                                       password: "",
                                                       password_confirmation: "" } }
     assert_not flash.empty?
-    assert_redirected_to @agent
+    assert_redirected_to private_path
     @agent.reload
     assert_equal name, @agent.name
     assert_equal email, @agent.email
@@ -45,7 +45,7 @@ class AgentsEditTest < ActionDispatch::IntegrationTest
                                                       password: "",
                                                       password_confirmation: "" } }
     assert_not flash.empty?
-    assert_redirected_to @agent
+    assert_redirected_to private_path
     @agent.reload
     assert_equal name, @agent.name
     assert_equal email, @agent.email
