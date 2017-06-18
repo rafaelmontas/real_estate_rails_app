@@ -18,3 +18,18 @@ one:
   location: "Naco"
   mts: 250
   general: "Example text"
+
+two:
+  id: 2
+  agent_id: 2
+  name: "Cumbre VI"
+  address: "C/ Fabio Mota #9"
+  price: 300000
+  sale: "En Venta"
+  kind: "Apartamento"
+  room: 4
+  bath: 4.0
+  parking: 3
+  location: "Naco"
+  mts: 250
+  general: "Example text"

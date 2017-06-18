@@ -1,4 +1,47 @@
-
+<aside id="main-sidebar">
+  <a href="" class="hidden-lg main-block-close">
+    <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+  </a>
+  <ul class="main-menu">
+    <li class="alt-profile-img">
+      <a href="">
+        <% if current_agent.avatar.present? %>
+          <%= image_tag current_agent.avatar_url(:small) %>
+          <h4><%= current_agent.name %></h4>
+        <% else %>
+          <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg") %>
+          <h4><%= current_agent.name %></h4>
+        <% end %>
+        <!-- <img src="../images/03.jpg" alt="profile">
+        <h4>Rafael Montas</h4> -->
+      </a>
+    </li>
+    <li>
+      <a href="../index.html">
+        <i class="fa fa-home" aria-hidden="true"></i>
+        Inicio
+      </a>
+    </li>
+    <li class="active">
+      <%= link_to private_path do %>
+        <i class="fa fa-th-list" aria-hidden="true"></i>
+        Propiedades
+      <% end %>
+    </li>
+    <li>
+      <%= link_to(edit_agent_path(current_agent)) do %>
+        <i class="fa fa-cog" aria-hidden="true"></i>
+        Editar Perfil
+      <% end %>
+    </li>
+    <li>
+      <%= link_to agents_logout_path, method: "delete" do %>
+        <i class="fa fa-sign-out" aria-hidden="true"></i>
+        Cerrar Sesión
+      <% end %>
+    </li>
+  </ul>
+</aside>
 <section id="main-content">
   <div class="action-header-alt">
     <div class="action-header-item action-header-add">
@@ -19,7 +62,7 @@
       <div class="list-group-header text-left">
         Total de Propiedades: <%= current_agent.properties.count %>
       </div>
-      <% current_agent.properties.each do |property| %>
+      <% @properties.each do |property| %>
         <div class="list-group-item media">
           <div class="pull-left">
             <!-- <img src="../images/metro.jpg" alt="image" class="list-group-img"> -->
@@ -49,6 +92,7 @@
           </div>
         </div>
       <% end %>
+      <%= will_paginate @properties %>
     </div>
   </div>
 </section>

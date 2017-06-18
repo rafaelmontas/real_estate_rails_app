@@ -1,8 +1,10 @@
 class PropertiesController < ApplicationController
   before_action :set_agent, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_property, only: [:edit, :update, :destroy]
-  before_action :logged_in_agent, only: [:edit, :update]
-  # before_action :correct_agent
+  before_action :logged_in_agent, only: [:new, :edit, :update, :destroy]
+  before_action :correct_agent, only: [:new, :edit, :update, :destroy]
+
+  layout "private_show", only: [:new, :edit]
 
   def index
     @q = Property.ransack(params[:q])
@@ -40,6 +42,12 @@ class PropertiesController < ApplicationController
     end
   end
 
+  def destroy
+    @agent.destroy
+    flash[:success] = "Propiedad Eliminada"
+    redirect_to private_url
+  end
+
 
   private
 
@@ -62,5 +70,9 @@ class PropertiesController < ApplicationController
         flash[:danger] = "Por favor Inicie Sesión."
         redirect_to agents_login_url
       end
+    end
+
+    def correct_agent
+      redirect_to(root_url) unless current_agent?(@agent)
     end
 end

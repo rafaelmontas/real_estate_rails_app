@@ -12,6 +12,7 @@ rafael:
   activated_at: <%= Time.zone.now %>
 
 antonio:
+  id: 2
   name: "Antonio"
   email: "antonio@gmail.com"
   phone_number: "8099080000"

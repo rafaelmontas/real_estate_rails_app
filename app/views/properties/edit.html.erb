@@ -1,78 +1,53 @@
-<h1>Hi</h1>
-<%= form_for([@agent, @property]) do |f| %>
+<%= provide(:button_text, 'Editar propiedad') %>
+<%= provide(:url, agent_property_path) %>
 
-
-
-
-
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+<aside id="main-sidebar">
+  <a href="" class="hidden-lg main-block-close">
+    <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+  </a>
+  <ul class="main-menu">
+    <li class="alt-profile-img">
+      <a href="">
+        <% if @current_agent.avatar.present? %>
+          <%= image_tag @current_agent.avatar_url(:small) %>
+          <h4><%= @current_agent.name %></h4>
+        <% else %>
+          <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg") %>
+          <h4><%= @current_agent.name %></h4>
+        <% end %>
+        <!-- <img src="../images/03.jpg" alt="profile">
+        <h4>Rafael Montas</h4> -->
+      </a>
+    </li>
+    <li>
+      <a href="../index.html">
+        <i class="fa fa-home" aria-hidden="true"></i>
+        Inicio
+      </a>
+    </li>
+    <li class="active">
+      <%= link_to private_path do %>
+        <i class="fa fa-th-list" aria-hidden="true"></i>
+        Propiedades
+      <% end %>
+    </li>
+    <li>
+      <%= link_to(edit_agent_path(@current_agent)) do %>
+        <i class="fa fa-cog" aria-hidden="true"></i>
+        Editar Perfil
+      <% end %>
+    </li>
+    <li>
+      <%= link_to agents_logout_path, method: "delete" do %>
+        <i class="fa fa-sign-out" aria-hidden="true"></i>
+        Cerrar Sesión
+      <% end %>
+    </li>
+  </ul>
+</aside>
+<section id="main-content">
+  <div class="main-container">
+    <h1>Editar Propiedad</h1>
+    <%= render "form" %>
   </div>
-
-  <div class="form-group">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :price, "Precio US$" %>
-    <%= f.number_field :price %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :sale, "Venta/Alquiler" %>
-    <%= f.select :sale, [['En Venta', 'en venta'], ['En Alquiler', 'en alquiler']], selected: 'venta' %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :kind, "Tipo de Propiedad" %>
-    <%= f.select :kind, [['Apartamento', 'apartamento'],
-                         ['Penthouse', 'penthouse'],
-                         ['Casa', 'casa'],
-                         ['Villa', 'villa'],
-                         ['Solar', 'solar'],
-                         ['Oficina', 'oficina'],
-                         ['Edificio', 'edificio'],
-                         ['Local Comercial', 'local comercial']],
-                         selected: 'apartamento' %>
-  </div>
-
-  <div class="form-group">
-    <!-- Should be select field -->
-    <%= f.label :location, "Sector" %>
-    <%= f.select :location, [['Naco', 'naco'], ['Piantini', 'piantini'], ['Evaristo Morales', 'evaristo morales']] %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :room, "Habitaciones" %>
-    <%= f.select :room, [['1 habitación', 1],
-                         ['2 habitaciones', 2],
-                         ['3 habitaciones', 3],
-                         ['4 habitaciones', 4],
-                         ['5 habitaciones', 5],
-                         ['6 habitaciones', 6]] %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :bath, "Baños" %>
-    <%= f.select :bath, [['1+', 1], ['2+', 2], ['3+', 3], ['4+', 4], ['5+', 5], ['6+', 6]] %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :parking, "Parqueos" %>
-    <%= f.select :parking, [['1 Parque', 1], ['2 Parqueos', 2], ['3 Parqueos', 3], ['4 Parqueos', 4]] %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :mts, "Metro Cuadrados (mt2)" %>
-    <%= f.number_field :mts %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :general, "Descripción" %>
-    <%= f.text_area :general %>
-  </div>
-
-  <%= f.submit "Actualizar", class: "btn btn-primary" %>
-<% end %>
+</section>

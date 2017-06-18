@@ -49,6 +49,7 @@ class AgentsController < ApplicationController
 
   def private_show
     current_agent
+    @properties = Property.where(agent_id: current_agent.id).paginate(page: params[:page], per_page: 3)
   end
 
 
