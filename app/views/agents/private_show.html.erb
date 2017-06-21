@@ -64,31 +64,50 @@
       </div>
       <% @properties.each do |property| %>
         <div class="list-group-item media">
-          <div class="pull-left">
-            <!-- <img src="../images/metro.jpg" alt="image" class="list-group-img"> -->
-            <% if property.photos.first %>
-              <%= image_tag property.photos.first.image_url(:large, public: true), class: "list-group-img" %>
-            <% else %>
-              <%= image_tag "https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", class: "list-group-img" %>
-            <% end %>
-          </div>
-          <div class="media-body list-group-text">
-            <strong><%= property.address %></strong>
-            <!-- <small><%#= number_to_currency(property.price, precision: 0, unit: "US$") %></small> -->
-            <small class="inline-ame">US$ <%= property.price %>.</small>
-            <small class="inline-ame"><%= property.room %> Hab.</small>
-            <small class="inline-ame"><%= property.bath %> Baños...</small>
-            <!-- <small>$US 350,000. 4 Hab. 3 Baños...</small> -->
-            <div class="list-group-label list-group-label-float">
-              <span class="delete">
-                <i class="fa fa-trash-o" aria-hidden="true"></i>
-                Eliminar
-              </span>
-              <span class="edit">
-                <i class="fa fa-pencil" aria-hidden="true"></i>
-                Editar
-              </span>
+          <%= link_to(property_path(property)) do %>
+            <div class="pull-left">
+              <!-- <img src="../images/metro.jpg" alt="image" class="list-group-img"> -->
+              <% if property.photos.first %>
+                <%= image_tag property.photos.first.image_url(:large, public: true), class: "list-group-img" %>
+              <% else %>
+                <%= image_tag "https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", class: "list-group-img" %>
+              <% end %>
             </div>
+            <div class="media-body list-group-text agent-properties">
+              <div class="listings-grid-body">
+                <strong><%= property.address %></strong>
+                <small><%= property.name %></small>
+              </div>
+              <ul class="listings-grid-attrs">
+                <li>
+                  <%= fa_icon "bed" %>
+                  <%= property.room %>
+                </li>
+                <li>
+                  <%= fa_icon "bath" %>
+                  <%= property.bath %>
+                </li>
+                <li>
+                  <%= fa_icon "car" %>
+                  <%= property.parking %>
+                </li>
+              </ul>
+            </div>
+          <% end %>
+          <div class="listings-grid-agent">
+            <div class="list-group-label hidden-xs">
+              <%= link_to(agent_property_path(current_agent, property), class: "delete", method: :delete, data: { confirm: "Seguro que desea eliminar esta propiedad?" }) do %>
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                <span>Eliminar</span>
+              <% end %>
+              <%= link_to(edit_agent_property_path(current_agent, property), class: "edit") do %>
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+                <span>Editar</span>
+              <% end %>
+            </div>
+            <%= link_to(edit_agent_property_path(current_agent, property), class: "more visible-xs") do %>
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            <% end %>
           </div>
         </div>
       <% end %>

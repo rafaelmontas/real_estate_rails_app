@@ -1617,6 +1617,7 @@ strong {
 /* Previous overflow: visible; problem */
 .media {
 	margin: 0;
+  overflow: visible;
 }
 
 
@@ -2313,7 +2314,7 @@ left: auto;
 	}
 }
 
-.list-group-label>a, .list-group-label>span {
+.list-group-label>a, .list-group-label>a {
   border-radius: 2px;
   color: #fff;
   display: inline-block;
@@ -2321,11 +2322,11 @@ left: auto;
   font-weight: 500;
 }
 
-.list-group-label>span.delete {
+.list-group-label>a.delete {
 	background-color: #ea5a51;
 }
 
-.list-group-label>span.edit {
+.list-group-label>a.edit {
 	background-color: #44a967;
 }
 
@@ -3183,4 +3184,49 @@ ul.facet-options-list li.facet-property-type a {
 #main-content .main-container .list-group-block div.pagination {
   display: block;
   text-align: center;
+}
+
+.agent-properties div.listings-grid-body {
+  padding: 0 10px;
+}
+
+.agent-properties ul.listings-grid-attrs {
+  padding: 5px 10px 0px;
+  border-top: 0px;
+}
+
+.agent-properties ul.listings-grid-attrs li {
+  font-size: 11;
+}
+
+.agent-properties ul.listings-grid-attrs li i {
+  font-size: 12px;
+}
+
+.listings-grid-agent {
+  position: absolute;
+  z-index: 0;
+  bottom: 30px;
+  right: 35px;
+}
+
+.list-group-block .list-group-item:hover {
+  background-color: #fffdee;
+}
+
+.main-container .list-group-block .list-group-item {
+  padding: 13px 25px;
+}
+
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+  z-index: 0;
+}
+
+.listings-grid-agent a.more {
+  font-size: 15px;
+  position: absolute;
+  bottom: 10px;
+  padding: 15px;
+  left: -20px;
+  color: #4189e8;
 }

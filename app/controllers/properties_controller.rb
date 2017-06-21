@@ -43,7 +43,7 @@ class PropertiesController < ApplicationController
   end
 
   def destroy
-    @agent.destroy
+    @property.destroy
     flash[:success] = "Propiedad Eliminada"
     redirect_to private_url
   end
