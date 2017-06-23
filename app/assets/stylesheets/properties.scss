@@ -2245,12 +2245,18 @@ left: auto;
 	.main-container {
 		padding: 100px 15px 50px;
 	}
+  .main-container.agent-new-property {
+    padding: 50px 15px 50px;
+  }
 }
 
 @media screen and (min-width: 768px) {
 	.main-container {
 		padding: 100px 40px;
 	}
+  .main-container.agent-new-property {
+    padding: 50px 40px;
+  }
 }
 
 .main-title {
@@ -2265,6 +2271,13 @@ left: auto;
   margin: 0;
   font-weight: 400;
 	text-transform: uppercase;
+}
+
+.main-title small {
+  display: block;
+  margin-top: 8px;
+  color: #9c9c9c;
+  font-size: 13px;
 }
 
 .list-group-block:not([class*=mdc-bg-]) {
@@ -3229,4 +3242,89 @@ ul.facet-options-list li.facet-property-type a {
   padding: 15px;
   left: -20px;
   color: #4189e8;
+}
+
+// New property form (submit property)
+
+.submit-property {
+  text-align: center;
+}
+
+.submit-property-steps {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  display: inline-block;
+}
+
+.submit-property-steps>li {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0;
+}
+
+.submit-property-steps>li>a {
+  display: block;
+  width: 35px;
+  height: 35px;
+  background-color: #fff;
+  border-radius: 50%;
+  line-height: 35px;
+  color: #b9b9b9;
+  margin: 0 4px;
+}
+
+.submit-property-steps>li.active>a {
+  background-color: #03A9F4;
+  color: #fff;
+}
+
+.submit-property-steps>.submit-property-caret, .submit-property-steps>li>a {
+  -webkit-transition: all;
+  -o-transition: all;
+  transition: all;
+  -webkit-transition-duration: 250ms;
+  transition-duration: 250ms;
+}
+
+.submit-property-content {
+  margin-top: 40px;
+}
+
+.submit-property-content .tab-pane {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.tab-content>.tab-pane {
+  display: none;
+}
+
+.tab-content>.active {
+  display: block;
+}
+
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity .15s linear;
+  -o-transition: opacity .15s linear;
+  transition: opacity .15s linear;
+}
+
+.fade.in {
+  opacity: 1;
+}
+
+.submit-property-content .tab-pane .card {
+  padding: 20px 0;
+}
+
+.card:not([class*=mdc-bg-]) {
+  background: #fff;
+}
+.submit-property-content .card-body {
+  max-width: 450px;
+  margin: 20px auto 0;
 }

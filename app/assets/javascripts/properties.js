@@ -576,6 +576,30 @@ $(document).on('turbolinks:load', function() {
       $('.dropdown-menu').click(function (event){
         event.stopPropagation();
       });
+
+      // Submit property
+      // Show pane #1 by default
+      if ($(".submit-property-steps li:nth-child(1)").attr("class") == "active") {
+        $(".submit-property-content .tab-pane").removeClass("active in");
+        $(".submit-property-content .tab-pane#submit-property-1").addClass("active in");
+      }
+      // Show panes based on click
+      $(".submit-property-steps li").click(function() {
+        // Background Color
+        $(".submit-property-steps li").removeClass("active");
+        $(this).addClass("active");
+        // show pane
+        if ($(".submit-property-steps li:nth-child(1)").attr("class") == "active") {
+          $(".submit-property-content .tab-pane").removeClass("active in");
+          $(".submit-property-content .tab-pane#submit-property-1").addClass("active in");
+        } else if ($(".submit-property-steps li:nth-child(2)").attr("class") == "active") {
+          $(".submit-property-content .tab-pane").removeClass("active in");
+          $(".submit-property-content .tab-pane#submit-property-2").addClass("active in");
+        } else if ($(".submit-property-steps li:nth-child(3)").attr("class") == "active") {
+          $(".submit-property-content .tab-pane").removeClass("active in");
+          $(".submit-property-content .tab-pane#submit-property-3").addClass("active in");
+        }
+      });
 });
 
 // $('.default_image').click(function() {

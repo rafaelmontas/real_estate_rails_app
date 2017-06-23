@@ -1,5 +1,5 @@
 <%= provide(:button_text, 'Publicar propiedad') %>
-<%= provide(:url, agent_properties_path) %>
+<%#= provide(:url, agent_properties_path) %>
 
 <aside id="main-sidebar">
   <a href="" class="hidden-lg main-block-close">
@@ -46,8 +46,39 @@
   </ul>
 </aside>
 <section id="main-content">
-  <div class="main-container">
-    <h1>Nueva Propiedad</h1>
-    <%= render "form" %>
+  <div class="main-container agent-new-property">
+    <header class="main-title text-center">
+      <h2>Nueva Propiedad</h2>
+      <small>Agregar nueva propiedad para ser confirmada</small>
+    </header>
+    <div class="submit-property">
+      <%= form_for([@agent, @property], url: agent_properties_path) do |f| %>
+        <ul class="submit-property-steps">
+          <li class="active">
+            <a data-turbolinks="false">1</a>
+          </li>
+          <li>
+            <a data-turbolinks="false">2</a>
+          </li>
+          <li>
+            <a data-turbolinks="false">3</a>
+          </li>
+        </ul>
+        <div class="tab-content submit-property-content">
+          <div class="tab-pane fade"id="submit-property-1">
+            <div class="card">
+              <div class="card-header">
+                <h2>Ubicación De La Propiedad</h2>
+                <small>Dirección</small>
+              </div>
+              <div class="card-body">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <%#= render "form" %>
   </div>
 </section>
