@@ -539,7 +539,7 @@ a.logo {
   background-image: none;
   border: 1px solid #eee;
   border-radius: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  // -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
   -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
   -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
@@ -549,9 +549,9 @@ a.logo {
   padding-left: 2px;
   padding-right: 2px;
   resize: none;
-  /*border-left: 0;
+  border-left: 0;
   border-top: 0;
-  border-right: 0;*/
+  border-right: 0;
 }
 
 .form-control, output {
@@ -587,9 +587,9 @@ a.logo {
   pointer-events: none;
   padding-left: 2px;
   width: 100%;
-  font-size: 13px;
+  // font-size: 13px;
   margin-bottom: 8px;
-  color: #8a8a8a;
+  color: #9c9c9c;
 }
 label {
   display: inline-block;
@@ -1617,7 +1617,7 @@ strong {
 /* Previous overflow: visible; problem */
 .media {
 	margin: 0;
-  overflow: visible;
+  // overflow: visible;
 }
 
 
@@ -3298,24 +3298,24 @@ ul.facet-options-list li.facet-property-type a {
   position: relative;
 }
 
-.tab-content>.tab-pane {
-  display: none;
-}
-
-.tab-content>.active {
-  display: block;
-}
+// .tab-content>.tab-pane {
+//   display: none;
+// }
+//
+// .tab-content>.active {
+//   display: block;
+// }
 
 .fade {
   opacity: 0;
-  -webkit-transition: opacity .15s linear;
-  -o-transition: opacity .15s linear;
-  transition: opacity .15s linear;
+  -webkit-transition: opacity .20s linear;
+  -o-transition: opacity .20s linear;
+  transition: opacity .20s linear;
 }
 
-.fade.in {
-  opacity: 1;
-}
+// .fade.in {
+//   opacity: 1;
+// }
 
 .submit-property-content .tab-pane .card {
   padding: 20px 0;
@@ -3327,4 +3327,81 @@ ul.facet-options-list li.facet-property-type a {
 .submit-property-content .card-body {
   max-width: 450px;
   margin: 20px auto 0;
+}
+
+.m-b-5 {
+  margin-bottom: 5px;
+}
+
+.submit-property .form-group:focus {
+  border-color: #03A9F4;
+}
+
+.submit-property .form-group select#property_location, .submit-property .form-group select#property_sale, .submit-property .form-group select#property_kind, .submit-property .form-group select#property_room, .submit-property .form-group select#property_bath, .submit-property .form-group select#property_parking {
+  width: 100%;
+  height: 35px;
+}
+
+.submit-property-button {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: 250ms;
+  animation-duration: 250ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.submit-property a {
+  cursor: pointer;
+}
+
+.submit-property input {
+  text-align: center;
+}
+
+.submit-property .form-group textarea {
+  width: 100%;
+  height: 100px;
+}
+
+.submit-property input[type="submit"] {
+  padding: 10px;
+  color: #eee;
+  text-transform: uppercase;
+  background-color: #03A9F4;
+}
+
+.submit-property-success {
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.submit-property-success>i {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  line-height: 65px;
+  font-size: 30px;
+  background-color: #cec825;
+  display: inline-block;
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.submit-property-success>h2 {
+  font-size: 17px;
+  margin: 20px 0 15px;
 }

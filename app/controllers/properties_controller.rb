@@ -4,7 +4,7 @@ class PropertiesController < ApplicationController
   before_action :logged_in_agent, only: [:new, :edit, :update, :destroy]
   before_action :correct_agent, only: [:new, :edit, :update, :destroy]
 
-  layout "private_show", only: [:new, :edit]
+  layout "private_show", only: [:new, :edit, :create]
 
   def index
     @q = Property.ransack(params[:q])
@@ -22,8 +22,8 @@ class PropertiesController < ApplicationController
   def create
     @property = @agent.properties.new(property_params)
     if @property.save
-      flash[:success] = "Propiedad enviada para validación!"
-      redirect_to @property
+      # flash[:success] = "Propiedad enviada para validación!"
+      # redirect_to @property
     else
       render 'new'
     end

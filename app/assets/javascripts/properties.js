@@ -578,6 +578,26 @@ $(document).on('turbolinks:load', function() {
       });
 
       // Submit property
+      // from 1 to 2
+      $("#submit-property-1-button").click(function() {
+        $(".submit-property-steps li:nth-child(1)").removeClass("active");
+        $(".submit-property-content .tab-pane#submit-property-1").removeClass("active in");
+        $(".submit-property-steps li:nth-child(2)").addClass("active");
+        $(".submit-property-content .tab-pane#submit-property-2").addClass("active");
+        window.setTimeout(function(){
+          $(".submit-property-content .tab-pane#submit-property-2").addClass("in");
+        }, 150);
+      });
+      // from 2 to 3
+      $("#submit-property-2-button").click(function() {
+        $(".submit-property-steps li:nth-child(2)").removeClass("active");
+        $(".submit-property-content .tab-pane#submit-property-2").removeClass("active in");
+        $(".submit-property-steps li:nth-child(3)").addClass("active");
+        $(".submit-property-content .tab-pane#submit-property-3").addClass("active");
+        window.setTimeout(function(){
+          $(".submit-property-content .tab-pane#submit-property-3").addClass("in");
+        }, 150);
+      });
       // Show pane #1 by default
       if ($(".submit-property-steps li:nth-child(1)").attr("class") == "active") {
         $(".submit-property-content .tab-pane").removeClass("active in");
@@ -588,18 +608,60 @@ $(document).on('turbolinks:load', function() {
         // Background Color
         $(".submit-property-steps li").removeClass("active");
         $(this).addClass("active");
+
         // show pane
         if ($(".submit-property-steps li:nth-child(1)").attr("class") == "active") {
           $(".submit-property-content .tab-pane").removeClass("active in");
-          $(".submit-property-content .tab-pane#submit-property-1").addClass("active in");
+          $(".submit-property-content .tab-pane#submit-property-1").addClass("active");
+          window.setTimeout(function(){
+            $(".submit-property-content .tab-pane#submit-property-1").addClass("in");
+          }, 150);
         } else if ($(".submit-property-steps li:nth-child(2)").attr("class") == "active") {
           $(".submit-property-content .tab-pane").removeClass("active in");
-          $(".submit-property-content .tab-pane#submit-property-2").addClass("active in");
+          $(".submit-property-content .tab-pane#submit-property-2").addClass("active");
+          window.setTimeout(function(){
+            $(".submit-property-content .tab-pane#submit-property-2").addClass("in");
+          }, 150);
         } else if ($(".submit-property-steps li:nth-child(3)").attr("class") == "active") {
           $(".submit-property-content .tab-pane").removeClass("active in");
-          $(".submit-property-content .tab-pane#submit-property-3").addClass("active in");
+          $(".submit-property-content .tab-pane#submit-property-3").addClass("active");
+          window.setTimeout(function(){
+            $(".submit-property-content .tab-pane#submit-property-3").addClass("in");
+          }, 150);
         }
       });
+      // form
+      // pane #1
+      $(".form-group #property_address").change(function() {
+        if ($(".form-group #property_address").val()) {
+          $(".form-group-float#form-for-address").addClass("form-group-active");
+        } else {
+          $(".form-group-float#form-for-address").removeClass("form-group-active");
+        }
+      });
+      $(".form-group #property_name").change(function() {
+        if ($(".form-group #property_name").val()) {
+          $(".form-group-float#form-for-name").addClass("form-group-active");
+        } else {
+          $(".form-group-float#form-for-name").removeClass("form-group-active");
+        }
+      });
+      // pane #2
+      $(".form-group #property_mts").change(function() {
+        if ($(".form-group #property_mts").val()) {
+          $(".form-group-float#form-for-mts").addClass("form-group-active");
+        } else {
+          $(".form-group-float#form-for-mts").removeClass("form-group-active");
+        }
+      });
+      $(".form-group #property_price").change(function() {
+        if ($(".form-group #property_price").val()) {
+          $(".form-group-float#form-for-price").addClass("form-group-active");
+        } else {
+          $(".form-group-float#form-for-price").removeClass("form-group-active");
+        }
+      });
+
 });
 
 // $('.default_image').click(function() {
