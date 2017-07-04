@@ -32,6 +32,12 @@
       <% end %>
     </li>
     <li>
+      <%= link_to private_path do %>
+      <i class="fa fa-clock-o" aria-hidden="true"></i>
+        Prop. Pendientes
+      <% end %>
+    </li>
+    <li>
       <%= link_to(edit_agent_path(current_agent)) do %>
         <i class="fa fa-cog" aria-hidden="true"></i>
         Editar Perfil
@@ -51,8 +57,11 @@
       <h2>Nueva Propiedad</h2>
       <small>Agregar nueva propiedad para ser confirmada</small>
     </header>
+    <%= render 'shared/properties_error_messages' %>
     <div class="submit-property">
       <%= form_for([@agent, @property], url: agent_properties_path) do |f| %>
+
+
         <ul class="submit-property-steps">
           <li class="active">
             <a data-turbolinks="false">1</a>

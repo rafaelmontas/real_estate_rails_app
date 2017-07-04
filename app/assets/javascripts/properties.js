@@ -577,6 +577,24 @@ $(document).on('turbolinks:load', function() {
         event.stopPropagation();
       });
 
+      // form field label action
+      if ($(".submit-property-content #property_address").val()) {
+        $("#property_address").next().css("top", "-19px");
+        $("#property_address").next().css("font-size", "11px");
+      }
+      if ($(".submit-property-content #property_name").val()) {
+        $("#property_name").next().css("top", "-19px");
+        $("#property_name").next().css("font-size", "11px");
+      }
+      if ($(".submit-property-content #property_mts").val()) {
+        $("#property_mts").next().css("top", "-19px");
+        $("#property_mts").next().css("font-size", "11px");
+      }
+      if ($(".submit-property-content #property_price").val()) {
+        $("#property_price").next().css("top", "-19px");
+        $("#property_price").next().css("font-size", "11px");
+      }
+
       // Submit property
       // from 1 to 2
       $("#submit-property-1-button").click(function() {

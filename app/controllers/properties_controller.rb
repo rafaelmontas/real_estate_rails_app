@@ -21,12 +21,7 @@ class PropertiesController < ApplicationController
 
   def create
     @property = @agent.properties.new(property_params)
-    if @property.save
-      # flash[:success] = "Propiedad enviada para validación!"
-      # redirect_to @property
-    else
-      render 'new'
-    end
+    render 'new' unless @property.save
   end
 
   def edit
