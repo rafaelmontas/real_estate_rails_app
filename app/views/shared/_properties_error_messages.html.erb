@@ -1,7 +1,7 @@
 <% if @property.errors.any? %>
   <div id="error_explanation">
     <div class="alert alert-danger">
-      The form contains <%= pluralize(@property.errors.count, "error") %>.
+      El formulario contiene <%= pluralize(@property.errors.count, "error") %>.
     </div>
     <ul>
       <% @property.errors.full_messages.each do |msg| %>

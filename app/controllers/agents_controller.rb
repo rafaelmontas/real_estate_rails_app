@@ -3,7 +3,7 @@ class AgentsController < ApplicationController
   before_action :correct_agent, only: [:edit, :update]
   before_action :admin_agent, only: [:destroy]
 
-  layout "private_show", only: [:edit, :private_show]
+  layout "private_show", only: [:edit, :private_show, :pending_properties]
 
   def index
     @agents = Agent.where(activated: true).paginate(page: params[:page], per_page: 6)
@@ -48,6 +48,11 @@ class AgentsController < ApplicationController
   end
 
   def private_show
+    current_agent
+    @properties = Property.where(agent_id: current_agent.id).paginate(page: params[:page], per_page: 3)
+  end
+
+  def pending_properties
     current_agent
     @properties = Property.where(agent_id: current_agent.id).paginate(page: params[:page], per_page: 3)
   end

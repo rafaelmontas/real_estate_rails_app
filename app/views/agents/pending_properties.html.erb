@@ -22,13 +22,13 @@
         Inicio
       <% end %>
     </li>
-    <li class="active">
+    <li>
       <%= link_to private_path do %>
         <i class="fa fa-th-list" aria-hidden="true"></i>
         Propiedades
       <% end %>
     </li>
-    <li>
+    <li class="active">
       <%= link_to pending_properties_path do %>
       <i class="fa fa-clock-o" aria-hidden="true"></i>
         Prop. Pendientes
@@ -62,7 +62,7 @@
       <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
     <% end %>
     <header class="main-title">
-      <h2>Propiedades</h2>
+      <h2>Propiedades Pendientes De Aprobación</h2>
     </header>
     <div class="list-group list-group-block">
       <div class="list-group-header text-left">

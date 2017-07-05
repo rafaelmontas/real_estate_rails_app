@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   # get "/agents/:id/edit", to: "agents#edit"
   patch "/agents/:id/edit", to: "agents#update"
   get "/agent", to: "agents#private_show", as: "private"
+  get "/agent/pending_properties", to: "agents#pending_properties", as: "pending_properties"
 
   # Users routes
   get "users/signup", to: "users#new"
