@@ -1,11 +1,12 @@
 <h1>Iniciar Sesión (Usuario)</h1>
 
+<i class="fa fa-user-circle-o" aria-hidden="true"></i>
 <div class="col-sm-4 col-sm-offset-4 signup-form">
   <%= form_for(:session_user, url: users_login_path) do |f| %>
     <%= f.label :email %>
     <%= f.email_field :email, class: "form-control" %>
 
-    <%= f.label :password %>
+    <%= f.label :password, "Contraseña" %>
     <%= link_to "(Olvido Contraseña)", new_password_reset_user_path %>
     <%= f.password_field :password, class: "form-control" %>
 

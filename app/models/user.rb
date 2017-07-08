@@ -6,12 +6,12 @@ class User < ApplicationRecord
   attr_accessor :remember_token, :reset_token
   before_save { self.email = email.downcase }
 
-  validates :name, presence: true, length: { maximum: 50 }
+  validates :name, presence: { message: "no puede estar en blanco" }, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-  validates :email, presence: true, length: { maximum: 255 },
-                    format: { with: VALID_EMAIL_REGEX },
+  validates :email, presence: { message: "no puede estar en blanco" }, length: { maximum: 255 },
+                    format: { with: VALID_EMAIL_REGEX, message: "es invalido" },
                     uniqueness: { case_sensitive: false }
-  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  validates :password, presence: { message: "no puede estar en blanco" }, length: { minimum: 6, message: "es muy corta (mínimo 6 caracteres)" }, allow_nil: true
   has_secure_password
 
   # Returns the hash digest of the given string.

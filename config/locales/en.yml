@@ -21,3 +21,21 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    attributes:
+      property:
+        name: "Nombre"
+        address: "Calle/Ubicación"
+        price: "Precio"
+        mts: "Metros Cuadrados"
+        general: "Descripción"
+      agent:
+        name: "Nombre"
+        email: "Email"
+        phone_number: "Número De Telefono"
+        password: "Contraseña"
+        password_confirmation: "Confirmación de contraseña"
+      user:
+        name: "Nombre"
+        email: "Email"
+        password: "Contraseña"
