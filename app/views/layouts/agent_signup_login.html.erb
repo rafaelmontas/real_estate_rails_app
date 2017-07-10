@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>TuCasa.com | Tu Casa</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body id="agent_signup_login">
+    <header id="header_agent_signup_login">
+      <%= yield :header_top %>
+      <div class="header-main">
+        <div class="container">
+
+          <%= link_to(root_path, class: "logo") do %>
+            <i class="fa fa-home" aria-hidden="true"></i>
+            <div class="logo-text">
+              <span>TuCasa</span>
+              <span>Tu verdadera casa</span>
+            </div>
+          <% end %>
+
+          <div class="navigation-trigger visible-xs visible-sm">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </div>
+          <ul class="navigation">
+            <li class="visible-xs visible-sm">
+              <a class="navigation-close" data-turbolinks="false">
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+              </a>
+            </li>
+            <!-- <li class="active">
+              <%#= link_to "Inicio", root_path %>
+            </li>
+            <li class="nav-drop">
+              <%#= link_to "Propiedades", properties_path %>
+              <ul class="nav-drop-menu">
+                <li>
+                  <a href="pages/search.html">Recientes</a>
+                </li>
+                <li>
+                  <a href="#">Mas vistas</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <%#= link_to "Agentes", agents_path %>
+            </li>
+            <li>
+              <a href="#">Contacto</a>
+            </li> -->
+            <% if user_logged_in? %>
+              <li class="nav-drop">
+
+                  <a href="#"><%= @current_user.name %></a>
+
+                <ul class="nav-drop-menu nav-drop-menu-right">
+                  <%= content_tag(:li, link_to("Perfil", @current_user)) %>
+                  <%= content_tag(:li, link_to("Editar perfil", edit_user_path(@current_user))) %>
+                  <%= content_tag(:li, link_to("Cerrar sesión", users_logout_path, method: "delete")) %>
+                </ul>
+              </li>
+            <% else %>
+              <%= content_tag(:li, class: "hidden-xs hidden-sm") do %>
+                <%= link_to(users_login_path, class: "login") do %>
+                  <%= fa_icon "user-o" %>
+                  Iniciar Sesión
+                <% end %>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <%= yield :header_search_recommended %>
+    </header>
+    <% flash.each do |message_type, message| %>
+      <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+    <% end %>
+    <%= yield %>
+    <footer id="footer">
+      <div class="container hidden-xs">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="footer-block">
+              <a class="logo clearfix" href="#">
+                <div class="logo-text">
+                  <span>TuCasa</span>
+                  <span>Tu verdadera casa</span>
+                </div>
+              </a>
+              <address class="m-t-20 m-b-20 f-14">
+                C/ Fabio Mota #9, edif. Calvin Ariel Apt. 8B, Naco.
+              </address>
+              <div class="f-20">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <a href="tel:8099080343">809-908-0343</a>
+              </div>
+              <div class="f-14 m-t-5">
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                <a href="mailto:info@tucasa.com">info@tucasa.com</a>
+              </div>
+              <div class="f-20 m-t-20">
+                <a class="m-r-10" href="#">
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a class="m-r-10" href="#">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a class="m-r-10" href="#">
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="footer-block footer-block-blog">
+              <div class="footer-title">
+                Novedades en nuestro Blog
+              </div>
+              <a href="#">
+                Aenean lacinia bibendum nulla sed
+                <small>On 2016/06/20 at 6:00 PM</small>
+              </a>
+              <a href="#">
+                Vestibulum id ligula porta felis euismod semper
+                <small>On 2016/06/18 at 7:12 PM</small>
+              </a>
+              <a href="#">
+                Vestibulum id ligula porta felis euismod semper
+                <small>On 2016/06/18 at 7:12 PM</small>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="footer-block">
+              <div class="footer-title">
+                Disclaimer
+              </div>
+              <div class="">
+                Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <span class="footer-copyright">&copy; TuCasa S. R. L.</span>
+          <a href="#">Sobre Nosotros</a>
+          <a href="#">Terminos &amp; Condiciones</a>
+          <a href="#">Politicas de Privacidad</a>
+          <% if logged_in? %>
+            <%= link_to @current_agent.name, private_path, class: "login" %>
+          <% else %>
+            <%= link_to "Agentes", agents_login_path, class: "login" %>
+          <% end %>
+        </div>
+      </div>
+    </footer>
+    <%= debug(params) if Rails.env.development? %>
+  </body>
+</html>
