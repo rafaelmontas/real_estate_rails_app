@@ -3427,3 +3427,43 @@ ul.facet-options-list li.facet-property-type a {
   font-size: 17px;
   margin: 20px 0 15px;
 }
+
+
+// Agent signup, login page
+body#agent_signup_login {
+  background-color: #fff;
+}
+
+#header_agent_signup_login {
+  background-color: #fff;
+  color: #000;
+  border-top: 3px solid red;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+
+  .header-main {
+    padding: 10px;
+    .logo {
+      color: #000;
+      .logo-text {
+        color: #000;
+      }
+    }
+    .navigation-trigger {
+      color: #000;
+    }
+    .navigation li {
+      color: #000;
+      margin-top: 5px;
+    }
+    .navigation li a.login {
+      color: #000;
+      border: 1px solid #000;
+      padding: 8px 12px;
+    }
+    .navigation li a.login:hover {
+      background-color: #e6e6e6;
+    }
+  }
+}

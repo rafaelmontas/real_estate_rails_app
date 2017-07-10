@@ -16,6 +16,7 @@ class AgentsController < ApplicationController
 
   def new
     @agent = Agent.new
+    render layout: "agent_signup_login"
   end
 
   def create
