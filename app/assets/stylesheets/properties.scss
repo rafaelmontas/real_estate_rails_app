@@ -3467,3 +3467,50 @@ body#agent_signup_login {
     }
   }
 }
+
+@media screen and (max-width: 767px) {
+  #header_agent_signup_login+.main-container {
+    margin-top: 72px;
+    padding: 15px 0px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #header_agent_signup_login+.main-container {
+    margin-top: 72px;
+    padding: 32px 20px;
+  }
+}
+
+#header_agent_signup_login+.main-container form.card {
+  box-shadow: none;
+  overflow: hidden;
+  .card-header {
+    margin-bottom: 45px;
+    h1.text-center {
+      font-size: 25px;
+      font-weight: 300;
+    }
+  }
+  .card-body {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 0px;
+    .form-group {
+      margin-bottom: 15px;
+      .input-group {
+        width: 100%
+      }
+      label {
+        font-size: 12px;
+        margin-bottom: 4px;
+        color: #000;
+        font-weight: 400;
+      }
+    }
+  }
+  .text-center .btn-primary {
+    background-color: #09c;
+    border-color: #09c;
+  }
+}
