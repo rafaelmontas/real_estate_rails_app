@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+  layout "agent_signup_login", only: [:new]
+  
   def new
   end
 

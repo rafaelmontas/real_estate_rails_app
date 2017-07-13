@@ -25,8 +25,9 @@ class AgentsController < ApplicationController
       @agent.send_activation_email
       flash.now[:info] = "Por favor revisar email para activar cuenta."
       # redirect_to root_url
+      render layout: "agent_signup_login"
     else
-      render 'new'
+      render 'new', layout: "agent_signup_login"
     end
   end
 
