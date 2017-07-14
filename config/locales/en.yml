@@ -39,3 +39,11 @@ en:
         name: "Nombre"
         email: "Email"
         password: "Contraseña"
+    errors:
+      models:
+        agent:
+          attributes:
+            password:
+              blank: "no puede estar en blanco"
+            password_confirmation:
+              confirmation: "no coincide con contraseña"

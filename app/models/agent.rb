@@ -11,7 +11,7 @@ class Agent < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: { message: "no puede estar en blanco" }, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX, message: "es invalido" },
-                    uniqueness: { case_sensitive: false }
+                    uniqueness: { case_sensitive: false, message: "ya existe" }
   validates :phone_number, presence: { message: "no puede estar en blanco" }
   has_secure_password
   validates :password, presence: { message: "no puede estar en blanco" }, length: { minimum: 6, message: "es muy corta (mínimo 6 caracteres)" }, allow_nil: true

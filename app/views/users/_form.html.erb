@@ -6,11 +6,11 @@
   <% if @user.errors.any? && @user.avatar.present? %>
     <%= image_tag @user.avatar_url(:small), size: "120x120", class: "default_image" %>
   <% elsif @user.errors.any? %>
-    <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", size: "120x120", class: "default_image", id: "output") %>
+    <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default_avatar.png", size: "120x120", class: "default_image", id: "output") %>
   <% elsif @user.avatar.present? %>
     <%= image_tag @user.avatar_url(:small), size: "120x120", class: "default_image", id: "output" %>
   <% else %>
-    <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", size: "120x120", class: "default_image", id: "output") %>
+    <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default_avatar.png", size: "120x120", class: "default_image", id: "output") %>
   <% end %>
 </div>
 

@@ -1,10 +1,6 @@
-<!-- <%= provide(:button_text, 'Crear cuenta') %>
-<%#= provide(:url, agents_signup_path) %>
-<h1>Registrarse</h1>
+<%= provide(:button_text_for_nav, 'Registrate') %>
+<%= provide(:url, agents_signup_path) %>
 
-<div class="col-sm-4 col-sm-offset-4 signup-form">
-  <%#= render "form" %>
-</div> -->
 <div class="main-container">
   <div class="container-fluid">
     <div class="container-fluid">
@@ -12,18 +8,26 @@
         <div class="col-sm-10 col-sm-push-1 col-md-8 col-md-push-2 col-lg-6 col-lg-push-3">
           <%= form_for(@agent, url: agents_signup_path, html: { class: "card" }) do |f| %>
             <%= render 'shared/error_messages' %>
-            <% if @agent.avatar.present? %>
-              <%= image_tag @agent.avatar_url(:small) %>
-            <% end %>
 
             <div class="card-header">
               <h1 class="text-center">Crear cuenta profesional</h1>
               <small class="text-center hidden-xs">Sign up to use your professional dashboard—it's fast and free. Showcase your brand, enhance your listings and much more.</small>
             </div>
             <div class="col-sm-10 col-sm-push-1 clearfix m-t-20 card-body">
+              <div class="image_to_preview">
+                <% if @agent.errors.any? && @agent.avatar.present? %>
+                  <%= image_tag @agent.avatar_url(:small), size: "120x120", class: "default_image" %>
+                <% elsif @agent.errors.any? %>
+                  <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default_avatar.png", size: "120x120", class: "default_image", id: "output") %>
+                <% elsif @agent.avatar.present? %>
+                  <%= image_tag @agent.avatar_url(:small), size: "120x120", class: "default_image", id: "output" %>
+                <% else %>
+                  <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default_avatar.png", size: "120x120", class: "default_image", id: "output") %>
+                <% end %>
+              </div>
               <div class="form-group">
                 <%= f.hidden_field :avatar, value: @agent.cached_avatar_data %>
-                <%= f.file_field :avatar %>
+                <%= f.file_field :avatar, onchange: 'loadFile(event)', id: "hidden" %>
               </div>
               <div class="form-group">
                 <div class="input-group">

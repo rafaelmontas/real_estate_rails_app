@@ -2401,13 +2401,15 @@ left: auto;
   width: 100%;
 }
 
+.image_to_preview {
+  margin-bottom: 30px;
+}
+
 .default_image {
   cursor: pointer;
-  position: relative;
+  display: block;
+  margin: auto;
   border-radius: 50%;
-  left: 135px;
-  bottom: 15px;
-  border: 2px solid cornflowerblue;
 }
 
 #hidden {
@@ -3483,7 +3485,7 @@ body#agent_signup_login {
   box-shadow: none;
   overflow: hidden;
   .card-header {
-    margin-bottom: 45px;
+    margin-bottom: 20px;
     h1.text-center {
       font-size: 25px;
       font-weight: 300;
