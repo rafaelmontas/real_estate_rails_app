@@ -3468,20 +3468,20 @@ body#agent_signup_login {
 }
 
 @media screen and (max-width: 767px) {
-  #header_agent_signup_login+.main-container {
+  #agent_signup_login .main-container {
     margin-top: 72px;
     padding: 15px 0px;
   }
 }
 
 @media screen and (min-width: 768px) {
-  #header_agent_signup_login+.main-container {
+  #agent_signup_login .main-container {
     margin-top: 72px;
     padding: 32px 20px;
   }
 }
 
-#header_agent_signup_login+.main-container form.card {
+#agent_signup_login .main-container form.card, #agent_signup_login+.main-container form.card.login-card {
   box-shadow: none;
   overflow: hidden;
   .card-header {
@@ -3495,10 +3495,29 @@ body#agent_signup_login {
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 0px;
+    .image_to_preview .default_image {
+      width: 120px;
+      height: 120px;
+    }
+    @media screen and (max-width: 767px) {
+      .image_to_preview .default_image {
+        width: 85px;
+        height: 85px;
+      }
+    }
     .form-group {
       margin-bottom: 15px;
       .input-group {
-        width: 100%
+        width: 100%;
+        .input-group-btn {
+          font-size: 11px;
+          a {
+            display: inline-block;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            margin-bottom: -4px;
+          }
+        }
       }
       label {
         font-size: 12px;
@@ -3506,6 +3525,11 @@ body#agent_signup_login {
         color: #000;
         font-weight: 400;
       }
+    }
+    label.checkbox span{
+      color: #000;
+      font-weight: 300;
+      vertical-align: middle;
     }
   }
   .text-center .btn-primary {
@@ -3517,6 +3541,7 @@ body#agent_signup_login {
 #agent_signup_login #footer {
   background-color: #f5f5f5;
   box-shadow: none;
+  padding-top: 0px;
   ul {
     list-style: none;
     margin: 0;
@@ -3533,6 +3558,35 @@ body#agent_signup_login {
         text-transform: uppercase;
         color: #fff;
       }
+      a:hover {
+        text-decoration: underline;
+      }
     }
   }
+  .footer-middle li {
+    display: inline;
+    margin-right: 25px;
+    margin-left: 0;
+    a {
+      display: inline-block;
+      padding: 15px 0;
+      text-transform: uppercase;
+      color: #333;
+    }
+    a:hover {
+      color: #d92228;
+    }
+  }
+  .footer-copyright {
+    padding: 15px 0;
+    text-align: right;
+    p {
+      font-size: 10px;
+      color: #c4c4c4;
+    }
+  }
+}
+
+#agent_signup_login .password_reset_for_footer+#footer {
+  margin-top: 148px;
 }

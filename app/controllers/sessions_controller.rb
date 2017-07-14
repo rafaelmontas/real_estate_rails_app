@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   layout "agent_signup_login", only: [:new]
-  
+
   def new
   end
 
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
       end
     else
       flash.now[:danger] = "Combinación email/contraseña incorrecta"
-      render 'new'
+      render 'new', layout: "agent_signup_login"
     end
   end
 
