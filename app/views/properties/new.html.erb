@@ -72,6 +72,9 @@
           <li>
             <a data-turbolinks="false">3</a>
           </li>
+          <li>
+            <a data-turbolinks="false">4</a>
+          </li>
         </ul>
         <div class="tab-content submit-property-content">
           <div class="tab-pane fade" id="submit-property-1">
@@ -143,6 +146,40 @@
                 <small>Datos Generales</small>
               </div>
               <div class="card-body">
+                <div class="form-group">
+                  <%= f.label :room, "Habitaciones" %>
+                  <%= f.select :room, [['1 habitación', 1],
+                                       ['2 habitaciones', 2],
+                                       ['3 habitaciones', 3],
+                                       ['4 habitaciones', 4],
+                                       ['5 habitaciones', 5],
+                                       ['6 habitaciones', 6]] %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :bath, "Baños" %>
+                  <%= f.select :bath, [['1+ Baño', 1], ['2+ Baños', 2], ['3+ Baños', 3], ['4+ Baños', 4], ['5+ Baños', 5], ['6+ Baños', 6]] %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :parking, "Parqueos" %>
+                  <%= f.select :parking, [['1 Parqueo', 1], ['2 Parqueos', 2], ['3 Parqueos', 3], ['4 Parqueos', 4]] %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :general, "Descripción De La Propiedad" %>
+                  <%= f.text_area :general %>
+                </div>
+                <a data-turbolinks="false" class="btn-circle btn-primary submit-property-button" id="submit-property-3-button">
+                  <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-10 col-sm-push-1 tab-pane fade" id="submit-property-4">
+            <div class="card">
+              <div class="card-header">
+                <h2>Fotografías De La Propiedad</h2>
+                <small>Selecionar Imágenes</small>
+              </div>
+              <div class="card-body img-upload">
                 <div class="form-group">
                   <%= f.label :room, "Habitaciones" %>
                   <%= f.select :room, [['1 habitación', 1],

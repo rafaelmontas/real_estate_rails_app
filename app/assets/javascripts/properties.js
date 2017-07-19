@@ -616,6 +616,16 @@ $(document).on('turbolinks:load', function() {
           $(".submit-property-content .tab-pane#submit-property-3").addClass("in");
         }, 150);
       });
+      // from 3 to 4
+      $("#submit-property-3-button").click(function() {
+        $(".submit-property-steps li:nth-child(3)").removeClass("active");
+        $(".submit-property-content .tab-pane#submit-property-3").removeClass("active in");
+        $(".submit-property-steps li:nth-child(4)").addClass("active");
+        $(".submit-property-content .tab-pane#submit-property-4").addClass("active");
+        window.setTimeout(function(){
+          $(".submit-property-content .tab-pane#submit-property-4").addClass("in");
+        }, 150);
+      });
       // Show pane #1 by default
       if ($(".submit-property-steps li:nth-child(1)").attr("class") == "active") {
         $(".submit-property-content .tab-pane").removeClass("active in");
@@ -645,6 +655,12 @@ $(document).on('turbolinks:load', function() {
           $(".submit-property-content .tab-pane#submit-property-3").addClass("active");
           window.setTimeout(function(){
             $(".submit-property-content .tab-pane#submit-property-3").addClass("in");
+          }, 150);
+        } else if ($(".submit-property-steps li:nth-child(4)").attr("class") == "active") {
+          $(".submit-property-content .tab-pane").removeClass("active in");
+          $(".submit-property-content .tab-pane#submit-property-4").addClass("active");
+          window.setTimeout(function(){
+            $(".submit-property-content .tab-pane#submit-property-4").addClass("in");
           }, 150);
         }
       });
