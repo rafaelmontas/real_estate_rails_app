@@ -108,6 +108,39 @@ $(document).on('turbolinks:load', function() {
     $("input#hidden").click();
   });
 
+  $('.default-1').click(function() {
+    event.preventDefault();
+    $("input#hidden1").click();
+  });
+  $('.default-2').click(function() {
+    event.preventDefault();
+    $("input#hidden2").click();
+  });
+  $('.default-3').click(function() {
+    event.preventDefault();
+    $("input#hidden3").click();
+  });
+  $('.default-4').click(function() {
+    event.preventDefault();
+    $("input#hidden4").click();
+  });
+  $('.default-5').click(function() {
+    event.preventDefault();
+    $("input#hidden5").click();
+  });
+  $('.default-6').click(function() {
+    event.preventDefault();
+    $("input#hidden6").click();
+  });
+  $('.default-7').click(function() {
+    event.preventDefault();
+    $("input#hidden7").click();
+  });
+  $('.default-8').click(function() {
+    event.preventDefault();
+    $("input#hidden8").click();
+  });
+
   // Home search
   $('#property-status-wrapper #comprar').click(function() {
     $("#property-status-wrapper input[type='radio']#q_sale_cont_venta").click();
@@ -709,6 +742,40 @@ $(document).on('turbolinks:load', function() {
 var loadFile = function(event) {
   var output = document.getElementById('output');
   output.src = URL.createObjectURL(event.target.files[0]);
+};
+
+// property images
+var loadFile1 = function(event) {
+  var output1 = document.getElementById('output1');
+  output1.src = URL.createObjectURL(event.target.files[0]);
+};
+var loadFile2 = function(event) {
+  var output2 = document.getElementById('output2');
+  output2.src = URL.createObjectURL(event.target.files[0]);
+};
+var loadFile3 = function(event) {
+  var output3 = document.getElementById('output3');
+  output3.src = URL.createObjectURL(event.target.files[0]);
+};
+var loadFile4 = function(event) {
+  var output4 = document.getElementById('output4');
+  output4.src = URL.createObjectURL(event.target.files[0]);
+};
+var loadFile5 = function(event) {
+  var output5 = document.getElementById('output5');
+  output5.src = URL.createObjectURL(event.target.files[0]);
+};
+var loadFile6 = function(event) {
+  var output6 = document.getElementById('output6');
+  output6.src = URL.createObjectURL(event.target.files[0]);
+};
+var loadFile7 = function(event) {
+  var output7 = document.getElementById('output7');
+  output7.src = URL.createObjectURL(event.target.files[0]);
+};
+var loadFile8 = function(event) {
+  var output8 = document.getElementById('output8');
+  output8.src = URL.createObjectURL(event.target.files[0]);
 };
 
 // Fixed header search results

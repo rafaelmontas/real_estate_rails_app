@@ -61,10 +61,17 @@ ActiveRecord::Schema.define(version: 20170616202813) do
     t.integer  "mts"
     t.string   "location"
     t.text     "general"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text     "image_data"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "agent_id"
+    t.text     "image1_data"
+    t.text     "image2_data"
+    t.text     "image3_data"
+    t.text     "image4_data"
+    t.text     "image5_data"
+    t.text     "image6_data"
+    t.text     "image7_data"
+    t.text     "image8_data"
     t.index ["agent_id"], name: "index_properties_on_agent_id", using: :btree
   end
 

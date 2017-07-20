@@ -1,4 +1,14 @@
 class Property < ApplicationRecord
+
+  include ImageUploader[:image1]
+  include ImageUploader[:image2]
+  include ImageUploader[:image3]
+  include ImageUploader[:image4]
+  include ImageUploader[:image5]
+  include ImageUploader[:image6]
+  include ImageUploader[:image7]
+  include ImageUploader[:image8]
+
   belongs_to :agent
   has_many :photos, dependent: :destroy
   has_many :likes

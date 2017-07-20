@@ -47,7 +47,7 @@ class PropertiesController < ApplicationController
   private
 
     def property_params
-      params.require(:property).permit(:name, :address, :price, :sale, :kind, :room, :bath, :parking, :mts, :location, :general)
+      params.require(:property).permit(:name, :address, :price, :sale, :kind, :room, :bath, :parking, :mts, :location, :general, :image1, :image2, :image3, :image4, :image5, :image6, :image7, :image8)
     end
 
     def set_agent

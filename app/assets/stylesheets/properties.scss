@@ -3596,3 +3596,29 @@ body#agent_signup_login {
     overflow: hidden;
   }
 }
+
+.hidden {
+  display: none;
+}
+.default_image_properties {
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+
+.personal-row {
+  overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  #submit-property-4 .form-group {
+    display: inline-block;
+    float: left;
+    width: 48%;
+    margin: 1%;
+  }
+  .default_image_properties {
+    width: 85%;
+  }
+}

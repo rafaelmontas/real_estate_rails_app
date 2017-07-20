@@ -1,6 +1,10 @@
 <section class="section section-show">
   <div class="container">
 
+    <%= image_tag(@property.image1_url(:large)) %>
+    <%= image_tag(@property.image2_url(:large)) %>
+    
+
     <%= render partial: "photos/form", locals: {photo: Photo.new} %>
 
 
@@ -184,22 +188,22 @@
               </div>
             </a>
             <!-- <a class="list-group-item media" href="agent.html"> -->
-            <%= link_to agent_path(@property.agent), class: "list-group-item media" do %>
-            <div class="pull-left">
-              <% if @property.agent.avatar.present? %>
-                <%= image_tag @property.agent.avatar_url(:small), class: "list-group-img img-circle" %>
+            <%#= link_to agent_path(@property.agent), class: "list-group-item media" do %>
+            <!-- <div class="pull-left"> -->
+              <%# if @property.agent.avatar.present? %>
+                <%#= image_tag @property.agent.avatar_url(:small), class: "list-group-img img-circle" %>
                 <%#= @property.agent.name %>
-              <% else %>
-                <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", class: "list-group-img img-circle") %>
+              <%# else %>
+                <%#= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", class: "list-group-img img-circle") %>
                 <%#= @property.agent.name %>
-              <% end %>
+              <%# end %>
               <!-- <img class="list-group-img img-circle" src="../images/agent.jpg" alt="image"> -->
-            </div>
-            <div class="media-body list-group-text">
-              <strong><%= @property.agent.name %></strong>
-              <small class="list-group-text"><%= number_to_phone(@property.agent.phone_number, area_code: true) %></small>
-            </div>
-            <% end %>
+            <!-- </div> -->
+            <!-- <div class="media-body list-group-text">
+              <strong><%#= @property.agent.name %></strong>
+              <small class="list-group-text"><%#= number_to_phone(@property.agent.phone_number, area_code: true) %></small>
+            </div> -->
+            <%# end %>
 
             <!-- </a> -->
           </div>
