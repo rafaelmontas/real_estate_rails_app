@@ -183,14 +183,15 @@
                 <div class="personal-row">
                   <div class="form-group">
                     <div class="image_to_preview">
+                      <h4 class="text-center">Imagen #1</h4>
                       <% if @property.errors.any? && @property.image1.present? %>
                         <%= image_tag @property.image1_url(:small), class: "default_image_properties default-1" %>
                       <% elsif @property.errors.any? %>
-                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default_avatar.png", class: "default_image_properties default-1", id: "output1") %>
+                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", class: "default_image_properties default-1", id: "output1") %>
                       <% elsif @property.image1.present? %>
                         <%= image_tag @property.image1_url(:small), class: "default_image_properties default-1", id: "output1" %>
                       <% else %>
-                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default_avatar.png", class: "default_image_properties default-1", id: "output1") %>
+                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", class: "default_image_properties default-1", id: "output1") %>
                       <% end %>
                     </div>
                     <%= f.hidden_field :image1, value: @property.cached_image1_data %>
@@ -198,14 +199,15 @@
                   </div>
                   <div class="form-group">
                     <div class="image_to_preview">
+                      <h4 class="text-center">Imagen #2</h4>
                       <% if @property.errors.any? && @property.image2.present? %>
                         <%= image_tag @property.image2_url(:small), class: "default_image_properties default-2" %>
                       <% elsif @property.errors.any? %>
-                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default_avatar.png", class: "default_image_properties default-2", id: "output2") %>
+                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", class: "default_image_properties default-2", id: "output2") %>
                       <% elsif @property.image2.present? %>
                         <%= image_tag @property.image2_url(:small), class: "default_image_properties default-2", id: "output2" %>
                       <% else %>
-                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default_avatar.png", class: "default_image_properties default-2", id: "output2") %>
+                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", class: "default_image_properties default-2", id: "output2") %>
                       <% end %>
                     </div>
                     <%= f.hidden_field :image2, value: @property.cached_image2_data %>
@@ -215,14 +217,15 @@
                 <div class="personal-row">
                   <div class="form-group">
                     <div class="image_to_preview">
+                      <h4 class="text-center">Imagen #3</h4>
                       <% if @property.errors.any? && @property.image3.present? %>
                         <%= image_tag @property.image3_url(:small), class: "default_image_properties default-3" %>
                       <% elsif @property.errors.any? %>
-                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default_avatar.png", class: "default_image_properties default-3", id: "output3") %>
+                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", class: "default_image_properties default-3", id: "output3") %>
                       <% elsif @property.image3.present? %>
                         <%= image_tag @property.image3_url(:small), class: "default_image_properties default-3", id: "output3" %>
                       <% else %>
-                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default_avatar.png", class: "default_image_properties default-3", id: "output3") %>
+                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", class: "default_image_properties default-3", id: "output3") %>
                       <% end %>
                     </div>
                     <%= f.hidden_field :image3, value: @property.cached_image3_data %>
@@ -230,14 +233,15 @@
                   </div>
                   <div class="form-group">
                     <div class="image_to_preview">
+                      <h4 class="text-center">Imagen #4</h4>
                       <% if @property.errors.any? && @property.image4.present? %>
                         <%= image_tag @property.image4_url(:small), class: "default_image_properties default-4" %>
                       <% elsif @property.errors.any? %>
-                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default_avatar.png", class: "default_image_properties default-4", id: "output4") %>
+                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", class: "default_image_properties default-4", id: "output4") %>
                       <% elsif @property.image4.present? %>
                         <%= image_tag @property.image4_url(:small), class: "default_image_properties default-4", id: "output4" %>
                       <% else %>
-                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default_avatar.png", class: "default_image_properties default-4", id: "output4") %>
+                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", class: "default_image_properties default-4", id: "output4") %>
                       <% end %>
                     </div>
                     <%= f.hidden_field :image4, value: @property.cached_image4_data %>
@@ -247,14 +251,15 @@
                 <div class="personal-row">
                   <div class="form-group">
                     <div class="image_to_preview">
+                      <h4 class="text-center">Imagen #5</h4>
                       <% if @property.errors.any? && @property.image5.present? %>
                         <%= image_tag @property.image5_url(:small), class: "default_image_properties default-5" %>
                       <% elsif @property.errors.any? %>
-                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default_avatar.png", class: "default_image_properties default-5", id: "output5") %>
+                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", class: "default_image_properties default-5", id: "output5") %>
                       <% elsif @property.image5.present? %>
                         <%= image_tag @property.image5_url(:small), class: "default_image_properties default-5", id: "output5" %>
                       <% else %>
-                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default_avatar.png", class: "default_image_properties default-5", id: "output5") %>
+                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", class: "default_image_properties default-5", id: "output5") %>
                       <% end %>
                     </div>
                     <%= f.hidden_field :image5, value: @property.cached_image5_data %>
@@ -262,14 +267,15 @@
                   </div>
                   <div class="form-group">
                     <div class="image_to_preview">
+                      <h4 class="text-center">Imagen #6</h4>
                       <% if @property.errors.any? && @property.image6.present? %>
                         <%= image_tag @property.image6_url(:small), class: "default_image_properties default-6" %>
                       <% elsif @property.errors.any? %>
-                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default_avatar.png", class: "default_image_properties default-6", id: "output6") %>
+                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", class: "default_image_properties default-6", id: "output6") %>
                       <% elsif @property.image6.present? %>
                         <%= image_tag @property.image6_url(:small), class: "default_image_properties default-6", id: "output6" %>
                       <% else %>
-                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default_avatar.png", class: "default_image_properties default-6", id: "output6") %>
+                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", class: "default_image_properties default-6", id: "output6") %>
                       <% end %>
                     </div>
                     <%= f.hidden_field :image6, value: @property.cached_image6_data %>
@@ -279,14 +285,15 @@
                 <div class="personal-row">
                   <div class="form-group">
                     <div class="image_to_preview">
+                      <h4 class="text-center">Imagen #7</h4>
                       <% if @property.errors.any? && @property.image7.present? %>
                         <%= image_tag @property.image7_url(:small), class: "default_image_properties default-7" %>
                       <% elsif @property.errors.any? %>
-                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default_avatar.png", class: "default_image_properties default-7", id: "output7") %>
+                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", class: "default_image_properties default-7", id: "output7") %>
                       <% elsif @property.image7.present? %>
                         <%= image_tag @property.image7_url(:small), class: "default_image_properties default-7", id: "output7" %>
                       <% else %>
-                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default_avatar.png", class: "default_image_properties default-7", id: "output7") %>
+                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", class: "default_image_properties default-7", id: "output7") %>
                       <% end %>
                     </div>
                     <%= f.hidden_field :image7, value: @property.cached_image7_data %>
@@ -294,14 +301,15 @@
                   </div>
                   <div class="form-group">
                     <div class="image_to_preview">
+                      <h4 class="text-center">Imagen #8</h4>
                       <% if @property.errors.any? && @property.image8.present? %>
                         <%= image_tag @property.image8_url(:small), class: "default_image_properties default-8" %>
                       <% elsif @property.errors.any? %>
-                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default_avatar.png", class: "default_image_properties default-8", id: "output8") %>
+                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", class: "default_image_properties default-8", id: "output8") %>
                       <% elsif @property.image8.present? %>
                         <%= image_tag @property.image8_url(:small), class: "default_image_properties default-8", id: "output8" %>
                       <% else %>
-                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default_avatar.png", class: "default_image_properties default-8", id: "output8") %>
+                        <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", class: "default_image_properties default-8", id: "output8") %>
                       <% end %>
                     </div>
                     <%= f.hidden_field :image8, value: @property.cached_image8_data %>

@@ -1,11 +1,14 @@
 <section class="section section-show">
   <div class="container">
 
-    <%= image_tag(@property.image1_url(:large)) %>
-    <%= image_tag(@property.image2_url(:large)) %>
-    
+    <%#= image_tag(@property.image1_url(:large, public: true)) %>
+    <%#= image_tag(@property.image2_url(:large)) %>
+    <%#= image_tag(@property.image3_url(:large)) %>
+    <%#= image_tag(@property.image4_url(:large)) %>
+    <%#= image_tag(@property.image5_url(:large)) %>
 
-    <%= render partial: "photos/form", locals: {photo: Photo.new} %>
+
+    <%#= render partial: "photos/form", locals: {photo: Photo.new} %>
 
 
     <header class="section_title section_title-alt">
@@ -29,23 +32,121 @@
                 <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="6"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="7"></li>
               </ol>
 
               <!-- Wrapper for slides -->
               <div class="carousel-inner" role="listbox">
+                <!-- image #1 -->
+                <% if @property.image1.present? %>
+                  <div class="item active">
+                    <%= image_tag(@property.image1_url(:large, public: true), class: "resp") %>
+                  </div>
+                <% end %>
+                <!-- image #2 -->
+                <% if @property.image2.present? %>
+                  <% if @property.image1.present? ==  false %>
+                    <div class="item active">
+                      <%= image_tag(@property.image2_url(:large, public: true), class: "resp") %>
+                    </div>
+                  <% else %>
+                    <div class="item">
+                      <%= image_tag(@property.image2_url(:large, public: true), class: "resp") %>
+                    </div>
+                  <% end %>
+                <% end %>
+                <!-- image #3 -->
+                <% if @property.image3.present? %>
+                  <% if @property.image2.present? ==  false %>
+                    <div class="item active">
+                      <%= image_tag(@property.image3_url(:large, public: true), class: "resp") %>
+                    </div>
+                  <% else %>
+                    <div class="item">
+                      <%= image_tag(@property.image3_url(:large, public: true), class: "resp") %>
+                    </div>
+                  <% end %>
+                <% end %>
+                <!-- image #4 -->
+                <% if @property.image4.present? %>
+                  <% if @property.image3.present? ==  false %>
+                    <div class="item active">
+                      <%= image_tag(@property.image4_url(:large, public: true), class: "resp") %>
+                    </div>
+                  <% else %>
+                    <div class="item">
+                      <%= image_tag(@property.image4_url(:large, public: true), class: "resp") %>
+                    </div>
+                  <% end %>
+                <% end %>
+                <!-- image #5 -->
+                <% if @property.image5.present? %>
+                  <% if @property.image4.present? ==  false %>
+                    <div class="item active">
+                      <%= image_tag(@property.image5_url(:large, public: true), class: "resp") %>
+                    </div>
+                  <% else %>
+                    <div class="item">
+                      <%= image_tag(@property.image5_url(:large, public: true), class: "resp") %>
+                    </div>
+                  <% end %>
+                <% end %>
+                <!-- image #6 -->
+                <% if @property.image6.present? %>
+                  <% if @property.image5.present? ==  false %>
+                    <div class="item active">
+                      <%= image_tag(@property.image6_url(:large, public: true), class: "resp") %>
+                    </div>
+                  <% else %>
+                    <div class="item">
+                      <%= image_tag(@property.image6_url(:large, public: true), class: "resp") %>
+                    </div>
+                  <% end %>
+                <% end %>
+                <!-- image #7 -->
+                <% if @property.image7.present? %>
+                  <% if @property.image6.present? ==  false %>
+                    <div class="item active">
+                      <%= image_tag(@property.image7_url(:large, public: true), class: "resp") %>
+                    </div>
+                  <% else %>
+                    <div class="item">
+                      <%= image_tag(@property.image7_url(:large, public: true), class: "resp") %>
+                    </div>
+                  <% end %>
+                <% end %>
+                <!-- image #8 -->
+                <% if @property.image8.present? %>
+                  <% if @property.image7.present? ==  false %>
+                    <div class="item active">
+                      <%= image_tag(@property.image8_url(:large, public: true), class: "resp") %>
+                    </div>
+                  <% else %>
+                    <div class="item">
+                      <%= image_tag(@property.image8_url(:large, public: true), class: "resp") %>
+                    </div>
+                  <% end %>
+                <% end %>
 
 
-                <% @property.photos.each_with_index do |photo, index| %>
-                  <% if index == 0 %>
-                    <% active = "active" %>
-                  <% end %>
-                  <%= content_tag(:div, class: "item #{active}") do %>
-                    <%= image_tag photo.image_url(:large, public: true), class: "resp" %>
-                  <% end %>
+
+
+
+                <%# @property.photos.each_with_index do |photo, index| %>
+                  <%# if index == 0 %>
+                    <%# active = "active" %>
+                  <%# end %>
+                  <%#= content_tag(:div, class: "item #{active}") do %>
+                    <%#= image_tag photo.image_url(:large, public: true), class: "resp" %>
+                  <%# end %>
                   <!-- <div class="item active"> -->
                     <%#= image_tag photo.image_url(:large, public: true), class: "resp" %>
                   <!-- </div> -->
-                <% end %>
+                <%# end %>
                 <!-- <div class="item active">
                   <img class="resp" src="../images/apart.jpg" alt="image">
                 </div>
