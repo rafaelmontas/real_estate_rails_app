@@ -319,44 +319,26 @@
           </div>
           <div class="list-group">
             <% @similar_properties.each do |similar| %>
-              <h1><%= similar.name %></h1>
+              <%= link_to property_path(similar), class: "list-group-item media" do %>
+                <div class="pull-left">
+                  <!-- <img class="list-group-img" src="../images/apart.jpg" alt="image"> -->
+                  <% if similar.image1.present? %>
+                    <%= image_tag similar.image1_url(:large, public: true), class: "list-group-img" %>
+                  <% elsif similar.image2.present? %>
+                    <%= image_tag similar.image1_url(:large, public: true), class: "list-group-img" %>
+                  <% else %>
+                    <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", class: "list-group-img") %>
+                  <% end %>
+                </div>
+                <div class="media-body list-group-text">
+                  <strong><%= similar.name %></strong>
+                  <strong><%= number_to_currency(similar.price, precision: 0, unit: "US$") %></strong>
+                  <small class="similar_properties"><%= fa_icon "bed" %> <%= similar.room %></small>
+                  <small class="similar_properties"><%= fa_icon "bath" %> <%= similar.bath %></small>
+                  <!-- <small>$US320,000 . 03 habitaciones . 03 baños . </small> -->
+                </div>
+              <% end %>
             <% end %>
-            <a class="list-group-item media" href="#">
-              <div class="pull-left">
-                <img class="list-group-img" src="../images/apart.jpg" alt="image">
-              </div>
-              <div class="media-body list-group-text">
-                <strong>Torre Cumbre VI</strong>
-                <small>$US320,000 . 03 habitaciones . 03 baños . </small>
-              </div>
-            </a>
-            <a class="list-group-item media" href="#">
-              <div class="pull-left">
-                <img class="list-group-img" src="../images/metro.jpg" alt="image">
-              </div>
-              <div class="media-body list-group-text">
-                <strong>Torre Calvin Arial</strong>
-                <small>$US150,000 . 04 habitaciones . 04 baños . </small>
-              </div>
-            </a>
-            <a class="list-group-item media" href="#">
-              <div class="pull-left">
-                <img class="list-group-img" src="../images/boat.jpg" alt="image">
-              </div>
-              <div class="media-body list-group-text">
-                <strong>Cap Cana</strong>
-                <small>$US520,000 . 03 habitaciones . 03 baños . </small>
-              </div>
-            </a>
-            <a class="list-group-item media" href="#">
-              <div class="pull-left">
-                <img class="list-group-img" src="../images/pool.jpg" alt="image">
-              </div>
-              <div class="media-body list-group-text">
-                <strong>Torre Cumbre VIII</strong>
-                <small>$US320,000 . 03 habitaciones . 03 baños . </small>
-              </div>
-            </a>
           </div>
         </div>
       </div>
