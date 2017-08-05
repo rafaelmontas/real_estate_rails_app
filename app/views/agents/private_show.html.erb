@@ -72,9 +72,10 @@
         <div class="list-group-item media">
           <%= link_to(property_path(property)) do %>
             <div class="pull-left">
-              <!-- <img src="../images/metro.jpg" alt="image" class="list-group-img"> -->
-              <% if property.photos.first %>
-                <%= image_tag property.photos.first.image_url(:large, public: true), class: "list-group-img" %>
+              <% if property.image1.present? %>
+                <%= image_tag property.image1_url(:large, public: true), class: "list-group-img" %>
+              <% elsif property.image2.present? %>
+                <%= image_tag property.image2_url(:large, public: true), class: "list-group-img" %>
               <% else %>
                 <%= image_tag "https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg", class: "list-group-img" %>
               <% end %>

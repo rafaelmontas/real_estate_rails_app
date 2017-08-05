@@ -13,6 +13,8 @@ class PropertiesController < ApplicationController
 
   def show
     @property = Property.find(params[:id])
+    random = rand(Property.count - 4)
+    @similar_properties = Property.where(location: @property.location).limit(4).offset(random)
   end
 
   def new

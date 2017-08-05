@@ -1613,7 +1613,7 @@ strong {
 }
 
 .listings-list-alt .listings-grid-item {
-	padding: 20px;
+	padding: 10px;
 	margin: 0;
 	box-shadow: none;
 	border-radius: 0;
@@ -3620,5 +3620,21 @@ body#agent_signup_login {
   }
   .default_image_properties {
     width: 85%;
+  }
+}
+
+#agent-question textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+#agent-question textarea:focus {
+  border-color: #66afe9;
+}
+
+.agent-public-show {
+  margin-bottom: 50px;
+  .section_title_agent {
+    padding: 30px 0 0;
   }
 }

@@ -12,6 +12,7 @@ class AgentsController < ApplicationController
   def show
     @agent = Agent.find(params[:id])
     redirect_to root_url and return unless @agent.activated?
+    @properties = @agent.properties.paginate(page: params[:page], per_page: 4)
   end
 
   def new

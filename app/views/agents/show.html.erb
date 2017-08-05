@@ -1,6 +1,6 @@
 
 <section class="section">
-  <div class="container">
+  <div class="container agent-public-show">
     <header class="section_title section_title_agent text-left">
       <h2><%= @agent.name %></h2>
     </header>
@@ -35,90 +35,45 @@
             <h2>Propiedades</h2>
           </div>
           <div class="listings-list listings-list-alt">
-            <div class="listings-grid-item">
-              <a href="show.html" class="media">
-                <div class="listings-grid-main pull-left">
-                  <img src="../images/apart.jpg" alt="image">
-                  <div class="listings-grid-price">$US350,000</div>
-                </div>
-                <div class="media-body">
-                  <div class="listings-grid-body">
-                    <small>Torre Calvin Ariel, Naco</small>
-                    <h5>Nullam iddolor idnibh ultricies vehicula</h5>
+            <% @properties.each do |property| %>
+              <div class="listings-grid-item">
+                <%= link_to(property_path(property), class: "media") do %>
+                  <div class="listings-grid-main pull-left">
+                    <% if property.image1.present? %>
+                      <%= image_tag property.image1_url(:large, public: true) %>
+                    <% elsif property.image2.present? %>
+                      <%= image_tag property.image2_url(:large, public: true) %>
+                    <% else %>
+                      <%= image_tag "https://s3.amazonaws.com/real.estate.app/agents_images/default-thumbnail.jpg" %>
+                    <% end %>
+                    <div class="listings-grid-price">
+                      <%= number_to_currency(property.price, precision: 0, unit: "US$") %>
+                    </div>
                   </div>
-                  <ul class="listings-grid-attrs">
-                    <li>
-                      <i class="fa fa-bed" aria-hidden="true"></i>
-                      03
-                    </li>
-                    <li>
-                      <i class="fa fa-bath" aria-hidden="true"></i>
-                      02
-                    </li>
-                    <li>
-                      <i class="fa fa-car" aria-hidden="true"></i>
-                      02
-                    </li>
-                  </ul>
-                </div>
-              </a>
-            </div>
-            <div class="listings-grid-item">
-              <a href="show.html" class="media">
-                <div class="listings-grid-main pull-left">
-                  <img src="../images/metro.jpg" alt="image">
-                  <div class="listings-grid-price">$US350,000</div>
-                </div>
-                <div class="media-body">
-                  <div class="listings-grid-body">
-                    <small>Torre Cumbre VII, Naco</small>
-                    <h5>Nullam iddolor idnibh ultricies vehicula</h5>
+                  <div class="media-body">
+                    <div class="listings-grid-body">
+                      <small><%= property.name %></small>
+                      <h5><%= property.address %></h5>
+                    </div>
+                    <ul class="listings-grid-attrs">
+                      <li>
+                        <i class="fa fa-bed" aria-hidden="true"></i>
+                        <%= property.room %>
+                      </li>
+                      <li>
+                        <i class="fa fa-bath" aria-hidden="true"></i>
+                        <%= property.bath %>
+                      </li>
+                      <li>
+                        <i class="fa fa-car" aria-hidden="true"></i>
+                        <%= property.parking %>
+                      </li>
+                    </ul>
                   </div>
-                  <ul class="listings-grid-attrs">
-                    <li>
-                      <i class="fa fa-bed" aria-hidden="true"></i>
-                      03
-                    </li>
-                    <li>
-                      <i class="fa fa-bath" aria-hidden="true"></i>
-                      02
-                    </li>
-                    <li>
-                      <i class="fa fa-car" aria-hidden="true"></i>
-                      02
-                    </li>
-                  </ul>
-                </div>
-              </a>
-            </div>
-            <div class="listings-grid-item">
-              <a href="show.html" class="media">
-                <div class="listings-grid-main pull-left">
-                  <img src="../images/boat.jpg" alt="image">
-                  <div class="listings-grid-price">$US350,000</div>
-                </div>
-                <div class="media-body">
-                  <div class="listings-grid-body">
-                    <small>Cap Cana, Punta Cana</small>
-                    <h5>Nullam iddolor idnibh ultricies vehicula</h5>
-                  </div>
-                  <ul class="listings-grid-attrs">
-                    <li>
-                      <i class="fa fa-bed" aria-hidden="true"></i>
-                      03
-                    </li>
-                    <li>
-                      <i class="fa fa-bath" aria-hidden="true"></i>
-                      02
-                    </li>
-                    <li>
-                      <i class="fa fa-car" aria-hidden="true"></i>
-                      02
-                    </li>
-                  </ul>
-                </div>
-              </a>
-            </div>
+                <% end %>
+              </div>
+            <% end %>
+            <%= will_paginate @properties %>
           </div>
         </div>
       </div>
@@ -141,14 +96,15 @@
               <label>Número De Contacto</label>
             </div>
             <div class="form-group form-group-float form-group-active">
-              <textarea class="form-control textarea-autoheight" rows="6" cols="80"></textarea>
+              <textarea class="textarea-autoheight" rows="6" cols="80"></textarea>
               <label>Mensaje</label>
             </div>
             <small class="text-muted">Al enviarnos su información, está de acuerdo con los terminos y politica de privacidad de TuCasa S. R. L.</small>
           </div>
           <div class="card-footer">
             <button class="btn btn-primary">Solicitar Info.</button>
-            <button class="btn btn-sm btn-link visible-sm-inline visible-xs-inline">Cancelar</button>
+            <!-- <button class="btn btn-sm btn-link visible-sm-inline visible-xs-inline">Cancelar</button> -->
+            <a class="btn btn-sm btn-link visible-sm-inline visible-xs-inline" data-turbolinks="false">Cancelar</a>
           </div>
         </form>
       </div>

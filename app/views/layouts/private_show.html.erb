@@ -33,9 +33,9 @@
             <% end %>
           </a>
           <ul class="dropdown-menu pull-right dropdown-menu-agent">
-            <%= content_tag(:li, link_to("Perfil", agent_path(current_agent), target: "_blank")) %>
+            <%= content_tag(:li, link_to("Perfil Público", agent_path(current_agent), target: "_blank")) %>
             <%= content_tag(:li, link_to("Editar Perfil", edit_agent_path(current_agent))) %>
-            <%= content_tag(:li, link_to("Cerrar Sesión", agents_logout_path, method: "delete")) %>
+            <%#= content_tag(:li, link_to("Cerrar Sesión", agents_logout_path, method: "delete")) %>
           </ul>
         </li>
       </ul>
