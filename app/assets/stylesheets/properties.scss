@@ -714,6 +714,13 @@ dt, label {
   -webkit-transition-duration: .2s;
   transition-duration: .2s;
 }
+
+@media screen and (min-width: 768px) {
+  .listings-grid-main>img {
+    max-height: 125px;
+  }
+}
+
 .slick-slide img {
   display: block;
 }
@@ -2330,9 +2337,9 @@ left: auto;
   border-bottom: 1px solid #f7f7f7;
 }
 
-.media>.pull-left {
-  padding-right: 15px;
-}
+// .media>.pull-left {
+//   padding-right: 15px;
+// }
 
 @media screen and (max-width: 991px) {
 	.list-group-label-float {
