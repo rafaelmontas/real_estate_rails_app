@@ -57,19 +57,25 @@
         <div class="listings-grid-item">
           <%= link_to(property_path(property)) do %>
               <div class="listings-grid-main">
-                  <% if property.photos.first %>
-		                <%= image_tag property.photos.first.image_url(:medium, public: true) %>
-	                <% end %>
-                <div class="listings-grid-price">DOP$ 8,500,000</div>
+                <% if property.image1.present? %>
+                  <%= image_tag property.image1_url(:large, public: true) %>
+                <% elsif property.image2.present? %>
+                  <%= image_tag property.image2_url(:large, public: true) %>
+                <%# if property.photos.first %>
+	                <%#= image_tag property.photos.first.image_url(:medium, public: true) %>
+                <% end %>
+                <div class="listings-grid-price">
+                  <%= number_to_currency(property.price, precision: 0, unit: "US$") %>
+                </div>
               </div>
               <div class="listings-grid-body">
-                <small>C/ Fabio Mota #9</small>
-                <h5>Apartamento en construcción</h5>
+                <small><%= property.address %></small>
+                <h5><%= property.name %></h5>
               </div>
               <ul class="listings-grid-attrs">
-                <li><i class="listings-grid-icon fa fa-bed" aria-hidden="true"> 03</i></li>
-                <li><i class="listings-grid-icon fa fa-bath" aria-hidden="true"> 02</i></li>
-                <li><i class="listings-grid-icon fa fa-car" aria-hidden="true"> 02</i></li>
+                <li><i class="listings-grid-icon fa fa-bed" aria-hidden="true"> <%= property.room %></i></li>
+                <li><i class="listings-grid-icon fa fa-bath" aria-hidden="true"> <%= property.bath %></i></li>
+                <li><i class="listings-grid-icon fa fa-car" aria-hidden="true"> <%= property.parking %></i></li>
               </ul>
           <% end %>
           <div class="actions listings-grid-favorite">

@@ -10,6 +10,8 @@
           <div class="profile-img">
             <% if @agent.avatar.present? %>
               <%= image_tag @agent.avatar_url(:small) %>
+            <% else %>
+              <%= image_tag("https://s3.amazonaws.com/real.estate.app/agents_images/default_avatar.png") %>
             <% end %>
           </div>
           <div class="profile-info">

@@ -246,12 +246,12 @@
             <small>Llamar o enviar Email</small>
           </div>
           <div class="card-body">
-            <%# if @property.agent.phone_number %>
+            <% if @property.agent.phone_number %>
               <div class="inquire-number">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <%= number_to_phone(@property.agent.phone_number, area_code: true) %>
               </div>
-            <%# end %>
+            <% end %>
             <div class="form-group form-group-float form-group-active">
               <input type="text" class="form-control">
               <label for="">Name</label>
