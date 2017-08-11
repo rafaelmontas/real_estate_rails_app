@@ -14,7 +14,7 @@ class AgentsEditTest < ActionDispatch::IntegrationTest
                                                       password: "foo",
                                                       password_confirmation: "bar" } }
     assert_template 'agents/edit'
-    assert_select 'div.alert', "The form contains 4 errors."
+    assert_select 'div.alert', "El formulario contiene 4 errores."
   end
 
   test "successful edit" do
