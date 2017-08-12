@@ -11,8 +11,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body id="agent_signup_login">
-    <header id="header_agent_signup_login">
+  <body id="user_signup_login">
+    <header id="header_user_signup_login">
       <div class="header-main">
         <div class="container">
 
@@ -24,13 +24,13 @@
             </div>
           <% end %>
           <!-- Modify for production -->
-          <% if request.original_url == "http://localhost:3000/agents/signup" %>
-            <%= link_to(agents_login_path, class: "login") do %>
+          <% if request.original_url == "http://localhost:3000/users/signup" %>
+            <%= link_to(users_login_path, class: "login") do %>
               <%= fa_icon "user-o" %>
               Iniciar Sesión
             <% end %>
-          <% elsif request.original_url == "http://localhost:3000/agents/login" %>
-            <%= link_to(agents_signup_path, class: "login") do %>
+          <% elsif request.original_url == "http://localhost:3000/users/login" %>
+            <%= link_to(users_signup_path, class: "login") do %>
               <%= fa_icon "user-o" %>
               Registrate
             <% end %>

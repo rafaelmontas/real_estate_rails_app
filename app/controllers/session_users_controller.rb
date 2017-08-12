@@ -1,5 +1,7 @@
 class SessionUsersController < ApplicationController
 
+  layout "user_signup_login", only: [:new]
+
   def new
   end
 
@@ -11,7 +13,7 @@ class SessionUsersController < ApplicationController
       redirect_back_or @user
     else
       flash.now[:danger] = "Combinación email/contraseña incorrecta"
-      render 'new'
+      render 'new', layout: "user_signup_login"
     end
   end
 

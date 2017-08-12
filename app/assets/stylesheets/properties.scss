@@ -550,7 +550,7 @@ a.logo {
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
-.form-control {
+.form-control:not(.user-login) {
   padding-left: 2px;
   padding-right: 2px;
   resize: none;
@@ -3435,12 +3435,71 @@ ul.facet-options-list li.facet-property-type a {
 }
 
 
+// User signup, login page
+
+#user_signup_login {
+  @media screen and (max-width: 767px) {
+    .main-container {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  .panel-main{
+    overflow: hidden;
+    max-width: 800px;
+    margin: auto;
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    background-color: #fff;
+    .col-sm-6 {
+      padding: 12px 25px;
+    }
+    .col-left {
+      h2 {
+        margin: 10px 0;
+        font-size: 22px;
+      }
+      label.checkbox, input.btn-primary {
+        margin-bottom: 12px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+        label {
+          color: #828282;
+          font-weight: bold;
+        }
+        label.user-password {
+          display: inline;
+        }
+        .user-login {
+          border: 1px solid #ccc;
+          border-radius: 4px;
+        }
+        .form-control.user-login:focus {
+          border-color: #66afe9;
+        }
+      }
+    }
+    @media screen and (max-width: 767px) {
+      .col-left {
+        border-bottom: 1px solid #cfcfcf;
+      }
+    }
+    @media screen and (min-width: 768px) {
+      .col-left {
+        border-right: 1px solid #cfcfcf;
+      }
+    }
+  }
+}
+
 // Agent signup, login page
 body#agent_signup_login {
   background-color: #fff;
 }
 
-#header_agent_signup_login {
+#header_agent_signup_login, #header_user_signup_login {
   background-color: #fff;
   color: #000;
   border-top: 3px solid red;
@@ -3479,7 +3538,7 @@ body#agent_signup_login {
 }
 
 @media screen and (min-width: 768px) {
-  #agent_signup_login .main-container {
+  #agent_signup_login .main-container, #user_signup_login .main-container {
     margin-top: 72px;
     padding: 32px 20px;
   }
@@ -3542,7 +3601,7 @@ body#agent_signup_login {
   }
 }
 
-#agent_signup_login #footer {
+#agent_signup_login #footer, #user_signup_login #footer {
   background-color: #f5f5f5;
   box-shadow: none;
   padding-top: 0px;
