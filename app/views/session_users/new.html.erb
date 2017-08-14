@@ -29,7 +29,13 @@
           <p>Nuevo Usuario? <%= link_to "Registrate ahora!", users_signup_path %></p>
         </div>
         <div class="col-sm-6">
-          <h1>hi</h1>
+          <h2>Trabajas en el sector Inmobiliario?</h2>
+          <p>Maneja tu perfil, propiedades y más.</p>
+          <%= link_to "Iniciar Sesión", agents_login_path, class: "btn btn-primary" %>
+          <p>
+            ¿No tienes cuenta?
+            <%= link_to "Registrate ahora!", agents_signup_path %>
+          </p>
         </div>
       </div>
     </div>
